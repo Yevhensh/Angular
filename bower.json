@@ -1,0 +1,17 @@
+{
+  "name": "angular_es5_webpack",
+  "description": "Start seed for building component base application based on angular 1.5 and webpack",
+  "main": "entry.js",
+  "authors": [
+    "Vladyslav Bezruchko"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Yevhensh/Angular",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
