@@ -8,6 +8,6 @@ module.exports = angular.module("app.main", [
   carsComponent.name,
   mainComponent.name,
   contactsComponent.name,
-  mainRoute.name
+  mainRoute.name,
 ]);
 
