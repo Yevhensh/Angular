@@ -9,3 +9,7 @@ button {
 .tstClass {
     margin-top: 10px;
 }
+
+body {
+  background-color: black;
+}
