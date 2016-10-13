@@ -7,5 +7,7 @@ angular.module('app',
       require('angular-ui-router')
     ])
   .config(function($locationProvider) {
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode({
+      enabled: true,
+    });
   });
