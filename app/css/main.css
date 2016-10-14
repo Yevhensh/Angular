@@ -8,6 +8,7 @@
   font-family: custom;
   src: url('./HelveticaNeueCyr-Roman.otf');
 }*/
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 
 .main-nav {
@@ -63,4 +64,3 @@
   left: 7px;
   font-size: 14px;
   opacity: 0.54; }
-
