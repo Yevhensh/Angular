@@ -1,0 +1,32 @@
+<div flex layout="row" layout-xs="column">
+
+  <p>
+    Sort by:
+    <select ng-model="$ctrl.orderProp">
+      <option value="">Default</option>
+      <option value="title">Alphabetical</option>
+    </select>
+  </p>
+
+  <p>
+    Search:
+    <input ng-model="$ctrl.query" />
+  </p>
+
+</div>
+
+<div>
+
+  <md-list>
+    <h1>Albums</h1>
+    <md-list-item ng-repeat="album in $ctrl.albums | filter:$ctrl.query
+                                                   | orderBy:$ctrl.orderProp">
+      <h1>{{ album.title }}</h1>
+      <p>{{ album.created_at | date}}</p>
+      <img ng-src="{{album.image}}" alt="{{album.title}}"
+                                  style="width:300px;height:200px;" />
+
+    </md-list-item>
+  </md-list>
+
+</div>
