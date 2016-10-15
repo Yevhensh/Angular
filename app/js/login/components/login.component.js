@@ -1,0 +1,12 @@
+var angular = require('angular');
+
+module.exports = angular
+  .module('app.login.component', [])
+  .component('login', {
+    templateUrl: '/app/js/login/components/login.template.html',
+    controller: LoginController,
+  });
+
+function LoginController() {
+  var ctrl = this;
+}
