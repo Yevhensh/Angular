@@ -2,9 +2,9 @@
 module.exports = angular
   .module('app.main.route', [])
   .config(function($stateProvider, $urlRouterProvider) {
-      $stateProvider.state({ 
+      $stateProvider.state({
         name: 'main',
-        url: '/', 
+        url: '/',
         template: '<app-main></app-main>'
       });
   });
