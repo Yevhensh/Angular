@@ -14,7 +14,7 @@ button {
   margin-top: 10px;
 }
 
-.borderschool
+.borderlist
 {
 	border-width:1px;
 	border-radius: 1%;
@@ -23,5 +23,5 @@ button {
 	padding: 20px;
 	list-style-type: none;
 	margin: 25px 50px 25px 25px;
-} 
+}
 
