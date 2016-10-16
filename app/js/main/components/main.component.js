@@ -1,6 +1,7 @@
+var angular = require('angular');
 'use strict';
 module.exports = angular
-  .module('app.main.component', ['ngMaterial', 'sidenavDemo1'])
+  .module('app.main.component', ['ngMaterial'])
   .component('appMain', {
     templateUrl: '/app/js/main/components/main.template.html',
     controller: MainController,
