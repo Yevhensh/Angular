@@ -4,10 +4,9 @@ var angular = require('angular'),
 angular.module('app',
     [
       mainModule.name,
-      require('angular-ui-router')
+      require('angular-ui-router'),
+      require('angular-material')
     ])
   .config(function($locationProvider) {
-    $locationProvider.html5Mode({
-      enabled: true,
-    });
-  });
+    $locationProvider.html5Mode(true);
+});
