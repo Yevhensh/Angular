@@ -1,6 +1,6 @@
-angular
-  .module('app.index', ['ngMaterial'])
-  .controller('AppCtrl', function ($scope, $timeout, $mdSidenav) {
+module.exports = angular
+  .module('app.index.component', ['ngMaterial'])
+  .controller('IndexCtrl', function ($scope, $timeout, $mdSidenav) {
     $scope.toggleLeft = buildToggler('left');
     $scope.toggleRight = buildToggler('right');
 
@@ -9,4 +9,4 @@ angular
         $mdSidenav(componentId).toggle();
       }
     }
-  })
+  });
