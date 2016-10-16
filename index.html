@@ -38,7 +38,14 @@
         </md-content>
       </md-sidenav>
     </div>
+
     <section ui-view></section>
+
+    <div class="main-nav main-nav-footer">
+      <section class="main-nav-title main-nav-footer-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <a ui-sref="#"><md-button>Footer</md-button></a>
+      </section>
+    </div>
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-aria/angular-aria.js"></script>
     <script src="/node_modules/angular-animate/angular-animate.js"></script>
