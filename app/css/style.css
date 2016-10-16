@@ -2,14 +2,25 @@ h1,h2,h3,h4,h5 {
   text-align: center;
 }
 
+h1 {
+  text-transform: uppercase;
+}
+
 button {
   margin-bottom: 0px;
 }
 
 .tstClass {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-body {
-  background-color: black;
+.borderlist
+{
+  border-width:1px;
+  border-radius: 1%;
+  border-style: solid;
+  border-color: black;
+  padding: 20px;
+  list-style-type: none;
+  margin: 25px 50px 25px 25px;
 }
