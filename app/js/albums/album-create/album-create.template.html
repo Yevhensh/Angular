@@ -1,5 +1,16 @@
 <h1><a ui-sref="albums">Click to see the album-list</a></h1>
 <h1>Albums New</h1>
-<form>
-  Title:<input type="text" name="title" id="title" placeholder="Album 1">
+<form ng-submit="addAlbum()">
+  Title:<br/>
+  <input ng-model ="album.title" type="text" name="title" id="title" placeholder="Foxes"/>
+  <br/>Image:<br/>
+  <input ng-model ="album.image" type="text" name="image" id="image"
+  placeholder="http://cameralabs.org/media/k2/items/cache/f85c69e258fa1e3fd07e321cb5f74e94_L.jpg"/>
+  <br/>Belongs to: <br/>
+  <input ng-model ="album.imageable_type" type="text" name="imageable_type" id="imageable_type"
+  placeholder="Group"/>
+  <br/>Belongs to id:<br/>
+  <input ng-model ="album.imageable_id" type="text" name="imageable_id" id="imageable_id"
+  placeholder="1"/><br/>
+  <input type="submit"  value="Save"/>
 </form>

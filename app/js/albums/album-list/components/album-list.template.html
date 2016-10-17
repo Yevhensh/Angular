@@ -18,10 +18,16 @@
 
 <div>
 
+<div class="albums" flex layout="row" layout-xs="column" layout="row"
+                            layout-align="end center">
+
+  <p><a ui-sref="albumCreate">New</a></p>
+  
+</div>
+
   <md-list class="album-list">
     <h1>Albums</h1>
-    <h1>{{$ctrl.a}}</h1>
-    <ui-view></ui-view>
+
     <a ui-sref="albumCreate">New</a>
     <md-list-item class="album-item" ng-repeat="album in $ctrl.albums | filter:$ctrl.query
                                                    | orderBy:$ctrl.orderProp">
