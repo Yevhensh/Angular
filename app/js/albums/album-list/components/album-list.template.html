@@ -1,4 +1,5 @@
-<div flex layout="row" layout-xs="column">
+<div class="albums" flex layout="row" layout-xs="column" layout="row"
+                          layout-align="end center">
 
   <p>
     Sort by:
@@ -17,14 +18,21 @@
 
 <div>
 
-  <md-list>
+  <md-list class="album-list">
     <h1>Albums</h1>
-    <md-list-item ng-repeat="album in $ctrl.albums | filter:$ctrl.query
+    <h1>{{$ctrl.a}}</h1>
+    <ui-view></ui-view>
+    <a ui-sref="albumCreate">New</a>
+    <md-list-item class="album-item" ng-repeat="album in $ctrl.albums | filter:$ctrl.query
                                                    | orderBy:$ctrl.orderProp">
-      <h1>{{ album.title }}</h1>
+      <h1><a ui-sref="album({ albumId: album.id })">{{ album.title }}</a></h1>
       <p>{{ album.created_at | date}}</p>
-      <img ng-src="{{album.image}}" alt="{{album.title}}"
-                                  style="width:300px;height:200px;" />
+
+      <a ui-sref="album({ albumId: album.id })">
+        <img ng-src="{{album.image}}" alt="{{album.title}}"/>
+      </a>
+
+
 
     </md-list-item>
   </md-list>
