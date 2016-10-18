@@ -1,10 +1,11 @@
-var angular = require('angular')
-    schoolsComponent = require('./components/schools.component.js'),
-    schoolsRoute = require('./schools.route.js'),
-    schoolsResource = require('./services/schools.service.js');
+var schoolListModule = require('../schools/school-list/school-list.module.js'),
+    schoolDetailModule = require('../schools/school-detail/school-detail.module.js'),
+    schoolCreateModule = require('../schools/school-create/school-create.module.js'),
+    schoolEditModule = require('../schools/school-edit/school-edit.module.js');
 
-module.exports = angular.module('app.schools', [
-  schoolsComponent.name,
-  schoolsRoute.name,
-  schoolsResource.name
+module.exports = angular.module("app.school", [
+  schoolCreateModule.name,
+  schoolEditModule.name,
+  schoolListModule.name,
+  schoolDetailModule.name,
 ]);

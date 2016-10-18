@@ -1,0 +1,32 @@
+<p class="school_search"> 
+    <button <a ui-sref="schools">Back to the school list</a></button>
+</p>
+
+
+<div class="borderlist">
+<h1>{{ schoolDetail.school.name }}</h1>
+
+
+<p><span>E-mail:</span></p>
+<div class="border_school">
+<p>{{ schoolDetail.school.email }}</p>
+</div>
+<p><span>Address:</span></p>
+<div class="border_school">
+<p>{{ schoolDetail.school.address }}</p>
+</div>
+<p><span>Contact phone:</span></p>
+<div class="border_school">
+<p>{{ schoolDetail.school.contact_phone }}</p>
+</div>
+
+<p class="school_search"> 
+    <button <a ui-sref="schoolEdit({ schoolId: schoolDetail.school.id })" id="school_button">Edit school</a></button>
+</p>
+
+<p class="school_search"> 
+    <button <a ng-click="deleteSchool(schoolDetail)" id="school_button">Delete school</a></button>
+</p>
+
+
+</div>
