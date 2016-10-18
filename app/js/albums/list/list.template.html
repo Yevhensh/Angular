@@ -29,7 +29,7 @@
     <h1>Albums</h1>
 
 
-    <md-list-item class="album-item" ng-repeat="album in $ctrl.albums | filter:$ctrl.query
+    <md-list-item class="album-item" ng-repeat="album in albums | filter:$ctrl.query
                                                    | orderBy:$ctrl.orderProp">
       <h1><a ui-sref="album({ albumId: album.id })">{{ album.title }}</a></h1>
       <p>{{ album.created_at | date}}</p>

@@ -12,10 +12,6 @@ module.exports = angular
             return $resource(appSettings.SERVER_PATH + "albums/:id", null,
             {
               'update':{'method':'PUT'}
-            },
-
-            {
-              stripTrailingSlashes: false
             }
           );
     }
