@@ -1,12 +1,10 @@
 'use strict';
 
-var angular = require('angular');
-
 module.exports = angular
-  .module('app.albumCreate.component',['ngMaterial'])
+  .module('app.albumCreate.controller',['ngMaterial'])
   .controller( 'AlbumCreateController', AlbumCreateController);
-  AlbumCreateController.$inject = ['$scope', '$state', '$stateParams', 'Album'];
-  function AlbumCreateController ($scope, $state, $stateParams, Album) {
+  AlbumCreateController.$inject = ['$scope', '$state',  'Album'];
+  function AlbumCreateController ($scope, $state,  Album) {
     $scope.album = new Album();
 
     $scope.addAlbum = function() {

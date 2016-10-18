@@ -7,20 +7,19 @@ module.exports = angular
   	  name: 'albumEdit',
   	  url: '/albums/{albumId}/edit',
   	  templateUrl: './app/js/albums/album-edit/album-edit.template.html',
-      controller: ['$scope', '$state', '$stateParams', 'Album',
-      function AlbumUpdateController ($scope, $state, $stateParams, Album) {
-        $scope.updateAlbum = function() {
-
-          $scope.albumDetail.$update({ id: $stateParams.albumId }, function() {
-            $state.go('albums');
-          });
-        };
-        $scope.loadAlbum = function() {
-          $scope.albumDetail = Album.get({ id: $stateParams.albumId });
-        };
-
-        $scope.loadAlbum();
-    }]
+      controller: 'AlbumEditController'
+    //     $scope.updateAlbum = function() {
+    //
+    //       $scope.albumDetail.$update({ id: $stateParams.albumId }, function() {
+    //         $state.go('albums');
+    //       });
+    //     };
+    //     $scope.loadAlbum = function() {
+    //       $scope.albumDetail = Album.get({ id: $stateParams.albumId });
+    //     };
+    //
+    //     $scope.loadAlbum();
+    // }]
     };
     $stateProvider.state(albumUpdate);
 });
