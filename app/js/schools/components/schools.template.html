@@ -1,0 +1,11 @@
+<h1 class="text-uppercase">School List</h1>
+
+  <ul>
+    <li class="borderschool" ng-repeat="school in $ctrl.schools">
+      <p>ID: {{ school.id }}</p>
+      <p>Name: {{ school.name }}</p>
+      <p>Email: {{ school.email }}</p>
+      <p>Address: {{ school.address }}</p>
+      <p>Contact phone: {{ school.contact_phone }}</p>
+    </li>
+  </ul>
