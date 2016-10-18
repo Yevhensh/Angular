@@ -1,6 +1,6 @@
 <html ng-app="app">
   <head>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
     <link rel="stylesheet" href="app/css/main.css">
     <link rel="stylesheet" href="app/css/style.css">
@@ -8,24 +8,24 @@
   </head>
   <body>
     <div class="wrapper-primary-image">
-      <img src="./app/img/pack2/high-school.svg" class="primary-image"/>
+      <img src="./app/img/university-campus-2.svg" class="primary-image"/>
     </div>
     <!--Angular elements -->
-    <div ng-controller="IndexCtrl" layout="column" ng-cloak>
+    <div ng-controller="AppCtrl" layout="column" ng-cloak>
       <div class="main-nav">
         <section class="main-nav-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <a ui-sref="main"><md-button>Home</md-button></a>
-          <a ui-sref="login">  <md-button>Login</md-button></a>
-          <a ui-sref="contacts"><md-button>About</md-button><a>
+          <md-button>Home</md-button>
+          <md-button>Login</md-button>
+          <md-button>About</md-button>
         </section>
         <div class="main-nav-button">
           <md-button class="md-icon-button md-primary" style="width:60px;height:60px;" aria-label="Settings" ng-click="toggleLeft()">
-            <md-icon md-svg-icon="./app/img/bars-2.svg" style="width:40px;height:40px;"></md-icon>
+            <md-icon md-svg-icon="./app/img/menu-button.svg" style="width:40px;height:40px;"></md-icon>
           </md-button>
         </div>
       </div>
       <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
-        <md-toolbar class="md-theme-indigo" style="background-color: #D32F2F;">
+        <md-toolbar class="md-theme-indigo" style="background-color: #B71C1C;">
           <h1 class="md-toolbar-tools">Menu</h1>
         </md-toolbar>
         <md-content layout-margin>
@@ -38,20 +38,16 @@
         </md-content>
       </md-sidenav>
     </div>
-
     <section ui-view></section>
-
-    <div class="main-nav main-nav-footer">
-      <section class="main-nav-title main-nav-footer-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-        <a ui-sref="#"><md-button>Footer</md-button></a>
-      </section>
-    </div>
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-aria/angular-aria.js"></script>
     <script src="/node_modules/angular-animate/angular-animate.js"></script>
     <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/node_modules/angular-resource/angular-resource.js"></script>
     <script src="/node_modules/angular-material/angular-material.js"></script>
+    <script src="/node_modules/sass/lib/sass.js"></script>
+    <script src="/node_modules/sass-graph/sass-graph.js"></script>
+    <script src="/app/js/index.module.js"></script>
     <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
   </body>
 </html>

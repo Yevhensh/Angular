@@ -7,4 +7,5 @@ module.exports = angular
         url: '/',
         template: '<app-main></app-main>'
       });
+
   });
