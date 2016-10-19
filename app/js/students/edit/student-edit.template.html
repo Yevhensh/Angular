@@ -6,13 +6,13 @@
 <div class="form-group">
   <label for="first_name" class="col-sm-2 control-label">First Name</label>
   <div class="col-sm-10">
-    <input type="text" ng-model="studentDetail.student.first_name" class="form-control" id="first_name" value="{{studentDetail.student.first_name}}"/>
+    <input type="text" ng-model="studentDetail.student.first_name" class="form-control" id="first_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{studentDetail.student.first_name}}"/>
   </div>
 </div>
 <div class="form-group">
   <label for="last_name" class="col-sm-2 control-label">Last Name</label>
   <div class="col-sm-10">
-    <input type="text" ng-model="studentDetail.student.last_name" class="form-control" id="last_name" value="{{studentDetail.student.last_name}}"/>
+    <input type="text" ng-model="studentDetail.student.last_name" class="form-control" id="last_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{studentDetail.student.last_name}}"/>
   </div>
 </div>
 <div class="form-group">

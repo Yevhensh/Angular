@@ -1,4 +1,4 @@
-var coreServices  = require('../../common/core.services.js');
+var coreServices  = require('../common/core.services.js');
 
 module.exports = angular
     .module('app.studentList.resource', [

@@ -1,8 +1,11 @@
 'use strict';
 
 module.exports = angular
-  .module('app.studentEdit.controller',['ngMaterial'])
-  .controller( 'StudentEditController', StudentEditController);
+  .module('app.studentEdit.component',[])
+  .component('studentEdit', {
+    templateUrl: './app/js/students/edit/student-edit.template.html',
+    controller: StudentEditController
+  });
 
   StudentEditController.$inject = ['$scope', '$state', '$stateParams', 'Student'];
 
