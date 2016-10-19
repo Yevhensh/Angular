@@ -24,13 +24,13 @@
 <div>
   <label for="school_id">School</label>
   <div>
-    <input type="number" ng-model="student.school_id" placeholder="School"/>
+    <input type="number" min="1" ng-model="student.school_id" placeholder="School"/>
   </div>
 </div>
 <div>
   <label for="group_id">Group</label>
   <div>
-    <input type="number" ng-model="student.group_id" placeholder="Group"/>
+    <input type="number" min="1" ng-model="student.group_id" placeholder="Group"/>
   </div>
 </div>
 <md-checkbox ng-model="isDisabled" aria-label="Health Info:">Health Info:</md-checkbox>

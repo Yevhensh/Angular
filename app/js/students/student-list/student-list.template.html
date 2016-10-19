@@ -20,7 +20,7 @@
 </div>
 
 <table>
-  <tr><th>ID</th><th>Name</th><th>Surname</th></tr>
+  <tr><th>Name</th><th>Surname</th></tr>
   <tr ng-repeat="student in $ctrl.students | filter:$ctrl.query | orderBy:$ctrl.orderProp">
     <td>{{ student.first_name }}</td>
     <td>{{ student.last_name }}</td>
