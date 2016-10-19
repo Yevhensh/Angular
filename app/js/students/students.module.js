@@ -1,10 +1,11 @@
-var angular = require('angular')
-    studentsComponent = require('./components/students.component.js'),
-    studentsRoute = require('./students.route.js'),
-    studentsResource = require('./services/students.service.js');
+var studentListModule = require('../students/student-list/student-list.module.js'),
+    studentDetailModule = require('../students/student-detail/student-detail.module.js'),
+    studentCreateModule = require('../students/student-create/student-create.module.js'),
+    studentEditModule = require('../students/student-edit/student-edit.module.js');
 
-module.exports = angular.module('app.students', [
-  studentsComponent.name,
-  studentsRoute.name,
-  studentsResource.name
+module.exports = angular.module("app.students", [
+  studentCreateModule.name,
+  studentEditModule.name,
+  studentListModule.name,
+  studentDetailModule.name,
 ]);
