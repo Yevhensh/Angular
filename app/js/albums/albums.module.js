@@ -1,11 +1,15 @@
-var albumListModule = require('../albums/album-list/album-list.module.js'),
-    albumDetailModule = require('../albums/album-detail/album-detail.module.js'),
-    albumCreateModule = require('../albums/album-create/album-create.module.js'),
-    albumEditModule = require('../albums/album-edit/album-edit.module.js');
+var albumListComponent = require('./album-list/album-list.component.js'),
+    albumDetailComponent = require('./album-detail/album-detail.component.js'),
+    albumCreateComponent = require('./album-create/album-create.component.js'),
+    albumEditComponent = require('./album-edit/album-edit.component.js'),
+    albumService = require('./album.service.js'),
+    albumsRoute = require('./albums.route.js');
 
 module.exports = angular.module("app.albums", [
-  albumCreateModule.name,
-  albumEditModule.name,
-  albumListModule.name,
-  albumDetailModule.name,
+  albumCreateComponent.name,
+  albumEditComponent.name,
+  albumListComponent.name,
+  albumDetailComponent.name,
+  albumService.name,
+  albumsRoute.name
 ]);
