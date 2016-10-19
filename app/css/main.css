@@ -22,6 +22,7 @@ div.albums input:focus {
   background-color: #b3e5fc;
   color: indigo;
   border-radius: 10px;
+  border: 2px solid indigo;
 }
 
 .album-list {
@@ -75,6 +76,41 @@ div.albums input:focus {
 
 .album-list p {
   color: #880e4f;
+}
+
+form.albums {
+  width: 25%;
+  margin: 0 auto;
+}
+
+form.albums input {
+  margin: 1em;
+  border-radius: 10px;
+  border: 1px solid indigo;
+  padding: 0.5em;
+}
+
+form.albums input:focus {
+  background-color: #b3e5fc;
+  color: indigo;
+}
+
+form.albums input[type="submit"] {
+  background-color: white;
+  color: indigo;
+  border: 2px solid indigo;
+}
+
+form.albums input[type="submit"]:hover {
+  background-color: rgba(75, 0, 130, 0.8);
+  color: white;
+}
+
+form.albums label {
+  display: block;
+  color: indigo;
+  font-weight: bolder;
+  font-size: 1em;
 }
 
 /* Navbar */
