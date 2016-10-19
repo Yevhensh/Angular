@@ -1,8 +1,14 @@
 'use strict';
 
+
+
 module.exports = angular
-  .module('app.studentCreate.controller',['ngMaterial'])
-  .controller( 'StudentCreateController', StudentCreateController);
+  .module('app.studentcreate.component',['ngMaterial'])
+  .component('studentcreate', {
+    templateUrl: '/app/js/students/student-create/student-create.template.html',
+    controller: StudentCreateController
+  });
+
 
   StudentCreateController.$inject = ['$scope', '$state',  'Student'];
 

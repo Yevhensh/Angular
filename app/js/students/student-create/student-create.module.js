@@ -1,9 +1,9 @@
-var studentCreateController = require('./student-create.controller.js'),
+var studentCreateComponent = require('./studentcreate.component.js'),
     studentCreateRoute = require('./student-create.route.js'),
     studentService = require('../services/student.service.js');
 
 module.exports = angular.module('app.studentCreate', [
-  studentCreateController.name,
+  studentCreateComponent.name,
   studentCreateRoute.name,
   studentService.name
 ]);
