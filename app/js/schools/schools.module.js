@@ -1,11 +1,15 @@
-var schoolListModule = require('../schools/school-list/school-list.module.js'),
-    schoolDetailModule = require('../schools/school-detail/school-detail.module.js'),
-    schoolCreateModule = require('../schools/school-create/school-create.module.js'),
-    schoolEditModule = require('../schools/school-edit/school-edit.module.js');
+var schoolsRoute = require('./schools.route.js'),
+    schoolService = require('./services/schools.service.js'),
+    schoolListComponent = require('./components/school-list/schoollist.component.js'),
+    schoolDetailComponent = require('./components/school-detail/schooldetail.component.js'),
+    schoolCreateComponent = require('./components/school-create/schoolcreate.component.js'),
+    schoolEditComponent = require('./components/school-edit/schooledit.component.js');
 
-module.exports = angular.module("app.school", [
-  schoolCreateModule.name,
-  schoolEditModule.name,
-  schoolListModule.name,
-  schoolDetailModule.name,
+module.exports = angular.module('app.schools', [
+    schoolsRoute.name,
+    schoolService.name, 
+    schoolListComponent.name, 
+    schoolDetailComponent.name, 
+    schoolCreateComponent.name, 
+    schoolEditComponent.name 
 ]);

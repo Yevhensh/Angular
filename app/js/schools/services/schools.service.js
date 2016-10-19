@@ -7,7 +7,7 @@ module.exports = angular
       coreServices.name,
       require('angular-resource')
     ])
-    .factory("School", ['$resource','appSettings',
+    .factory('School', ['$resource','appSettings',
       function School($resource, appSettings){
             return $resource(appSettings.SERVER_PATH + "schools/:id", null,
             {

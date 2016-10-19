@@ -1,10 +1,16 @@
 'use strict';
 
 module.exports = angular
-  .module('app.schoolDetail.controller',['ngMaterial'])
-  .controller( 'SchoolDetailController', SchoolDetailController);
+  .module('app.schoolDetail.component',['ngMaterial'])
+  .component( 'schoolDetail', {
+        templateUrl: '/app/js/schools/components/school-detail/school-detail.template.html',
+        controller: SchoolDetailController
+    });
+
   SchoolDetailController.$inject = ['$scope', '$state', '$window', '$stateParams', 'School'];
+  
   function SchoolDetailController ($scope, $state, $window, $stateParams, School) {
+  
     $scope.schoolDetail = School.get({ id: $stateParams.schoolId });
     $scope.deleteSchool = function(schoolDetail) {
         schoolDetail.$delete({ id: $stateParams.schoolId }, function() {
@@ -12,3 +18,5 @@ module.exports = angular
         });
     };
   }
+
+ 
