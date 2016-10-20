@@ -1,0 +1,9 @@
+<h1> Level-list-template </h1>
+    <a ui-sref="levelCreate">Level create</a>
+    <li ng-repeat="level in $ctrl.levels">
+        <p>ID: {{ level.id }} </p>
+        <p>Name: {{ level.name }}</p>
+        <p><button ui-sref="level({ id: level.id })">show</button></p>
+        <p><button ng-click="$ctrl.deleteLevel(level.id)">delete</button></p>
+        <p><button ui-sref="levelEdit({ id: level.id })">Edit</button></p>
+    </li>

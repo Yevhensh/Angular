@@ -4,6 +4,7 @@ var carsComponent = require('../cars/car.module.js'),
     schoolsComponent = require('../schools/schools.module.js'),
     albumsModule = require('../albums/albums.module.js'),
     mainRoute = require('./main.route'),
+    indexComponent = require('../index/index.module.js'),
     mainComponent = require('./components/main.component.js');
 
 module.exports = angular.module("app.main", [
@@ -12,6 +13,7 @@ module.exports = angular.module("app.main", [
   require('angular-resource'),
   carsComponent.name,
   mainComponent.name,
+  indexComponent.name,
   studentsComponent.name,
   albumsModule.name,
   schoolsComponent.name,
