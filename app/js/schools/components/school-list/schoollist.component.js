@@ -9,7 +9,7 @@ module.exports = angular
         templateUrl: '/app/js/schools/components/school-list/school-list.template.html'
     });
   SchoolListController.$inject = ['School', '$scope', '$state'];
-   function SchoolListController(School, $scope, $state) {
+   function SchoolListController(School, $state) {
        var ctrl = this;
        School.get(function(data){
            ctrl.schools = data.schools;

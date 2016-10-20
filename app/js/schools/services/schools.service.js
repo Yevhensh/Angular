@@ -3,7 +3,7 @@ var angular = require('angular');
 var coreServices  = require('../../common/core.services.js');
 
 module.exports = angular
-    .module("app.schools.resource", [
+    .module("app.schoollist.resource", [
       coreServices.name,
       require('angular-resource')
     ])

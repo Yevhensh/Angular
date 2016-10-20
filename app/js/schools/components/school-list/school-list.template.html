@@ -10,10 +10,9 @@
   <ul>
     <li li class="borderlist" ng-repeat="school in $ctrl.schools | filter:$ctrl.query">
       <p><span>ID:</span> {{ school.id }}</p>
-      <h1><a ui-sref="school({ schoolId: school.id })">{{ school.name }}</a></h1>
+      <h1><a ui-sref="schoolDetail({ schoolId: school.id })">{{ school.name }}</a></h1>
       <p><span>E-mail:</span> {{ school.email }} </p>
       <p><span>Address:</span> {{ school.address }} </p>
       <p><span>Contact phone: </span> {{ school.contact_phone }}</p>
-      <md-button md-no-ink class="md-primary" ui-sref="school({schoolId: school.id})">View</md-button>
     </li>
   </ul>

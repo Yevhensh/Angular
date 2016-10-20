@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = angular
-  .module('app.schoolDetail.component',['ngMaterial'])
-  .component( 'schoolDetail', {
+  .module('app.schooldetail.component',['ngMaterial'])
+  .component('schooldetail', {
         templateUrl: '/app/js/schools/components/school-detail/school-detail.template.html',
         controller: SchoolDetailController
     });
