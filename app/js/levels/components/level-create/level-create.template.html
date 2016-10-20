@@ -1,9 +1,17 @@
-<h1><a ui-sref="levels">Click to see the levels</a></h1>
-<h1>Levels New</h1>
-<form ng-submit="addLevel()" role="form">
-    Title:<br/>
-    <input ng-model ="level.name" type="text" id="name" placeholder="Level1"/>
-    <br/>Belongs to school : <br/>
+<h1>Create page</h1>
+<div class="levels-create">
+    <md-button class="md-primary" ui-sref="levels">Back to levels</md-button>
+    <form ng-submit="addLevel()" role="form">
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Level title</label>
+            <input ng-model="level.name">
+        </md-input-container>
 
-    <input type="submit"  value="Save"/>
-</form>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>School of</label>
+            <input ng-model="level.school_id" type="number" step="1">
+        </md-input-container>
+        <md-button type="submit" value="Save">Submit</md-button>
+    </form>
+</div>
+
