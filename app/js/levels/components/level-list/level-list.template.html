@@ -1,9 +1,23 @@
 <h1> Level-list-template </h1>
-    <a ui-sref="levelCreate">Level create</a>
-    <li ng-repeat="level in $ctrl.levels">
-        <p>ID: {{ level.id }} </p>
-        <p>Name: {{ level.name }}</p>
-        <p><button ui-sref="level({ id: level.id })">show</button></p>
-        <p><button ng-click="$ctrl.deleteLevel(level.id)">delete</button></p>
-        <p><button ui-sref="levelEdit({ id: level.id })">Edit</button></p>
-    </li>
+    <md-button ui-sref="levelCreate" class="md-raised md-warn level-list-button">Level create</md-button>
+<div>
+    <md-card ng-repeat="level in $ctrl.levels" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" class="level-list" md-theme-watch>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Level name: {{ level.name }}</span>
+                <span class="md-subhead">Level id: {{ level.id }} </span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-lg card-media"></div>
+            </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ui-sref="level({ id: level.id })">show</md-button>
+            <md-button ui-sref="levelEdit({ id: level.id })">edit</md-button>
+            <md-button ng-click="$ctrl.deleteLevel(level.id)">delete</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
+
+
+<div id="mgt"></div>
