@@ -1,0 +1,29 @@
+<div align="center">
+  <h1>Log in</h1>
+  <div ng-if="$ctrl.failResponse===true">{{$ctrl.failMessage}}</div>
+  <form name="Login" ng-submit="$ctrl.login(ctrl.user)">
+    <div>
+      <div ng-if="$ctrl.isInvalid"></div>
+    </div>
+    <div>
+      <label for="userEmail">Email</label></label>
+      <div>
+        <input type="email" id="useremail" ng-model="ctrl.user.email" placeholder="Email">
+      </div>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <div>
+        <input type="password" ng-model="ctrl.user.password" placeholder="Password">
+      </div>
+    </div>
+  <div>
+          <label>
+          <input type="checkbox" ng-model="ctrl.user.rememberMe"> Remember me
+        </label>
+  </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+  </form>
+</div>
