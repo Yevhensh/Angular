@@ -1,15 +1,5 @@
-/* Main less file for your application.
-// Use `@import` to use other less files
-// relative to 'app/css' or 'vendor/css'.
-
-//@import 'style';*/
-
-/*@font-face {
-  font-family: custom;
-  src: url('./HelveticaNeueCyr-Roman.otf');
-}*/
-
-/* Albums */
+@import "./style.scss";
+@import "./levels.scss";
 
 div.albums p {
   margin-right: 5%;
@@ -22,6 +12,7 @@ div.albums input:focus {
   background-color: #b3e5fc;
   color: indigo;
   border-radius: 10px;
+  border: 2px solid indigo;
 }
 
 .album-list {
@@ -61,11 +52,11 @@ div.albums input:focus {
 }
 
 .album-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    opacity: 0.9;
-    transition: 0.1s;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.9;
+  transition: 0.1s;
 }
 
 .album-list h1 {
@@ -75,6 +66,41 @@ div.albums input:focus {
 
 .album-list p {
   color: #880e4f;
+}
+
+form.albums {
+  width: 25%;
+  margin: 0 auto;
+}
+
+form.albums input {
+  margin: 1em;
+  border-radius: 10px;
+  border: 1px solid indigo;
+  padding: 0.5em;
+}
+
+form.albums input:focus {
+  background-color: #b3e5fc;
+  color: indigo;
+}
+
+form.albums input[type="submit"] {
+  background-color: white;
+  color: indigo;
+  border: 2px solid indigo;
+}
+
+form.albums input[type="submit"]:hover {
+  background-color: rgba(75, 0, 130, 0.8);
+  color: white;
+}
+
+form.albums label {
+  display: block;
+  color: indigo;
+  font-weight: bolder;
+  font-size: 1em;
 }
 
 /* Navbar */
@@ -111,24 +137,8 @@ div.albums input:focus {
   position: fixed;
 }
 
-.button-hamburger section {
-  background: #f7f7f7;
-  border-radius: 3px;
-  text-align: center;
-  margin: 1em;
-  position: relative !important;
-  padding-bottom: 10px; }
 
-.button-hamburger md-content {
-  margin-right: 7px; }
-
-.button-hamburger section .md-button {
-  margin-top: 16px;
-  margin-bottom: 16px; }
-
-.button-hamburger .label {
-  position: absolute;
-  bottom: 5px;
-  left: 7px;
-  font-size: 14px;
-  opacity: 0.54; }
+/* Footer */
+.footer {
+  height: 150px;
+}

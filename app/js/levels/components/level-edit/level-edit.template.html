@@ -1,0 +1,13 @@
+<h1>Edit the level</h1>
+
+<div class="level-edit">
+    <md-button class="md-primary" ui-sref="levels">Back to levels</md-button>
+
+
+    <form ng-submit="updateLevel()">
+        <md-input-container class="md-block" ng-model="levelDetail.level.name" type="text" name="title">
+            <input ng-model="levelDetail.level.name">
+        </md-input-container>
+        <md-button type="submit" value="Update">Update</md-button>
+    </form>
+</div>
