@@ -7,6 +7,7 @@ angular.module('app',
       require('angular-ui-router'),
       require('angular-material')
     ])
-  .config(function($locationProvider) {
+  .config(function($locationProvider, $httpProvider) {
     $locationProvider.html5Mode(true);
+    $httpProvider.interceptors.push('AuthInterceptor')
 });
