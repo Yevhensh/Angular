@@ -1,0 +1,5 @@
+<a ui-sref="albums">Albums</a>
+<a ui-sref="newss">News</a>
+<div ng-if="$ctrl.isAuthenticated()">
+<a ui-sref="main" ng-click="$ctrl.logout()">Log out</a>
+</div>

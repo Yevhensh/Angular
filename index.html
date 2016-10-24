@@ -14,9 +14,9 @@
     <div ng-controller="IndexCtrl" layout="column" ng-cloak>
       <div class="main-nav">
         <section class="main-nav-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button>Home</md-button>
-          <md-button>Login</md-button>
-          <md-button>About</md-button>
+          <md-button ui-sref="main">Home</md-button>
+          <md-button ui-sref="login">Login</md-button>
+          <md-button ui-sref="contacts">About</md-button>
         </section>
         <div class="main-nav-button">
           <md-button class="md-icon-button md-primary" style="width:60px;height:60px;" aria-label="Settings" ng-click="toggleLeft()">

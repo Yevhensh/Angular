@@ -19,6 +19,6 @@ module.exports = angular
         $scope.loadLevel = function() {
             $scope.levelDetail = Level.get({ id: $stateParams.id });
         };
-        
+
         $scope.loadLevel();
     }
