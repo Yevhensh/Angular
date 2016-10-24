@@ -1,0 +1,6 @@
+<h1><a ui-sref="albums">Click to see the album-list</a></h1>
+<md-button class="md-accent" ui-sref="albumEdit({ albumId: albumDetail.album.id })">Edit</md-button>
+<md-button class="md-accent md-raised md-hue-1" ng-click="deleteAlbum(albumDetail)">Delete</md-button>
+<h1>{{ albumDetail.album.title }}</h1>
+<p>{{ albumDetail.album.created_at | date}}</p>
+<img ng-src="{{albumDetail.album.image}}" alt="{{album.title}}"/>

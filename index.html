@@ -1,8 +1,8 @@
 <html ng-app="app">
   <head>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
-    <link rel="stylesheet" href="app/css/main.css">
+    <link rel="stylesheet" href="/app/css/main.scss">
     <base href="/">
   </head>
   <body>
@@ -10,7 +10,7 @@
       <img src="./app/img/university-campus-2.svg" class="primary-image"/>
     </div>
     <!--Angular elements -->
-    <div ng-controller="AppCtrl" layout="column" ng-cloak>
+    <div ng-controller="IndexCtrl" layout="column" ng-cloak>
       <div class="main-nav">
         <section class="main-nav-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
           <md-button>Home</md-button>
@@ -38,11 +38,13 @@
       </md-sidenav>
     </div>
     <section ui-view></section>
+    <div class="footer"></div>
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-aria/angular-aria.js"></script>
     <script src="/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/node_modules/angular-resource/angular-resource.js"></script>
     <script src="/node_modules/angular-material/angular-material.js"></script>
-    <script src="/app/js/index.module.js"></script>
     <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
   </body>
 </html>
