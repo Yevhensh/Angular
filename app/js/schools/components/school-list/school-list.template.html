@@ -1,0 +1,18 @@
+<h1 class="text-uppercase">School List</h1>
+  <p class="school_search"> 
+    Search:<input ng-model="$ctrl.query">
+  </p>
+ 
+  <p class="school_search"> 
+    <button <a ui-sref="schoolCreate">Create new school</a></button>
+  </p>
+
+  <ul>
+    <li li class="borderlist" ng-repeat="school in $ctrl.schools | filter:$ctrl.query">
+      <p><span>ID:</span> {{ school.id }}</p>
+      <h1><a ui-sref="schoolDetail({ schoolId: school.id })">{{ school.name }}</a></h1>
+      <p><span>E-mail:</span> {{ school.email }} </p>
+      <p><span>Address:</span> {{ school.address }} </p>
+      <p><span>Contact phone: </span> {{ school.contact_phone }}</p>
+    </li>
+  </ul>

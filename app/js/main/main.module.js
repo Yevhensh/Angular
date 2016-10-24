@@ -1,6 +1,6 @@
 var contactsComponent = require('../contacts/contacts.module.js'),
     studentsComponent = require('../students/students.module.js'),
-    schoolsComponent = require('../schools/schools.module.js'),
+    schoolsModule = require('../schools/schools.module.js'),
     albumsModule = require('../albums/albums.module.js'),
     mainRoute = require('./main.route'),
     indexComponent = require('../index/index.module.js'),
@@ -14,8 +14,8 @@ module.exports = angular.module("app.main", [
   mainComponent.name,
   indexComponent.name,
   studentsComponent.name,
+  schoolsModule.name,
   albumsModule.name,
-  schoolsComponent.name,
   contactsComponent.name,
   levelsComponent.name,
   mainRoute.name
