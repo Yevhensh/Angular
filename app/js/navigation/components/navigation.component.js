@@ -1,7 +1,8 @@
+var angular = require('angular');
 'use strict';
 
 module.exports = angular
-    .module('app.navigation.component')
+    .module('app.navigation.component', [])
     .component('navigation', {
         controller: NavController,
         templateUrl: '/app/js/navigation/components/navigation.template.html'
