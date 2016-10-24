@@ -5,8 +5,9 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     mainRoute = require('./main.route'),
     navigationComponent = require('../navigation/navigation.module.js'),
     mainComponent = require('./components/main.component.js'),
-    levelsComponent = require('../levels/levels.module.js');
-    newsComponent = require('../news/news.module.js');
+    levelsComponent = require('../levels/levels.module.js'),
+    newsComponent = require('../news/news.module.js'),
+    loginModule = require('../login/login.module.js');
 
 module.exports = angular.module("app.main", [
   // modules
@@ -20,5 +21,6 @@ module.exports = angular.module("app.main", [
   contactsComponent.name,
   levelsComponent.name,
   newsComponent.name,
-  mainRoute.name
+  mainRoute.name,
+  loginModule.name
 ]);
