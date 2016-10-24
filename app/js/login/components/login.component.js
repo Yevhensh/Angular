@@ -3,7 +3,7 @@ module.exports = angular
     .module('app.login.component.login', [])
     .component('login', {
       templateUrl: '/app/js/login/components/login.template.html',
-      controller: LoginController
+      controller: 'LoginController', LoginController
     });
 
 LoginController.$inject = ['$state', 'Auth', 'messages'];
