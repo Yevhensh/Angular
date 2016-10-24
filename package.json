@@ -18,6 +18,7 @@
     "karma": "^0.13.22",
     "karma-angular": "0.0.6",
     "karma-coverage": "^1.0.0",
+    "karma-firefox-launcher": "^1.0.0",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-webpack": "^1.7.0",
@@ -25,10 +26,10 @@
     "phantomjs-prebuilt": "^2.1.7",
     "raw-loader": "^0.5.1",
     "sass-loader": "^4.0.2",
+    "sass-spec": "^3.3.6-3",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1",
-    "sass-spec": "^3.3.6-3"
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "@angular/common": "^2.0.2",
