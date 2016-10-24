@@ -1,0 +1,23 @@
+<h1> News List Template </h1>
+<md-button ui-sref="newsCreate" class="md-raised md-primary"">News create</md-button>
+<div>
+    <md-card ng-repeat="news in $ctrl.news" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" class="news-list" md-theme-watch>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline"><h3>Title: {{ news.title }}</h3></span>
+                <span class="md-subhead">Description: {{ news.description }}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-lg card-media"></div>
+            </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised" ui-sref="news({ id: news.id })">show</md-button>
+            <md-button class="md-raised md-primary" ui-sref="newsEdit({ id: news.id })">edit</md-button>
+            <md-button class="md-raised md-warn" ng-click="$ctrl.deleteNews(news.id)">delete</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
+
+
+

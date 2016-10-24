@@ -1,0 +1,27 @@
+<h1>Create page</h1>
+<div class="news-create">
+    <md-button class="md-primary" ui-sref="newss">Back to news</md-button>
+    <form ng-submit="addNews()" role="form">
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>News title</label>
+            <input ng-model="news.title">
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>News description</label>
+            <input ng-model="news.description">
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>News type</label>
+            <input ng-model="news.viewable_type">
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>News type's id</label>
+            <input ng-model="news.viewable_id" type="number" step="1">
+        </md-input-container>
+        <md-button type="submit" value="Save">Submit</md-button>
+    </form>
+</div>
+

@@ -1,0 +1,18 @@
+<h1>Edit the news</h1>
+
+<div class="news-edit">
+    <md-button class="md-primary" ui-sref="newss">Back to news</md-button>
+
+
+    <form ng-submit="updateNews()">
+        <md-input-container class="md-block" ng-model="newsDetail.news.title" type="text" name="title">
+        <h3>Title:</h3>
+            <input ng-model="newsDetail.news.title">
+        </md-input-container>
+        <md-input-container class="md-block" ng-model="newsDetail.news.description" type="text" name="description">
+        <h3>Description:</h3>
+            <input ng-model="newsDetail.news.description">
+        </md-input-container>
+        <md-button type="submit" value="Update">Update</md-button>
+    </form>
+</div>
