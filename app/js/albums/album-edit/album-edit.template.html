@@ -1,20 +1,20 @@
 <h1><a ui-sref="albums">Click to see the album-list</a></h1>
-<h1>Albums Edit</h1>
-<p>{{album.albums[5]}}</p>
-<form ng-submit="updateAlbum()">
+<h1>Edit the album</h1>
 
-  Title:<br/>
+<form class="albums" ng-submit="updateAlbum()">
+
+  <label for="title">Title:</label>
   <input ng-model ="albumDetail.album.title" type="text" name="title" id="title" placeholder="Foxes"/>
 
-  <br/>Image:<br/>
+  <label for="image">Image:</label>
   <input ng-model ="albumDetail.album.image" type="text" name="image" id="image"
   placeholder="http://cameralabs.org/media/k2/items/cache/f85c69e258fa1e3fd07e321cb5f74e94_L.jpg"/>
 
-  <br/>Belongs to: <br/>
+  <label for="imageable_type">Belongs to:</label>
   <input ng-model ="albumDetail.album.imageable_type" type="text" name="imageable_type" id="imageable_type"
   placeholder="Group"/>
 
-  <br/>Belongs to id:<br/>
+  <label for="imageable_id">Belongs to id:</label>
   <input ng-model ="albumDetail.album.imageable_id" type="text" name="imageable_id" id="imageable_id"
   placeholder="1"/><br/>
 
