@@ -3,49 +3,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
     <link rel="stylesheet" href="/app/css/main.scss">
-    <link rel="stylesheet" href="/app/css/style.css">
     <base href="/">
   </head>
   <body>
-    <div class="wrapper-primary-image">
-      <img src="./app/img/university-campus-2.svg" class="primary-image"/>
-    </div>
-    <!--Angular elements -->
-    <div ng-controller="IndexCtrl" layout="column" ng-cloak>
-      <div class="main-nav">
-        <section class="main-nav-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button ui-sref="main">Home</md-button>
-          <md-button ui-sref="login">Login</md-button>
-          <md-button ui-sref="contacts">About</md-button>
-        </section>
-        <div class="main-nav-button">
-          <md-button class="md-icon-button md-primary" style="width:60px;height:60px;" aria-label="Settings" ng-click="toggleLeft()">
-            <md-icon md-svg-icon="./app/img/menu-button.svg" style="width:40px;height:40px;"></md-icon>
-          </md-button>
-        </div>
-      </div>
-      <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
-        <md-toolbar class="md-theme-indigo" style="background-color: #B71C1C;">
-          <h1 class="md-toolbar-tools">Menu</h1>
-        </md-toolbar>
-        <md-content layout-margin>
-          <p>
-            This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
-          </p>
-          <md-button ng-click="toggleLeft()" class="md-accent">
-            Close this Sidenav
-          </md-button>
-        </md-content>
-      </md-sidenav>
-    </div>
+    <navigation></navigation>
     <section ui-view></section>
     <div class="footer"></div>
-    <script src="/node_modules/angular/angular.js"></script>
-    <script src="/node_modules/angular-aria/angular-aria.js"></script>
-    <script src="/node_modules/angular-animate/angular-animate.js"></script>
-    <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/node_modules/angular-resource/angular-resource.js"></script>
-    <script src="/node_modules/angular-material/angular-material.js"></script>
     <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
   </body>
 </html>
