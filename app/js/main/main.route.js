@@ -7,5 +7,4 @@ module.exports = angular
         url: '/main',
         template: '<app-main></app-main>'
       });
-      $urlRouterProvider.otherwise('/main');
   });
