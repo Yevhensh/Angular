@@ -1,6 +1,7 @@
 @import "./style.scss";
 @import "./levels.scss";
 @import "./schools.scss";
+@import "./groups.scss";
 
 div.albums p {
   margin-right: 5%;
@@ -141,5 +142,5 @@ form.albums label {
 
 /* Footer */
 .footer {
-  height: 150px;
+  height: 100px;
 }

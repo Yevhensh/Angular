@@ -1,0 +1,54 @@
+/* MAIN container*/
+.group-list-main {
+  width: 93%;
+  margin: 40px auto;
+}
+/*List for groups*/
+.group-list {
+  width: 100%;
+}
+
+/*height of cards blocks*/
+.group-list-height {
+  height: 100%;
+}
+
+/*Each item*/
+.group-list-b-m {
+  height: 10px;
+  width: 20px;
+  max-width: 20px;
+  font-size: 8px;
+}
+
+.group-list-buttons {
+  font-size: 10px;
+  line-height: 10px;
+
+}
+
+.group-list-students {
+  margin-left: 2%;
+  margin-top: 50px;
+}
+
+.group-list-student-item {
+  height: 30px;
+  line-height: 30px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.group-list-student-item * {
+  display: inline-block;
+  height: 30px;
+  margin: 0;
+}
+
+.group-list-name {
+}
+
+.group-create {
+  width: 500px;
+  margin-left: 30px;
+}
