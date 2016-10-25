@@ -5,9 +5,12 @@
 <div layout="column" ng-cloak>
     <div class="main-nav">
         <section class="main-nav-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-            <md-button ui-sref="main">Home</md-button>
-            <md-button ui-sref="login">Login</md-button>
-            <md-button ui-sref="contacts">About</md-button>
+            <div>
+                <md-button ui-sref="main">Home</md-button>
+                <md-button ui-sref="login" ng-if="!isAuthenticated()">Login</md-button>
+                <md-button ng-if="isAuthenticated()" ng-click="logout()" ui-sref="login">Logout</md-button>
+                <md-button ui-sref="contacts">About</md-button>
+            </div>
         </section>
         <div class="main-nav-button">
             <md-button class="md-icon-button md-primary" style="width:60px;height:60px;" aria-label="Settings" ng-click="toggleLeft()">
