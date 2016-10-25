@@ -1,5 +1,19 @@
-<a ui-sref="albums">Albums</a>
-<a ui-sref="newss">News</a>
-<div ng-if="$ctrl.isAuthenticated()">
-<a ui-sref="main" ng-click="$ctrl.logout()">Log out</a>
+<div class="main">
+    <div ng-switch="type">
+        <div ng-switch-when="Admin">
+            <h1>Admin</h1>
+        </div>
+
+        <div ng-switch-when="Superadmin">
+            <h1>Superadmin</h1>
+        </div>
+
+        <div ng-switch-when="Teacher">
+            <h1>Teacher</h1>
+        </div>
+
+        <div ng-switch-when="Parent">
+            <h1>Parent</h1>
+        </div>
+    </div>
 </div>
