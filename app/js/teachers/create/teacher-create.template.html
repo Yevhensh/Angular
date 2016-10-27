@@ -1,0 +1,45 @@
+<h1><a ui-sref="teachers">Click to see the teacher List</a></h1>
+<h1 class="text-uppercase">Teacher Create</h1>
+
+<form ng-submit="addTeacher()">
+<div>
+  <label for="first_name">First Name</label>
+  <div>
+    <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="teacher.first_name" placeholder="First Name"/>
+  </div>
+</div>
+<div>
+  <label for="last_name">Last Name</label>
+  <div>
+    <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="teacher.last_name" placeholder="Last Name"/>
+  </div>
+</div>
+<div>
+  <label for="email">E-mail</label>
+  <div>
+    <input type="e-mail"  ng-model="teacher.email" placeholder="asd@asa"/>
+  </div>
+</div>
+<div>
+  <label for="contact_phone">Contact Phone</label>
+  <div>
+    <input type="text" ng-model="teacher.contact_phone" placeholder="1234567890"/>
+  </div>
+</div>
+<div>
+  <label for="school_id">School</label>
+  <div>
+    <input type="number" min="1" ng-model="teacher.school_id" placeholder="School"/>
+  </div>
+</div>
+<div>
+  <label for="group_id">Group</label>
+  <div>
+    <input type="number" min="1" ng-model="teacher.group_id" placeholder="Group"/>
+  </div>
+</div>
+
+<div>
+  <input type="submit" value="Save"/>
+</div>
+</form>

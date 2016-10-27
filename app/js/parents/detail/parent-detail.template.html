@@ -1,0 +1,31 @@
+<h1><a ui-sref="parents">Click to see the parent List</a></h1>
+<h1 class="text-uppercase">parent View</h1>
+<md-button class="md-raised" ui-sref="parentEdit({parentId: parentDetail.parent.id})">Edit</md-button>
+<md-button class="md-raised  md-primary" ng-click="deleteParent(parentDetail)">Delete</md-button>
+
+<md-content class="md-padding" layout-xs="column" layout="row">
+  <div flex-xs flex-gt-xs="50" layout="column">
+    <md-card md-theme-watch>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{ parentDetail.parent.first_name }}</span>
+          <span class="md-headline">{{ parentDetail.parent.last_name }}</span>
+          <span class="md-subhead">Age: {{ parentDetail.parent.age }}</span>
+          <span class="md-subhead">School: {{ parentDetail.parent.school_id }}</span>
+          <span class="md-subhead">Group: {{ parentDetail.parent.group_id }}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-title>
+        <md-card-title-text>
+          <md-checkbox ng-model="isDisabled" aria-label="Health Info:">Health Info:</md-checkbox>
+          <div ng-show="isDisabled">
+            <p><span class="md-headline">Problem:</span>
+            <span class="md-subhead">{{ parentDetail.parent.health_info.health_problem }}</span></p>
+            <p><span class="md-headline">Description: </span>
+            <span class="md-subhead">{{ parentDetail.parent.health_info.description }}</span></p>
+          </div>
+         </md-card-title-text>
+      </md-card-title>
+    </md-card>
+  </div>
+</md-content>

@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = angular
   .module('app.main.component', ['ngMaterial'])
   .component('appMain', {

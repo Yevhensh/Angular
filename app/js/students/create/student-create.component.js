@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = angular
-  .module('app.studentcreate.component',[])
+  .module('app.studentCreate.component',[])
   .component('studentCreate', {
     templateUrl: '/app/js/students/create/student-create.template.html',
     controller: StudentCreateController
@@ -16,5 +16,5 @@ module.exports = angular
       $scope.student.$save(function() {
         $state.go('students');
       });
-    };
+    }
   }

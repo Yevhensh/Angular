@@ -1,0 +1,26 @@
+<p class="parent_search"> 
+    <button <a ui-sref="parents">Back to the parent list</a></button>
+</p>
+
+<h1>Create new parent</h1>
+
+<div class="parent_edit_form">
+  <form ng-submit="addParent()">
+    First Name:<br/>
+    <input ng-model ="parent.first_name" type="text" name="name" id="parent_input" placeholder="parent name"/><br/>
+    Last Name:<br/>
+    <input ng-model ="parent.last_name" type="text" name="name" id="parent_input" placeholder="parent name"/><br/>
+    E-mail:<br/>
+    <input ng-model ="parent.email" type="text" name="email" id="parent_input"
+    placeholder="example@mail.com"/><br/>
+    Contact phone:<br/>
+    <input ng-model ="parent.contact_phone" type="text" name="contact_phone" id="parent_input" placeholder="+123456789"/><br/>
+    School:<br/>
+    <input ng-model ="parent.school_id" type="text" name="school_id" id="parent_input"
+    placeholder="1"/><br/>
+    Student:<br/>
+    <input ng-model ="parent.student_id" type="text" name="student_id" id="parent_input"
+    placeholder="1"/><br/>
+    <input type="submit"  value="Create" id="parent_save"/>
+  </form>
+</div>

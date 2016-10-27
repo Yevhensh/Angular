@@ -1,0 +1,72 @@
+<h1>Apply To Join The Primary School Report System</h1>
+
+<div class="school_edit_form">
+<form  name="requestForm" action="mailto:kuriy_yevgeniy@ukr.net" id="usrform" method="post" enctype="text/plain">
+  <h2>General School Info</h2><br>
+  Name:<br>
+  <input type="text" ng-model="request.name" name="School name " id="school_input" required=""><br>
+  Address:<br>
+  <input type="text" ng-model="request.address" name="Address " id="school_input" required=""><br>
+  E-mail:<br>
+  <input type="email" ng-model="request.email" name="E-mail" id="school_input" required="" /><br>
+  Contact phone:<br>
+  <input type="text" ng-model="request.phone" name="Contact phone " id="school_input" required=""><br>
+
+  <h2>School Administrator Info</h2><br>
+  Admin First Name:<br>
+  <input type="text" ng-model="request.adminfname" name="Admin first name " id="school_input" required=""><br>
+  Admin Last Name:<br>
+  <input type="text" ng-model="request.adminlname" name="Admin last name " id="school_input" required=""><br>
+  Admin E-mail:<br>
+  <input type="email" ng-model="request.adminemail" name="Admin e-mail " id="school_input"><br>
+  Admin Contact Phone:<br>
+  <input type="text" ng-model="request.adminphone" name="Admin contact phone " id="school_input"><br>
+
+  <h3>Additional info / Comments:</h3><br>
+  <textarea rows="5" cols="50" ng-model="request.comment" name="Comment" form="usrform" id="school_input">Enter text here...</textarea><br>
+
+  <button type="submit" class="btn btn-primary" ng-disabled="requestForm.$invalid">Submit</button>
+  <button type="reset" class="btn btn-primary">Reset</button>
+</form>
+</div>
+
+
+
+<div ng-controller="RequestController" layout="column" layout-padding ng-cloak>
+
+  <br/>
+  <md-content class="md-no-momentum">
+    <md-input-container class="md-icon-float md-block">
+      <!-- Use floating label instead of placeholder -->
+      <label>Name</label>
+      <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+      <input ng-model="user.name" type="text">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block">
+      <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
+      <input ng-model="user.phone" type="text" placeholder="Phone Number">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <!-- Use floating placeholder instead of label -->
+      <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+      <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block">
+      <input ng-model="user.address" type="text" placeholder="Address" >
+      <md-icon md-svg-src="img/icons/ic_place_24px.svg" style="display:inline-block;"></md-icon>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-icon-right md-block">
+      <label>Donation Amount</label>
+      <md-icon md-svg-src="img/icons/ic_card_giftcard_24px.svg"></md-icon>
+      <input ng-model="user.donation" type="number" step="0.01">
+      <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
+    </md-input-container>
+
+  </md-content>
+
+</div>
+

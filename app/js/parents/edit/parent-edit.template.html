@@ -1,0 +1,56 @@
+<h1><a ui-sref="parents">Click to see the parent List</a></h1>
+
+<h1 class="text-uppercase">parent Edit</h1>
+
+<form class="form-horizontal" role="form" ng-submit="updateParent()">
+<div class="form-group">
+  <label for="first_name" class="col-sm-2 control-label">First Name</label>
+  <div class="col-sm-10">
+    <input type="text" ng-model="parentDetail.parent.first_name" class="form-control" id="first_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{parentDetail.parent.first_name}}"/>
+  </div>
+</div>
+<div class="form-group">
+  <label for="last_name" class="col-sm-2 control-label">Last Name</label>
+  <div class="col-sm-10">
+    <input type="text" ng-model="parentDetail.parent.last_name" class="form-control" id="last_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{parentDetail.parent.last_name}}"/>
+  </div>
+</div>
+<div class="form-group">
+  <label for="age" class="col-sm-2 control-label">Age</label>
+  <div class="col-sm-10">
+    <input type="number" min="2" max ="10" ng-model="parentDetail.parent.age" class="form-control" id="age" value="{{parentDetail.parent.age}}"/>
+  </div>
+</div>
+<div class="form-group">
+  <label for="school_id" min="1" class="col-sm-2 control-label">School</label>
+  <div class="col-sm-10">
+    <input type="number" ng-model="parentDetail.parent.school_id" class="form-control" id="school_id" value="{{parentDetail.parent.school_id}}"/>
+  </div>
+</div>
+<div class="form-group">
+  <label for="group_id" min="1" class="col-sm-2 control-label">Group</label>
+  <div class="col-sm-10">
+    <input type="number" ng-model="parentDetail.parent.group_id" class="form-control" id="group_id" value="{{parentDetail.parent.group_id}}"/>
+  </div>
+</div>
+<md-checkbox ng-model="isDisabled" aria-label="Health Info:">Health Info:</md-checkbox>
+<div ng-show="isDisabled">
+  <div class="form-group">
+    <label for="health_problem" class="col-sm-2 control-label">Health Problem</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="parentDetail.parent.health_info.health_problem" class="form-control" id="health_problem" value="{{parentDetail.parent.health_info.health_problem}}"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">Description</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="parentDetail.parent.health_info.description" class="form-control" id="description" value="{{parentDetail.parent.health_info.description}}"/>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <input type="submit" class="btn btn-primary" value="Update"/>
+  </div>
+</div>
+</form>
