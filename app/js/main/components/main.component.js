@@ -6,23 +6,27 @@ module.exports = angular
     templateUrl: '/app/js/main/components/main.template.html',
     controller: MainController,
     transclude: true
-    });
+  });
 
-MainController.$inject = ['$scope', 'Auth'];
-function MainController($scope, Auth){
-  var ctrl = this;
+MainController.$inject = ['$scope', 'Auth', 'Type'];
+function MainController($scope, Auth, Type){
   $scope.currentNavItem = 'home';
   $scope.googleUrl = 'http://google.com';
-  ctrl.logout = logout;
-  ctrl.isAuthenticated = isAuth;
-  var isAuth = false;
+  $scope.logout = logout;
+  function setType(){
+      $scope.type = Type();
+  }
+
+  $scope.isAuthenticated = isAuth;
+  var auth = false;
 
   function isAuth() {
-    if(!isAuth===Auth.isAuthenticated()) {
+    if(!auth===Auth.isAuthenticated()) {
       return true
     }
   }
   function logout() {
     Auth.logout();
   }
+  setType();
 }

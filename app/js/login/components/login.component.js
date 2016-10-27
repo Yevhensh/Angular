@@ -22,5 +22,5 @@ function LoginController($state, Auth, messages) {
       .error(function(response) {
         ctrl.failResponse = true;
     })
-  };
+  }
 }

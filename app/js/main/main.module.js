@@ -10,7 +10,8 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     loginModule = require('../login/login.module.js'),
     requestComponent = require('../request/request.module.js'),
     parentsModule = require('../parents/parents.module.js'),
-    teachersModule = require('../teachers/teachers.module.js');
+    teachersModule = require('../teachers/teachers.module.js'),
+    mainTypeService = require('./services/type.service.js');
 
 module.exports = angular.module("app.main", [
   // modules
@@ -28,5 +29,6 @@ module.exports = angular.module("app.main", [
   loginModule.name,
   requestComponent.name,
   parentsModule.name,
-  teachersModule.name
+  teachersModule.name,
+  mainTypeService.name
 ]);

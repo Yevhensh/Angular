@@ -8,12 +8,27 @@ module.exports = angular
         templateUrl: '/app/js/navigation/components/navigation.template.html'
     });
 
-    NavController.$inject = ['$scope', '$timeout', '$mdSidenav'];
+    NavController.$inject = ['$scope', '$mdSidenav', 'Auth', 'Type'];
 
-    function NavController($scope, $timeout, $mdSidenav){
+    function NavController($scope, $mdSidenav, Auth, Type){
         $scope.toggleLeft = buildToggler('left');
         $scope.toggleRight = buildToggler('right');
 
+        $scope.logout = logout;
+        $scope.type = Type.type;
+        $scope.isAuthenticated = isAuth;
+        var auth = false;
+
+        function isAuth() {
+            if(!auth===Auth.isAuthenticated()) {
+                return true
+            }
+        }
+        function logout() {
+            Auth.logout();
+            Type();
+        }
+        
         function buildToggler(componentId) {
             return function() {
                 $mdSidenav(componentId).toggle();
