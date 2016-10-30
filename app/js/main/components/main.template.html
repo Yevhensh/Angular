@@ -1,5 +1,18 @@
-<a ui-sref="albums">Albums</a>
-<a ui-sref="newss">News</a>
-<div ng-if="$ctrl.isAuthenticated()">
-<a ui-sref="main" ng-click="$ctrl.logout()">Log out</a>
+<div class="main">
+    <div permissions="Admin">
+        <h1>Admin</h1>
+    </div>
+
+    <div permissions="Superadmin">
+        <h1>Superadmin</h1>
+    </div>
+
+    <div permissions="Teacher">
+        <h1>Teacher</h1>
+    </div>
+
+    <div permissions="Parent">
+        <h1>Parent</h1>
+    </div>
 </div>
+

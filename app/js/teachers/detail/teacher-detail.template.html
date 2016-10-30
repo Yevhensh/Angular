@@ -1,0 +1,30 @@
+<p class="teacher_search"> 
+    <button <a ui-sref="teachers">Back to the teacher list</a></button>
+</p>
+
+<div class="borderlist">
+  
+  <p><span>First name:</span></p>
+    <div class="border_teacher">
+      <p>{{ teacherDetail.teacher.first_name }}</p>
+    </div><p><span>Last name:</span></p>
+    <div class="border_teacher">
+      <p>{{ teacherDetail.teacher.last_name }}</p>
+    </div>
+  <p><span>E-mail:</span></p>
+    <div class="border_teacher">
+      <p>{{ teacherDetail.teacher.email }}</p>
+    </div>
+    <p><span>Contact phone:</span></p>
+    <div class="border_teacher">
+      <p>{{ teacherDetail.teacher.contact_phone }}</p>
+    </div>
+  <p class="teacher_search"> 
+    <button <a ui-sref="teacherEdit({ teacherId: teacherDetail.teacher.id })" id="teacher_button">Edit teacher</a></button>
+  </p>
+
+  <p class="teacher_search"> 
+    <button <a ng-click="deleteteacher(teacherDetail)" id="teacher_button">Delete teacher</a></button>
+  </p>
+</div>
+

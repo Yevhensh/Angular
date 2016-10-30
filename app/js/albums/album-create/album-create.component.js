@@ -13,6 +13,8 @@ module.exports = angular
            $state.go('albums');
          });
        };
+
+       $scope.types = ["Group","Level","School"];
      }]
   });
 

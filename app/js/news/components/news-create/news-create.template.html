@@ -1,6 +1,6 @@
-<h1>Create page</h1>
-<div class="news-create">
-    <md-button class="md-primary" ui-sref="newss">Back to news</md-button>
+<div class="item">
+    <h1>Create the News</h1>
+    <md-button class="md-primary" ui-sref="newss">Back to News</md-button>
     <form ng-submit="addNews()" role="form">
         <md-input-container class="md-block" flex-gt-sm>
             <label>News title</label>
@@ -12,16 +12,19 @@
             <input ng-model="news.description">
         </md-input-container>
 
-        <md-input-container class="md-block" flex-gt-sm>
+        <div class="menus" layout="row" layout-align="space-between center">
+            <md-input-container class="md-block">
             <label>News type</label>
-            <input ng-model="news.viewable_type">
-        </md-input-container>
+            <md-select ng-model="news.viewable_type">
+            <md-option ng-repeat="type in types" value="{{type}}">{{type}}</md-option>
+            </md-select>
+            </md-input-container>
 
-        <md-input-container class="md-block" flex-gt-sm>
-            <label>News type's id</label>
-            <input ng-model="news.viewable_id" type="number" step="1">
-        </md-input-container>
+            <md-input-container class="md-block">
+                <label>News type's id</label>
+                <input ng-model="news.viewable_id" type="number" step="1">
+            </md-input-container>
+        </div>
         <md-button type="submit" value="Save">Submit</md-button>
     </form>
 </div>
-

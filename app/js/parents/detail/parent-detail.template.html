@@ -1,0 +1,20 @@
+<h1><a ui-sref="parents">Click to see the Parent List</a></h1>
+<h1 class="text-uppercase">Parent View</h1>
+<md-button class="md-raised" ui-sref="parentEdit({parentId: parentDetail.parent.id})">Edit</md-button>
+<md-button class="md-raised  md-primary" ng-click="deleteParent(parentDetail)">Delete</md-button>
+
+<md-content class="md-padding" layout-xs="column" layout="row">
+  <div flex-xs flex-gt-xs="50" layout="column">
+    <md-card md-theme-watch>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{ parentDetail.parent.first_name }}</span>
+          <span class="md-headline">{{ parentDetail.parent.last_name }}</span>
+          <span class="md-subhead">E-mail: {{ parentDetail.parent.email }}</span>
+          <span class="md-subhead">Phone: {{ parentDetail.parent.contact_phone }}</span>
+          <span class="md-subhead">School: {{ parentDetail.parent.school_id}}</span>
+        </md-card-title-text>
+      </md-card-title>
+    </md-card>
+  </div>
+</md-content>

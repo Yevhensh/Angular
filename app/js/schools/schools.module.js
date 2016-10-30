@@ -11,5 +11,5 @@ module.exports = angular.module('app.schools', [
     schoolListComponent.name, 
     schoolDetailComponent.name, 
     schoolCreateComponent.name, 
-    schoolEditComponent.name 
+    schoolEditComponent.name
 ]);

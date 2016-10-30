@@ -4,8 +4,7 @@ module.exports = angular
   .config(function($stateProvider, $urlRouterProvider) {
       $stateProvider.state({
         name: 'main',
-        url: '/',
+        url: '/main',
         template: '<app-main></app-main>'
       });
-
   });

@@ -1,17 +1,31 @@
-<h1>Edit the news</h1>
-
-<div class="news-edit">
-    <md-button class="md-primary" ui-sref="newss">Back to news</md-button>
-
-
+<div class="item">
+    <h1>Edit the News</h1>
+    <md-button class="md-primary" ui-sref="newss">Back to News</md-button>
     <form ng-submit="updateNews()">
-        <md-input-container class="md-block" ng-model="newsDetail.news.title" type="text" name="title">
+        <md-input-container class="md-block">
         <h3>Title:</h3>
-            <input ng-model="newsDetail.news.title">
+            <input ng-model="newsDetail.news.title" type="text" name="title" ng-trim="false" maxlength="50">
+            <p class="count">{{50 - newsDetail.news.title.length}} symbols left</p>
         </md-input-container>
-        <md-input-container class="md-block" ng-model="newsDetail.news.description" type="text" name="description">
+
+        <div class="menus" layout="row" layout-align="space-between center">
+            <md-input-container class="md-block">
+            <h3>Type of news:</h3>
+            <md-select ng-model="newsDetail.news.viewable_type">
+            <md-option ng-repeat="type in types" value="{{type}}">{{type}}</md-option>
+            </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+            <h3>Type's id of news:</h3>
+                <input ng-model="newsDetail.news.viewable_id" type="number" step="1">
+            </md-input-container>
+        </div>
+
+        <md-input-container class="md-block">
         <h3>Description:</h3>
-            <input ng-model="newsDetail.news.description">
+            <input ng-model="newsDetail.news.description" type="text" name="description" ng-trim="false" maxlength="512">
+            <p class="count">{{512 - newsDetail.news.description.length}} symbols left</p>
         </md-input-container>
         <md-button type="submit" value="Update">Update</md-button>
     </form>

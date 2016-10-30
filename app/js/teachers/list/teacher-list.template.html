@@ -1,0 +1,32 @@
+<h1 class="text-uppercase">Teacher List</h1>
+<div layout="row">
+  <md-button class="md-warn" ui-sref="teacherCreate">Add New Teacher</md-button>
+  <md-input-container class="md-icon-float md-block">
+    <label>Search:</label>
+    <input ng-model="$ctrl.query" type="text">
+  </md-input-container>
+
+  <div>
+    <div layout="row">
+      <md-input-container style="margin-right: 10px;">
+        <label>Sort by:</label>
+        <md-select ng-model="$ctrl.orderProp">
+          <md-option value="first_name">First Name</md-option>
+          <md-option value="last_name">Last Name</md-option>
+          <md-option value="group_id">Group</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+  </div>
+</div>
+
+<table>
+  <tr><th>First Name</th><th>Last Name</th></tr>
+  <tr ng-repeat="teacher in $ctrl.teachers | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+    <td>{{ teacher.first_name }}</td>
+    <td>{{ teacher.last_name }}</td>
+    <td>
+      <md-button md-no-ink class="md-primary" ui-sref="teacherDetail({teacherId: teacher.id})">View</md-button>
+    </td>
+  </tr>
+</table>

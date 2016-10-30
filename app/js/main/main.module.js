@@ -8,7 +8,13 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     levelsComponent = require('../levels/levels.module.js'),
     groupsComponent = require('../groups/groups.module.js'),
     newsComponent = require('../news/news.module.js'),
-    loginModule = require('../login/login.module.js');
+    loginModule = require('../login/login.module.js'),
+    requestComponent = require('../request/request.module.js'),
+    startpageComponent = require('../startpage/startpage.module.js'),
+    parentsModule = require('../parents/parents.module.js'),
+    teachersModule = require('../teachers/teachers.module.js'),
+    mainTypeService = require('./services/type.service.js'),
+    permissionsDirective = require('./directives/permissions.directive.js');
 
 
 module.exports = angular.module("app.main", [
@@ -25,5 +31,11 @@ module.exports = angular.module("app.main", [
   groupsComponent.name,
   newsComponent.name,
   mainRoute.name,
-  loginModule.name
+  loginModule.name,
+  requestComponent.name,
+  startpageComponent.name,
+  parentsModule.name,
+  teachersModule.name,
+  mainTypeService.name,
+  permissionsDirective.name
 ]);
