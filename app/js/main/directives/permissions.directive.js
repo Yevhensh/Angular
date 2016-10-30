@@ -7,11 +7,20 @@ module.exports = angular
             scope: false,
             link: function(scope, element, attr){
                 var attrVal = attr["permissions"];
-                var type = Type();
-                //getting string vals
-                type = type.toString();
                 attrVal = attrVal.toString();
-                if(type !== attrVal) {
+                //getting permission roles array
+                var permArr = attrVal.split(" ");
+                var remov = true;
+
+                var type = Type();
+                type = type.toString();
+
+                permArr.forEach(function(item) {
+                    if (item == type){
+                        remov = false;
+                    }
+                });
+                if (remov){
                     element.children().remove();
                     element.remove();
                 }
