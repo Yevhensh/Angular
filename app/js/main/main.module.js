@@ -8,6 +8,10 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     levelsComponent = require('../levels/levels.module.js'),
     newsComponent = require('../news/news.module.js'),
     loginModule = require('../login/login.module.js'),
+    requestComponent = require('../request/request.module.js'),
+    startpageComponent = require('../startpage/startpage.module.js'),
+    parentsModule = require('../parents/parents.module.js'),
+    teachersModule = require('../teachers/teachers.module.js'),
     mainTypeService = require('./services/type.service.js');
 
 module.exports = angular.module("app.main", [
@@ -24,5 +28,9 @@ module.exports = angular.module("app.main", [
   newsComponent.name,
   mainRoute.name,
   loginModule.name,
+  requestComponent.name,
+  startpageComponent.name,
+  parentsModule.name,
+  teachersModule.name,
   mainTypeService.name
 ]);

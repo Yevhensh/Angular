@@ -14,7 +14,7 @@ module.exports = angular
       $scope.school.$save(function() {
         $state.go('schools');
       });
-    };
-  };
+    }
+  }
 
 
