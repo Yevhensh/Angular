@@ -1,6 +1,19 @@
-<h1><a ui-sref="albums">Click to see the album-list</a></h1>
-<md-button class="md-accent" ui-sref="albumEdit({ albumId: albumDetail.album.id })">Edit</md-button>
-<md-button class="md-accent md-raised md-hue-1" ng-click="deleteAlbum(albumDetail)">Delete</md-button>
-<h1>{{ albumDetail.album.title }}</h1>
-<p>{{ albumDetail.album.created_at | date}}</p>
-<img ng-src="{{albumDetail.album.image}}" alt="{{album.title}}"/>
+<h1>Show page</h1>
+<div class="item">
+    <md-button class="md-primary" ui-sref="albums">Back to albums</md-button>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text class="item">
+                <span class="md-headline">{{ albumDetail.album.title }}</span>
+                <span class="md-subhead">{{ albumDetail.album.created_at | date}}</span>
+                <span class="md-subhead">
+                  <img ng-src="{{albumDetail.album.image}}" alt="{{album.title}}"/>
+                </span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="md-raised md-primary" ui-sref="albumEdit({ albumId: albumDetail.album.id })">Edit</md-button>
+          <md-button class="md-raised md-warn" ng-click="deleteAlbum(albumDetail)">Delete</md-button>
+        </md-card-actions>
+    </md-card>
+</div>

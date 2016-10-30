@@ -16,6 +16,9 @@ module.exports = angular
       $scope.loadAlbum = function() {
         $scope.albumDetail = Album.get({ id: $stateParams.albumId });
       };
+
+      $scope.types = ["Group","Level","School"];
+
       $scope.loadAlbum();
 
     }]

@@ -1,0 +1,38 @@
+.items-list {
+  width: 500px;
+  height: 350px;
+  margin: 20px;
+  display: inline-block;
+}
+
+.items-list a {
+    text-decoration: none;
+  };
+
+.items-list-button {
+  margin-left: auto;/*40px;*/
+}
+
+.item {
+  text-align: center;
+  width: 50%;
+  word-wrap: break-word;
+  margin: 0 auto;
+}
+
+.content {
+  max-height: 30px;
+  width: 450px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h1, h2, h3{
+  text-align: center;
+}
+
+.count{
+  text-align: right;
+  margin: 20px;
+}

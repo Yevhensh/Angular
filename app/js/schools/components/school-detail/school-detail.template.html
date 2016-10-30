@@ -1,27 +1,20 @@
-<p class="school_search"> 
-    <button <a ui-sref="schools">Back to the school list</a></button>
-</p>
-
-<div class="borderlist">
-	<h1>{{ schoolDetail.school.name }}</h1>
-	
-	<p><span>E-mail:</span></p>
-		<div class="border_school">
-			<p>{{ schoolDetail.school.email }}</p>
-		</div>
-	<p><span>Address:</span></p>
-		<div class="border_school">
-			<p>{{ schoolDetail.school.address }}</p>
-		</div>
-	<p><span>Contact phone:</span></p>
-		<div class="border_school">
-			<p>{{ schoolDetail.school.contact_phone }}</p>
-		</div>
-	<p class="school_search"> 
-    <button <a ui-sref="schoolEdit({ schoolId: schoolDetail.school.id })" id="school_button">Edit school</a></button>
-	</p>
-
-	<p class="school_search"> 
-    <button <a ng-click="deleteSchool(schoolDetail)" id="school_button">Delete school</a></button>
-	</p>
+<h1>Show page</h1>
+<div class="item">
+    <md-button class="md-primary" ui-sref="schools">Back to schools</md-button>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text class="item">
+                <span class="md-headline">{{ schoolDetail.school.name }}</span>
+                <span class="md-subhead">{{ schoolDetail.school.email }}</span>
+                <span class="md-subhead">{{ schoolDetail.school.address }}</span>
+                <span class="md-subhead">{{ schoolDetail.school.contact_phone }}</span>
+                <span class="md-subhead">{{$ctrl.item.news.description}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="md-raised md-primary" ui-sref="schoolEdit({ schoolId: schoolDetail.school.id })" id="school_button">Edit school</md-button>
+          <md-button class="md-raised md-warn" ng-click="deleteSchool(schoolDetail)" id="school_button">Delete school</md-button>
+        </md-card-actions>
+    </md-card>
 </div>
+

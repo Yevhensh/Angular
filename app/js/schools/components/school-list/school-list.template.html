@@ -1,18 +1,24 @@
-<h1 class="text-uppercase">School List</h1>
-  <p class="school_search"> 
-    Search:<input ng-model="$ctrl.query">
-  </p>
- 
-  <p class="school_search"> 
-    <button <a ui-sref="schoolCreate">Create new school</a></button>
-  </p>
+<div class="item" layout="row" layout-align="space-between">
+  <md-input-container class="md-block">
+    <label>Search:</label>
+    <input ng-model="$ctrl.query">
+  </md-input-container>
+</div>
 
-  <ul>
-    <li li class="borderlist" ng-repeat="school in $ctrl.schools | filter:$ctrl.query">
-      <p><span>ID:</span> {{ school.id }}</p>
-      <h1><a ui-sref="schoolDetail({ schoolId: school.id })">{{ school.name }}</a></h1>
-      <p><span>E-mail:</span> {{ school.email }} </p>
-      <p><span>Address:</span> {{ school.address }} </p>
-      <p><span>Contact phone: </span> {{ school.contact_phone }}</p>
-    </li>
-  </ul>
+<h1> School List </h1>
+<md-button ui-sref="schoolCreate" class="md-raised md-primary">Create new school</md-button>
+<div class="item" style="width:90%">
+    <md-card ng-repeat="school in $ctrl.schools | filter:$ctrl.query" class="items-list">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">
+                    <a ui-sref="schoolDetail({ schoolId: school.id })"><p class="content">{{ school.name }}</p></a>
+                </span>
+                <span class="md-subhead">{{ school.id }}</span>
+                <span class="md-subhead">{{ school.email }}</span>
+                <span class="md-subhead">{{ school.address }}</span>
+                <span class="md-subhead">{{ school.contact_phone }}</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+</div>

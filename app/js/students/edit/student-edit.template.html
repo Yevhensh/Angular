@@ -1,56 +1,45 @@
-<h1><a ui-sref="students">Click to see the Student List</a></h1>
+<div class="item">
+    <h1>Student Edit</h1>
+    <md-button class="md-primary" ui-sref="students">Back to Students</md-button>
+    <form ng-submit="updateStudent()">
+        <md-input-container class="md-block">
+        <h3>First Name:</h3>
+            <input type="text" ng-model="studentDetail.student.first_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$">
+        </md-input-container>
 
-<h1 class="text-uppercase">Student Edit</h1>
+        <md-input-container class="md-block">
+        <h3>Last Name:</h3>
+            <input type="text" ng-model="studentDetail.student.last_name" id="last_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{studentDetail.student.last_name}}"/>
+        </md-input-container>
 
-<form class="form-horizontal" role="form" ng-submit="updateStudent()">
-<div class="form-group">
-  <label for="first_name" class="col-sm-2 control-label">First Name</label>
-  <div class="col-sm-10">
-    <input type="text" ng-model="studentDetail.student.first_name" class="form-control" id="first_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{studentDetail.student.first_name}}"/>
-  </div>
+        <div class="menus" layout="row" layout-align="space-between center">
+          <md-input-container class="md-block">
+          <h3>Age:</h3>
+              <input type="number" min="2" max ="10" ng-model="studentDetail.student.age" value="{{studentDetail.student.age}}"/>
+          </md-input-container>
+          <md-input-container class="md-block">
+          <h3>School:</h3>
+              <input type="number" ng-model="studentDetail.student.school_id" value="{{studentDetail.student.school_id}}"/>
+          </md-input-container>
+          <md-input-container class="md-block">
+          <h3>Group:</h3>
+              <input type="number" ng-model="studentDetail.student.group_id" value="{{studentDetail.student.group_id}}"/>
+          </md-input-container>
+        </div>
+
+        <div><md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox></div>
+        <div ng-show="isDisabled">
+            <md-input-container class="md-block">
+            <h3>Health Problem:</h3>
+                <input type="text" ng-model="studentDetail.student.health_info.health_problem" value="{{studentDetail.student.health_info.health_problem}}"/>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+            <h3>Description:</h3>
+                <input type="text" ng-model="studentDetail.student.health_info.description" value="{{studentDetail.student.health_info.description}}">
+            </md-input-container>
+        </div>
+
+        <md-button type="submit" value="Update">Update</md-button>
+    </form>
 </div>
-<div class="form-group">
-  <label for="last_name" class="col-sm-2 control-label">Last Name</label>
-  <div class="col-sm-10">
-    <input type="text" ng-model="studentDetail.student.last_name" class="form-control" id="last_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{studentDetail.student.last_name}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="age" class="col-sm-2 control-label">Age</label>
-  <div class="col-sm-10">
-    <input type="number" min="2" max ="10" ng-model="studentDetail.student.age" class="form-control" id="age" value="{{studentDetail.student.age}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="school_id" min="1" class="col-sm-2 control-label">School</label>
-  <div class="col-sm-10">
-    <input type="number" ng-model="studentDetail.student.school_id" class="form-control" id="school_id" value="{{studentDetail.student.school_id}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="group_id" min="1" class="col-sm-2 control-label">Group</label>
-  <div class="col-sm-10">
-    <input type="number" ng-model="studentDetail.student.group_id" class="form-control" id="group_id" value="{{studentDetail.student.group_id}}"/>
-  </div>
-</div>
-<md-checkbox ng-model="isDisabled" aria-label="Health Info:">Health Info:</md-checkbox>
-<div ng-show="isDisabled">
-  <div class="form-group">
-    <label for="health_problem" class="col-sm-2 control-label">Health Problem</label>
-    <div class="col-sm-10">
-      <input type="text" ng-model="studentDetail.student.health_info.health_problem" class="form-control" id="health_problem" value="{{studentDetail.student.health_info.health_problem}}"/>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="description" class="col-sm-2 control-label">Description</label>
-    <div class="col-sm-10">
-      <input type="text" ng-model="studentDetail.student.health_info.description" class="form-control" id="description" value="{{studentDetail.student.health_info.description}}"/>
-    </div>
-  </div>
-</div>
-<div class="form-group">
-  <div class="col-sm-offset-2 col-sm-10">
-    <input type="submit" class="btn btn-primary" value="Update"/>
-  </div>
-</div>
-</form>

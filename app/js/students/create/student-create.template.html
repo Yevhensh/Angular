@@ -1,4 +1,4 @@
-<h1><a ui-sref="students">Click to see the Student List</a></h1>
+<!-- <h1><a ui-sref="students">Click to see the Student List</a></h1>
 <h1 class="text-uppercase">Student Create</h1>
 
 <form ng-submit="addStudent()">
@@ -50,4 +50,51 @@
 <div>
   <input type="submit" value="Save"/>
 </div>
-</form>
+</form> -->
+
+<div class="item">
+    <h1>Student Create</h1>
+    <md-button class="md-primary" ui-sref="students">Back to Schools</md-button>
+    <form ng-submit="addStudent()" role="form">
+        <md-input-container class="md-block">
+        <h3>First Name:</h3>
+            <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="student.first_name">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+        <h3>Last Name:</h3>
+            <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="student.last_name">
+        </md-input-container>
+
+        <div class="menus" layout="row" layout-align="space-between center">
+          <md-input-container class="md-block">
+          <h3>Age:</h3>
+              <input type="number" min="2" max ="10" ng-model="student.age">
+          </md-input-container>
+          <md-input-container class="md-block">
+          <h3>School:</h3>
+              <input type="number" min="1" ng-model="student.school_id">
+          </md-input-container>
+          <md-input-container class="md-block">
+          <h3>Group:</h3>
+              <input type="number" min="1" ng-model="student.group_id">
+          </md-input-container>
+        </div>
+
+        <div><md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox></div>
+        <div ng-show="isDisabled">
+            <md-input-container class="md-block">
+            <h3>Health Problem:</h3>
+                <input type="text" ng-model="student.health_info.health_problem">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+            <h3>Description:</h3>
+                <input type="text" ng-model="student.health_info.description">
+            </md-input-container>
+        </div>
+
+        <md-button type="submit" value="Save">Submit</md-button>
+    </form>
+</div>
+
