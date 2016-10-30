@@ -1,20 +1,18 @@
 <div class="main">
-    <div ng-switch="type">
-        <div ng-switch-when="Admin">
-            <h1>Admin</h1>
-        </div>
+    <div permissions="Admin">
+        <h1>Admin</h1>
+    </div>
 
-        <div ng-switch-when="Superadmin">
-            <h1>Superadmin</h1>
-        </div>
+    <div permissions="Superadmin">
+        <h1>Superadmin</h1>
+    </div>
 
-        <div ng-switch-when="Teacher">
-            <h1>Teacher</h1>
-        </div>
+    <div permissions="Teacher">
+        <h1>Teacher</h1>
+    </div>
 
-        <div ng-switch-when="Parent">
-            <h1>Parent</h1>
-        </div>
+    <div permissions="Parent">
+        <h1>Parent</h1>
     </div>
 </div>
 
