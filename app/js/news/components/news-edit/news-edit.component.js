@@ -20,5 +20,7 @@ module.exports = angular
             $scope.newsDetail = News.get({ id: $stateParams.id });
         };
 
+        $scope.types = ["Group","Level","School"];
+
         $scope.loadNews();
     }

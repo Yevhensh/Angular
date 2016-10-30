@@ -17,4 +17,6 @@ function NewsCreateController(News, $state, $scope, $stateParams) {
             $state.go('newss');
         });
     }
+
+    $scope.types = ["Group","Level","School"];
 }
