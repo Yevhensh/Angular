@@ -1,43 +1,23 @@
-<h1><a ui-sref="teachers">Click to see the teacher List</a></h1>
+<p class="school_search"> 
+    <button <a ui-sref="teachers">Back to the teacher list</a></button>
+</p>
 
-<h1 class="text-uppercase">teacher Edit</h1>
-
-<form class="form-horizontal" role="form" ng-submit="updateTeacher()">
-<div class="form-group">
-  <label for="first_name" class="col-sm-2 control-label">First Name</label>
-  <div class="col-sm-10">
-    <input type="text" ng-model="teacherDetail.teacher.first_name" class="form-control" id="first_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{teacherDetail.teacher.first_name}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="last_name" class="col-sm-2 control-label">Last Name</label>
-  <div class="col-sm-10">
-    <input type="text" ng-model="teacherDetail.teacher.last_name" class="form-control" id="last_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{teacherDetail.teacher.last_name}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="age" class="col-sm-2 control-label">Age</label>
-  <div class="col-sm-10">
-    <input type="number" min="2" max ="10" ng-model="teacherDetail.teacher.age" class="form-control" id="age" value="{{teacherDetail.teacher.age}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="school_id" min="1" class="col-sm-2 control-label">School</label>
-  <div class="col-sm-10">
-    <input type="number" ng-model="teacherDetail.teacher.school_id" class="form-control" id="school_id" value="{{teacherDetail.teacher.school_id}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="group_id" min="1" class="col-sm-2 control-label">Group</label>
-  <div class="col-sm-10">
-    <input type="number" ng-model="teacherDetail.teacher.group_id" class="form-control" id="group_id" value="{{teacherDetail.teacher.group_id}}"/>
-  </div>
-</div>
+<h1>Edit teacher info</h1>
 
 
-<div class="form-group">
-  <div class="col-sm-offset-2 col-sm-10">
-    <input type="submit" class="btn btn-primary" value="Update"/>
-  </div>
+<div class="school_edit_form">
+  <form ng-submit="updateTeacher()">
+    First name:<br/>
+    <input ng-model ="teacherDetail.teacher.first_name" type="text" name="fname" id="teacher_input" placeholder="teacher"/>
+    <br/>Last name<br/>
+    <input ng-model ="teacherDetail.teacher.last_name" type="text" name="lname" id="teacher_input"
+    placeholder="example@mail.com"/>
+    <br/>E-mail: <br/>
+    <input ng-model ="teacherDetail.teacher.email" type="text" name="email" id="teacher_input" placeholder="mail@"/>
+    <br/>Contact phone:<br/>
+    <input ng-model ="teacherDetail.teacher.contact_phone" type="text" name="teacher_input" id="teacher_input" placeholder="123456789"/><br/>
+    
+    
+    <input type="submit"  value="Save changes" id="teacher_save"/>
+  </form>
 </div>
-</form>

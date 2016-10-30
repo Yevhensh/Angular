@@ -16,36 +16,15 @@
   </div>
 </div>
 <div class="form-group">
-  <label for="age" class="col-sm-2 control-label">Age</label>
+  <label for="email" class="col-sm-2 control-label">E-mail</label>
   <div class="col-sm-10">
-    <input type="number" min="2" max ="10" ng-model="parentDetail.parent.age" class="form-control" id="age" value="{{parentDetail.parent.age}}"/>
+    <input type="email" ng-model="parentDetail.parent.email" class="form-control" id="email" value="{{parentDetail.parent.email}}"/>
   </div>
 </div>
 <div class="form-group">
-  <label for="school_id" min="1" class="col-sm-2 control-label">School</label>
+  <label for="contact_phone" min="1" class="col-sm-2 control-label">Phone</label>
   <div class="col-sm-10">
-    <input type="number" ng-model="parentDetail.parent.school_id" class="form-control" id="school_id" value="{{parentDetail.parent.school_id}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="group_id" min="1" class="col-sm-2 control-label">Group</label>
-  <div class="col-sm-10">
-    <input type="number" ng-model="parentDetail.parent.group_id" class="form-control" id="group_id" value="{{parentDetail.parent.group_id}}"/>
-  </div>
-</div>
-<md-checkbox ng-model="isDisabled" aria-label="Health Info:">Health Info:</md-checkbox>
-<div ng-show="isDisabled">
-  <div class="form-group">
-    <label for="health_problem" class="col-sm-2 control-label">Health Problem</label>
-    <div class="col-sm-10">
-      <input type="text" ng-model="parentDetail.parent.health_info.health_problem" class="form-control" id="health_problem" value="{{parentDetail.parent.health_info.health_problem}}"/>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="description" class="col-sm-2 control-label">Description</label>
-    <div class="col-sm-10">
-      <input type="text" ng-model="parentDetail.parent.health_info.description" class="form-control" id="description" value="{{parentDetail.parent.health_info.description}}"/>
-    </div>
+    <input type="text" ng-model="parentDetail.parent.contact_phone" class="form-control" id="contact_phone" value="{{parentDetail.parent.contact_phone}}"/>
   </div>
 </div>
 <div class="form-group">

@@ -1,18 +1,25 @@
 'use strict';
 
 module.exports = angular
-  .module('app.teacherList.component',['ngMaterial'])
+  .module('app.teacherList.component',[])
   .component('teacherList', {
     templateUrl: '/app/js/teachers/list/teacher-list.template.html',
     controller: TeacherListController
   });
 
-  TeacherListController.$inject =  ['Teacher','$scope', '$state'];
-  function TeacherListController(Teacher, $state) {
+  TeacherListController.$inject =  ['TeacherResource','$scope', '$state'];
+  function TeacherListController(TeacherResource, $scope, $state) {
     var ctrl = this;
-        
-   
-      Teacher.get(function(data){
+        ctrl.getTeachers = getTeachers;
+
+    function getTeachers() {
+      return TeacherResource.get(function(data){
         ctrl.teachers = data.teachers;
       });
     }
+
+    getTeachers();
+  }
+
+
+

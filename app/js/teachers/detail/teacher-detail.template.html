@@ -1,46 +1,30 @@
-<h1><a ui-sref="teachers">Click to see the Teacher List</a></h1>
-<h1 class="text-uppercase">Teacher View</h1>
-<md-button class="md-raised" ui-sref="teacherEdit({teacherId: teacherDetail.teacher.id})">Edit</md-button>
-<md-button class="md-raised  md-primary" ng-click="deleteTeacher(teacherDetail)">Delete</md-button>
+<p class="teacher_search"> 
+    <button <a ui-sref="teachers">Back to the teacher list</a></button>
+</p>
 
-<md-content class="md-padding" layout-xs="column" layout="row">
-  <div flex-xs flex-gt-xs="50" layout="column">
-    <md-card md-theme-watch>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-headline">{{ $ctrl.item.teacher.first_name }}</span>
-          <span class="md-headline">{{ teacherDetail.teacher.last_name }}</span>
-          <span class="md-subhead">E-mail: {{ teacherDetail.teacher.email }}</span>
-          <span class="md-subhead">Phone: {{ teacherDetail.teacher.contact_phone }}</span>
-          <span class="md-subhead">School: {{ teacherDetail.teacher.school_id }}</span>
-          <span class="md-subhead">Group: {{ teacherDetail.teacher.group_id }}</span>
-        </md-card-title-text>
-      </md-card-title>
-    
-    </md-card>
-  </div>
-</md-content>
+<div class="borderlist">
+  
+  <p><span>First name:</span></p>
+    <div class="border_teacher">
+      <p>{{ teacherDetail.teacher.first_name }}</p>
+    </div><p><span>Last name:</span></p>
+    <div class="border_teacher">
+      <p>{{ teacherDetail.teacher.last_name }}</p>
+    </div>
+  <p><span>E-mail:</span></p>
+    <div class="border_teacher">
+      <p>{{ teacherDetail.teacher.email }}</p>
+    </div>
+    <p><span>Contact phone:</span></p>
+    <div class="border_teacher">
+      <p>{{ teacherDetail.teacher.contact_phone }}</p>
+    </div>
+  <p class="teacher_search"> 
+    <button <a ui-sref="teacherEdit({ teacherId: teacherDetail.teacher.id })" id="teacher_button">Edit teacher</a></button>
+  </p>
 
-<h1> Level-list-template </h1>
-<md-button ui-sref="levelCreate" class="md-raised md-warn level-list-button">Level create</md-button>
-<div>
-    <md-card ng-repeat="level in $ctrl.levels" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" class="level-list" md-theme-watch>
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">Level name: {{ level.name }}</span>
-                <span class="md-subhead">Level id: {{ level.id }} </span>
-            </md-card-title-text>
-            <md-card-title-media>
-                <div class="md-media-lg card-media"></div>
-            </md-card-title-media>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button ui-sref="level({ id: level.id })">show</md-button>
-            <md-button ui-sref="levelEdit({ id: level.id })">edit</md-button>
-            <md-button ng-click="$ctrl.deleteLevel(level.id)">delete</md-button>
-        </md-card-actions>
-    </md-card>
+  <p class="teacher_search"> 
+    <button <a ng-click="deleteteacher(teacherDetail)" id="teacher_button">Delete teacher</a></button>
+  </p>
 </div>
-
-
 

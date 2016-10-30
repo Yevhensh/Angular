@@ -1,17 +1,16 @@
 'use strict';
 
 module.exports = angular
-  .module('app.teacherCreate.component',['ngMaterial'])
+  .module('app.teachercreate.component',[])
   .component('teacherCreate', {
     templateUrl: '/app/js/teachers/create/teacher-create.template.html',
     controller: TeacherCreateController
   });
 
-  TeacherCreateController.$inject = ['$scope', '$state',  'Teacher'];
+  TeacherCreateController.$inject = ['$scope', '$state', 'TeacherResource'];
 
-  function TeacherCreateController ($scope, $state,  Teacher) {
-    var ctrl = this;
-    $scope.teacher = new Teacher();
+  function TeacherCreateController ($scope, $state, TeacherResource) {
+    $scope.teacher = new TeacherResource();
 
     $scope.addTeacher = function() {
       $scope.teacher.$save(function() {
