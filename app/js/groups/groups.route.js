@@ -10,14 +10,14 @@ module.exports = angular
             name: 'groupCreate',
             url: '/groups/new',
             template: '<group-create></group-create>'
+        }).state({
+            name: 'group',
+            url: '/groups/:id',
+           template: '<group-detail></group-detail>'
+         }).state({
+            name: 'groupEdit',
+            url: '/groups/:id/edit',
+            template: '<group-edit></group-edit>'
         });
-            //.state({
-        //     name: 'groupEdit',
-        //     url: '/groups/:id/edit',
-        //     template: '<group-edit></group-edit>'
-        // }).state({
-        //     name: 'group',
-        //     url: '/groups/:id',
-        //     template: '<group-detail></group-detail>'
-        // })
+
     });

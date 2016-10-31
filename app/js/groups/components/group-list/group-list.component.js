@@ -27,9 +27,5 @@ function GroupListController(Group, $window, $scope) {
         $scope.teacher = group.teacher;
     };
 
-    $scope.studentNotNull = function () {
-        return $scope.students ? true : false;
-    };
-
     getGroups();
 }

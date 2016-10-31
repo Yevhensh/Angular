@@ -1,0 +1,11 @@
+<div class="item">
+    <h1>Edit the level</h1>
+    <md-button class="md-primary" ui-sref="groups">Back to groups</md-button>
+    <form ng-submit="updateGroup()">
+        <md-input-container class="md-block" type="text" name="title">
+            <h3>Name:</h3>
+            <input ng-model="groupDetail.group.name">
+        </md-input-container>
+        <md-button type="submit" value="Update">Update</md-button>
+    </form>
+</div>
