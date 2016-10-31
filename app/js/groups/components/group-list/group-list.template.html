@@ -1,5 +1,5 @@
-<div class="group-list-main">
-    <md-button ui-sref="groupCreate" class="md-raised md-warn group-list-button">Group create</md-button>
+<div class="group-list">
+    <md-button ui-sref="groupCreate" class="md-raised md-warn create-button">Group create</md-button>
     <!--<md-card ng-repeat="group in groups"  class="group-list" md-theme-watch>-->
         <!--<md-card-title>-->
             <!--<md-card-title-text>-->
@@ -16,9 +16,9 @@
             <!--<md-button ng-click="deleteGroup(group.id)">delete</md-button>-->
         <!--</md-card-actions>-->
     <!--</md-card>-->
-    <div layout="row" class="group-list-height">
-        <md-card class="group-list-card" flex="30">
-            <md-content class="group-list">
+    <div layout="row" class="height">
+        <md-card class="card" flex="30">
+            <md-content>
                 <md-list>
                     <md-list-item class="md-3-line" ng-repeat="group in groups">
                         <div class="md-list-item-text">
@@ -26,7 +26,7 @@
                             <h4>{{group.id}}</h4>
                             <p>Students count: </p>
                         </div>
-                        <md-button ng-click="getGroupParams(group);" class="group-list-b-m"><p class="group-list-buttons">students</p></md-button>
+                        <md-button ng-click="getGroupParams(group);" class="button-students" flex="30">students</md-button>
                         <!--<md-button class="md-secondary group-list-buttons" ng-click="getGroupParams(group);">students</md-button>-->
                         <!--<md-button class="md-secondary group-list-buttons"></md-button>-->
                         <md-divider ng-if="!$last"></md-divider>
@@ -35,11 +35,11 @@
             </md-content>
         </md-card>
 
-        <md-card ng-if="studentNotNull();" class="group-list-students" flex="70">
-            <md-content class="group-list">
+        <md-card ng-if="studentNotNull();" class="students" flex="70">
+            <md-content>
                 <md-list ng-repeat="student in students">
                     <div class="md-list-item-text">
-                        <div layout="row" class="group-list-student-item">
+                        <div layout="row" class="student-item">
                             <div class="group-list-name" flex="30">
                                 <h3>{{student.first_name}}</h3>
                                 <h3>{{student.last_name}}</h3>
