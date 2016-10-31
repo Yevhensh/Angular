@@ -1,29 +1,40 @@
-<div align="center">
-  <h1>Log in</h1>
-  <div ng-if="$ctrl.failResponse===true">{{$ctrl.failMessage}}</div>
-  <form name="Login" ng-submit="$ctrl.login(ctrl.user)">
-    <div>
-      <div ng-if="$ctrl.isInvalid"></div>
-    </div>
-    <div>
-      <label for="userEmail">Email</label></label>
-      <div>
-        <input type="email" id="useremail" ng-model="ctrl.user.email" placeholder="Email">
-      </div>
-    </div>
-    <div>
-      <label for="password">Password</label>
-      <div>
-        <input type="password" ng-model="ctrl.user.password" placeholder="Password">
-      </div>
-    </div>
-  <div>
-          <label>
-          <input type="checkbox" ng-model="ctrl.user.rememberMe"> Remember me
-        </label>
-  </div>
-    <div>
-        <button type="submit">Login</button>
-    </div>
-  </form>
+<div layout layout-align="center center">
+    <section layout="column" flex layout-align="center center" class="login">
+        <md-card class="md-whiteframe-4dp">
+            <md-toolbar>
+                <div layout="column" layout-padding layout-align="center center">
+                    <div>
+                        <md-icon class="logo">home</md-icon>
+                    </div>
+                    <div class="md-headline md-padding">Login</div>
+                </div>
+            </md-toolbar>
+            <md-card-content>
+                <form name="Login" ng-submit="$ctrl.login(ctrl.user)">
+                    <div ng-if="$ctrl.failResponse===true">{{$ctrl.failMessage}}</div>
+                    <div>
+                        <div ng-if="$ctrl.isInvalid"></div>
+                    </div>
+                    <md-input-container class="md-block">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" ng-model="ctrl.user.email" required placeholder="someone@example.com" />
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" ng-model="ctrl.user.password" required placeholder="******" />
+                    </md-input-container>
+                    <div>
+                        <label>
+                            <input type="checkbox" ng-model="ctrl.user.rememberMe"> Remember me
+                        </label>
+                    </div>
+                    <md-input-container class="md-block">
+                        <div layout="row" layout-align="center center">
+                            <md-button type="submit" class="md-raised md-primary" flex="50">Login</md-button>
+                        </div>
+                    </md-input-container>
+                </form>
+            </md-card-content>
+        </md-card>
+    </section>
 </div>
