@@ -1,0 +1,23 @@
+<h1>Create Group</h1>
+<div class="group-create">
+    <md-button class="md-primary" ui-sref="groups">Back to groups</md-button>
+    <form ng-submit="addGroup()" role="form">
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Group name</label>
+            <input ng-model="group.name">
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>School of</label>
+            <input ng-model="group.school_id" type="number" step="1">
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Teacher of</label>
+            <input ng-model="group.teacher">
+        </md-input-container>
+
+        <md-button type="submit" value="Save">Submit</md-button>
+    </form>
+</div>
+

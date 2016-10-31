@@ -6,6 +6,7 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     navigationComponent = require('../navigation/navigation.module.js'),
     mainComponent = require('./components/main.component.js'),
     levelsComponent = require('../levels/levels.module.js'),
+    groupsComponent = require('../groups/groups.module.js'),
     newsComponent = require('../news/news.module.js'),
     loginModule = require('../login/login.module.js'),
     requestComponent = require('../request/request.module.js'),
@@ -14,6 +15,7 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     teachersModule = require('../teachers/teachers.module.js'),
     mainTypeService = require('./services/type.service.js'),
     permissionsDirective = require('./directives/permissions.directive.js');
+
 
 module.exports = angular.module("app.main", [
   // modules
@@ -26,6 +28,7 @@ module.exports = angular.module("app.main", [
   albumsModule.name,
   contactsComponent.name,
   levelsComponent.name,
+  groupsComponent.name,
   newsComponent.name,
   mainRoute.name,
   loginModule.name,

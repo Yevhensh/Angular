@@ -7,9 +7,9 @@ module.exports = angular
         templateUrl: '/app/js/levels/components/level-create/level-create.template.html'
     });
 
-LevelCreateController.$inject = ['Level', '$state', '$scope', '$stateParams'];
+LevelCreateController.$inject = ['Level', '$state', '$scope'];
 
-function LevelCreateController(Level, $state, $scope, $stateParams) {
+function LevelCreateController(Level, $state, $scope) {
     $scope.level = new Level();
 
     $scope.addLevel = function(){
