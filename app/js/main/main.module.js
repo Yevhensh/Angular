@@ -13,7 +13,8 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     parentsModule = require('../parents/parents.module.js'),
     teachersModule = require('../teachers/teachers.module.js'),
     mainTypeService = require('./services/type.service.js'),
-    permissionsDirective = require('./directives/permissions.directive.js');
+    permissionsDirective = require('./directives/permissions.directive.js'),
+    profileModule = require('../profile/profile.module.js');
 
 module.exports = angular.module("app.main", [
   // modules
@@ -34,5 +35,6 @@ module.exports = angular.module("app.main", [
   parentsModule.name,
   teachersModule.name,
   mainTypeService.name,
-  permissionsDirective.name
+  permissionsDirective.name,
+  profileModule.name
 ]);

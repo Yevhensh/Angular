@@ -6,10 +6,11 @@
     <div class="main-nav">
         <section class="main-nav-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
             <div>
-                <md-button ui-sref="main">Home</md-button>
-                <md-button ui-sref="login" ng-if="!isAuthenticated()">Login</md-button>
-                <md-button ng-if="isAuthenticated()" ng-click="logout()" ui-sref="login">Logout</md-button>
-                <md-button ui-sref="contacts">About</md-button>
+              <md-button ui-sref="main">Home</md-button>
+              <md-button ng-if="isAuthenticated()" ui-sref="profile">Profile</md-button>
+              <md-button ui-sref="login" ng-if="!isAuthenticated()">Login</md-button>
+              <md-button ng-if="isAuthenticated()" ng-click="logout()" ui-sref="login">Logout</md-button>
+              <md-button ui-sref="contacts">About</md-button>
             </div>
         </section>
         <div class="main-nav-button">
