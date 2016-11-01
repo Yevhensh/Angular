@@ -1,15 +1,15 @@
-<md-toolbar layout="row" layout-align="center center">
-    <h1>User Profile</h1>
-</md-toolbar>
+<!-- <md-toolbar layout="row" layout-align="center center"> -->
+<h1>User Profile</h1>
+<!-- </md-toolbar> -->
 <md-whiteframe class="md-whiteframe-1dp" flex="100" layout="column" layout-wrap layout-align="center center">
     <md-card>
-
         <img ng-src="{{$ctrl.user.avatar_url_medium}}" class="md-card-image" alt="Avatar" accept="image/*" required maxsize="1000">
         <p>Upload a different photo.</p>
         <form>
             <input type='file' ng-model='$ctrl.user.avatar' base-sixty-four-input>
         </form>
     </md-card>
+
     <div>
         <md-input-container class="md-icon-float md-block">
             <p>

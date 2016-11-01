@@ -1,4 +1,4 @@
-<p class="parent_search"> 
+<!-- <p class="parent_search">
     <button <a ui-sref="parents">Back to the parent list</a></button>
 </p>
 
@@ -20,4 +20,36 @@
     placeholder="1"/><br/>
     <input type="submit"  value="Create" id="parent_save"/>
   </form>
+</div>
+ -->
+
+<div class="item">
+    <h1>Teacher Create</h1>
+    <md-button class="md-primary" ui-sref="parents">Back to Parents</md-button>
+    <form ng-submit="addStudent()" role="form">
+        <md-input-container class="md-block">
+          <input type="text" ng-model ="parent.first_name" placeholder="First Name">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <input type="text" ng-model ="parent.last_name" placeholder="Last Name">
+        </md-input-container>
+
+        <h3>E-mail:</h3>
+        <md-input-container class="md-block">
+          <input type="e-mail" ng-model ="parent.email" placeholder="example@mail.com">
+        </md-input-container>
+
+        <h3>Contact Phone:</h3>
+        <md-input-container class="md-block">
+          <input type="text" ng-model ="parent.contact_phone" placeholder="+123456789">
+        </md-input-container>
+
+        <h3>School:</h3>
+        <md-input-container class="md-block">
+          <input ng-model ="parent.school_id" type="number" name="school_id" id="parent_input" placeholder="1">
+        </md-input-container>
+
+        <md-button type="submit" value="Save">Submit</md-button>
+    </form>
 </div>

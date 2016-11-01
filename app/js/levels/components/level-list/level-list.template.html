@@ -1,11 +1,26 @@
-<h1> Level List </h1>
+<div class="item" layout="row" layout-align="space-between">
+  <md-input-container>
+  <label>Sort by:</label>
+    <md-select ng-model="$ctrl.orderProp">
+      <md-option value="Default">Default</md-option>
+      <md-option value="name">Alphabetical</md-option>
+    </md-select>
+  </md-input-container>
+
+  <md-input-container class="md-block">
+    <label>Search:</label>
+    <input ng-model="$ctrl.query">
+  </md-input-container>
+</div>
+
+<h1> Levels </h1>
 <md-button ui-sref="levelCreate" class="md-raised md-primary">Level create</md-button>
-<div class="item" style="width:90%">
-    <md-card ng-repeat="level in $ctrl.levels" class="items-list">
+<div class="item item-small" style="width:90%">
+    <md-card ng-repeat="level in $ctrl.levels | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list items-list-small">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">
-                <a ui-sref="level({ id: level.id })"><p class="content">                {{ level.name }}</p></a>
+                <a ui-sref="level({ id: level.id })"><p class="content content-small">                {{ level.name }}</p></a>
                 </span>
                 <span class="md-subhead">Level id: {{ level.id }} </span>
             </md-card-title-text>

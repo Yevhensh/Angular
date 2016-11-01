@@ -1,18 +1,26 @@
 <div class="item" layout="row" layout-align="space-between">
+  <md-input-container>
+  <label>Sort by:</label>
+    <md-select ng-model="$ctrl.orderProp">
+      <md-option value="Default">Default</md-option>
+      <md-option value="name">Alphabetical</md-option>
+    </md-select>
+  </md-input-container>
+
   <md-input-container class="md-block">
     <label>Search:</label>
     <input ng-model="$ctrl.query">
   </md-input-container>
 </div>
 
-<h1> School List </h1>
+<h1> Schools </h1>
 <md-button ui-sref="schoolCreate" class="md-raised md-primary">Create new school</md-button>
-<div class="item" style="width:90%">
-    <md-card ng-repeat="school in $ctrl.schools | filter:$ctrl.query" class="items-list">
+<div class="item item-small" style="width:90%">
+    <md-card ng-repeat="school in $ctrl.schools | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list items-list-small">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">
-                    <a ui-sref="schoolDetail({ schoolId: school.id })"><p class="content">{{ school.name }}</p></a>
+                    <a ui-sref="schoolDetail({ schoolId: school.id })"><p class="content content-small">{{ school.name }}</p></a>
                 </span>
                 <span class="md-subhead">{{ school.id }}</span>
                 <span class="md-subhead">{{ school.email }}</span>

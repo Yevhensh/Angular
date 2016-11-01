@@ -1,5 +1,4 @@
-
-.group-list {
+.person-list {
   width: 93%;
   margin: 30px auto;
 }
@@ -10,11 +9,10 @@
   margin: 0 30px 30px 0;
 }
 
-.group-list {
+.person-list {
 
   .ful {
     overflow: hidden;
-
   }
 
   .l-card {
@@ -36,14 +34,14 @@
     text-align: left;
   }
 
-  .wrapper-button-students {
+  .wrapper-button-persons {
     width: 50px;
     height: 100px;
     margin-top: 10px;
     margin-right: 20px;
   }
 
-  .button-students {
+  .button-persons {
     display: block;
     min-width: 10px;
     max-width: 60px;
@@ -54,17 +52,17 @@
     margin: 0 auto;
   }
 
-  .button-students p {
+  .button-persons p {
     font-size: 10px;
     line-height: 10px;
   }
 
-  .students {
+  .persons {
     margin-left: 2%;
     margin-top: 50px;
   }
 
-  .student-item {
+  .person-item {
     height: 30px;
     line-height: 30px;
     width: 80%;
@@ -72,7 +70,7 @@
   }
 }
 
-.group-create {
+.person-create {
   width: 400px;
   margin-left: 50px;
 }

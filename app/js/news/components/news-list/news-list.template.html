@@ -1,7 +1,22 @@
-<h1> News List </h1>
+<div class="item" layout="row" layout-align="space-between">
+  <md-input-container>
+  <label>Sort by:</label>
+    <md-select ng-model="$ctrl.orderProp">
+      <md-option value="Default">Default</md-option>
+      <md-option value="title">Alphabetical</md-option>
+    </md-select>
+  </md-input-container>
+
+  <md-input-container class="md-block">
+    <label>Search:</label>
+    <input ng-model="$ctrl.query">
+  </md-input-container>
+</div>
+
+<h1> News </h1>
 <md-button ui-sref="newsCreate" class="md-raised md-primary">News create</md-button>
 <div class="item" style="width:90%">
-    <md-card ng-repeat="news in $ctrl.news" class="items-list">
+    <md-card ng-repeat="news in $ctrl.news | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">
