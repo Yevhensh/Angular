@@ -1,35 +1,35 @@
 <div class="wrapper-primary-image">
-    <img src="./app/img/university-campus-2.svg" ui-sref="startpage" class="primary-image"/>
+    <img src="./app/img/school-building.svg" ui-sref="startpage" class="primary-image"/>
 </div>
 <!--Angular elements -->
 <div layout="column" ng-cloak>
     <div class="main-nav">
-        <section class="main-nav-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <section class="m-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
             <div>
-              <md-button ui-sref="main">Home</md-button>
-              <md-button ng-if="isAuthenticated()" ui-sref="profile">Profile</md-button>
-              <md-button ui-sref="login" ng-if="!isAuthenticated()">Login</md-button>
-              <md-button ng-if="isAuthenticated()" ng-click="logout()" ui-sref="login">Logout</md-button>
-              <md-button ui-sref="contacts">About</md-button>
+                <md-button ui-sref="main" class="m-button">Home</md-button>
+                <md-button ng-if="isAuthenticated()" ui-sref="profile" class="m-button">Profile</md-button>
+                <md-button ui-sref="login" ng-if="!isAuthenticated()" class="m-button">Login</md-button>
+                <md-button ng-if="isAuthenticated()" ng-click="logout()" ui-sref="login" class="m-button">Logout</md-button>
+                <md-button ui-sref="contacts" class="m-button">About</md-button>
             </div>
         </section>
-        <div class="main-nav-button">
-            <md-button class="md-icon-button md-primary" style="width:60px;height:60px;" aria-label="Settings" ng-click="toggleLeft()">
-                <md-icon md-svg-icon="./app/img/menu-button.svg" style="width:40px;height:40px;"></md-icon>
+        <div class="m-toggle">
+            <md-button class="md-icon-button md-primary" style="width:50px;height:50px;" aria-label="Settings" ng-click="toggleLeft()">
+                <md-icon md-svg-icon="./app/img/menu.svg" style="width:30px;height:30px;"></md-icon>
             </md-button>
         </div>
     </div>
-    <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
-        <md-toolbar class="md-theme-indigo" style="background-color: #B71C1C;">
-            <h1 class="md-toolbar-tools">Menu</h1>
-        </md-toolbar>
-        <md-content layout-margin>
-            <p>
-                This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
-            </p>
-            <md-button ng-click="toggleLeft()" class="md-accent">
-                Close this Sidenav
-            </md-button>
+
+    <div layout="row" class="m-content">
+        <md-sidenav class="md-sidenav-left m-side" md-component-id="left"
+                    md-disable-backdrop md-whiteframe="4" flex="15">
+            <md-content layout-margin>
+            </md-content>
+        </md-sidenav>
+        <md-content flex>
+            <section ui-view></section>
         </md-content>
-    </md-sidenav>
+    </div>
 </div>
+
+

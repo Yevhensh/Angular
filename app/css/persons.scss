@@ -3,16 +3,17 @@
   margin: 30px auto;
 }
 
-.create-button {
-  display: block;
-  width: 120px;
-  margin: 0 30px 30px 0;
-}
 
 .person-list {
 
   .ful {
     overflow: hidden;
+  }
+
+  .create-button {
+    display: block;
+    width: 120px;
+    margin: 0 30px 30px 0;
   }
 
   .l-card {

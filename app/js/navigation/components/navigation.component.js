@@ -12,7 +12,6 @@ module.exports = angular
 
     function NavController($scope, $mdSidenav, Auth, Type){
         $scope.toggleLeft = buildToggler('left');
-        $scope.toggleRight = buildToggler('right');
 
         $scope.logout = logout;
         $scope.type = Type.type;
@@ -34,4 +33,13 @@ module.exports = angular
                 $mdSidenav(componentId).toggle();
             }
         }
+        //getting height
+        // function setSideHeight(){
+        //     var h = document.body.offsetHeight.toString();
+        //     $scope.sheight = {
+        //         "min-height" : h + "px"
+        //     }
+        // }
+        //
+        // setSideHeight();
     }
