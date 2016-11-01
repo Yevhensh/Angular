@@ -5,12 +5,17 @@
   display: inline-block;
 }
 
+.items-list-small {
+  width: 250px;
+  height: 250px;
+}
+
 .items-list a {
-    text-decoration: none;
-  };
+  text-decoration: none;
+}
 
 .items-list-button {
-  margin-left: auto;/*40px;*/
+  margin-left: auto;
 }
 
 .item {
@@ -18,6 +23,10 @@
   width: 50%;
   word-wrap: break-word;
   margin: 0 auto;
+}
+
+.item-small {
+  width: 25%;
 }
 
 .content {
@@ -28,11 +37,11 @@
   text-overflow: ellipsis;
 }
 
-h1, h2, h3{
-  text-align: center;
+.content-small {
+  width: 225px;
 }
 
-.count{
+.count {
   text-align: right;
   margin: 20px;
 }

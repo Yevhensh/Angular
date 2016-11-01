@@ -26,7 +26,7 @@ button {
 	width: 75%;
 	background-color: #FAFAD2;
 	font-style: italic;
-} 
+}
 
 .borderlist span {
 	font-style: normal;
@@ -36,7 +36,7 @@ button {
 .school_name {
 	text-align: center;
  	font-weight: bold;
-  }
+}
 
 .school_search {
 	margin-left: 50px;
@@ -50,10 +50,10 @@ button {
 	padding: 20px;
 	list-style-type: none;
 	margin: 20px auto;
-	width: 50%;	
+	width: 50%;
 	background-color: #FAFAD2;
 	font-style: italic;
-} 
+}
 
 #contactlink {
 	text-align: center;
@@ -61,8 +61,8 @@ button {
 
 #school_input {
 	margin: 10px auto;
-    width: 100%;
-   } 
+  width: 100%;
+}
 
 #school_button {
 	width: 25%;
@@ -75,8 +75,8 @@ button {
 	border-color: rgba(75, 0, 130,.9);
 	padding: 0px 10px 0px 10px;
 	margin: 10px auto;
-    width: 95%;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, .4);
+  width: 95%;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, .4);
 }
 
 .title {
@@ -98,40 +98,35 @@ button {
 .welcome_text {
 	text-align:center;
 	font-size: 175%;
-	/*border-width: 3px;
-	border-radius: 15px/10px;
-	border-style: solid;
-	border-color: rgba(75, 0, 130,.9);*/
 	padding: 5px auto 5px auto;
 	margin: 10px auto 40px auto;
-    width: 75%;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, .4);
-    line-height: 1.6;
-    /*box-shadow: 0 3px 6px rgba(0, 0, 0, .4);*/
+  width: 75%;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, .4);
+  line-height: 1.6;
 }
 
 .button2 {
-    background-color: rgba(75, 0, 130,.9);
-    border: 3px solid rgba(75, 0, 130,.9);
-    color: white;
-    width: 20%;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-    box-shadow: 0px 0px 0px rgba(0,0,0,.7), 0px 0px 0px rgba(0,0,0,.7);
-    -webkit-transition-duration: 0.6s; /* Safari */
-    transition-duration: 0.6s;
+  background-color: rgba(75, 0, 130,.9);
+  border: 3px solid rgba(75, 0, 130,.9);
+  color: white;
+  width: 20%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px rgba(0,0,0,.7), 0px 0px 0px rgba(0,0,0,.7);
+  -webkit-transition-duration: 0.6s; /* Safari */
+  transition-duration: 0.6s;
 }
 
 .button2:hover {
-    background-color: white; 
-    color: black;
-    border: 3px solid rgba(75, 0, 130,.9);
+  background-color: white;
+  color: black;
+  border: 3px solid rgba(75, 0, 130,.9);
 }
 
 .about {
@@ -149,4 +144,8 @@ button {
 	text-transform: uppercase;
 	font-size: 125%;
 	font-style: italic;
+}
+
+textarea {
+  resize: vertical;
 }

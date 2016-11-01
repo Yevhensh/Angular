@@ -1,4 +1,4 @@
-<p class="school_search"> 
+<!-- <p class="school_search">
     <button <a ui-sref="teachers">Back to the teacher list</a></button>
 </p>
 
@@ -16,8 +16,36 @@
     <input ng-model ="teacherDetail.teacher.email" type="text" name="email" id="teacher_input" placeholder="mail@"/>
     <br/>Contact phone:<br/>
     <input ng-model ="teacherDetail.teacher.contact_phone" type="text" name="teacher_input" id="teacher_input" placeholder="123456789"/><br/>
-    
-    
+
+
     <input type="submit"  value="Save changes" id="teacher_save"/>
   </form>
+</div> -->
+
+<div class="item">
+    <h1>Teacher Edit</h1>
+    <md-button class="md-primary" ui-sref="teachers">Back to Teachers</md-button>
+    <form ng-submit="updateStudent()">
+        <h3>First Name:</h3>
+        <md-input-container class="md-block">
+            <input ng-model ="teacherDetail.teacher.first_name" type="text" name="fname" id="teacher_input" placeholder="teacher">
+        </md-input-container>
+
+        <h3>Last Name:</h3>
+        <md-input-container class="md-block">
+            <input ng-model ="teacherDetail.teacher.last_name" type="text" name="lname" id="teacher_input" placeholder="example@mail.com">
+        </md-input-container>
+
+        <h3>E-mail:</h3>
+        <md-input-container class="md-block">
+            <input ng-model ="teacherDetail.teacher.email" type="text" name="email" id="teacher_input" placeholder="mail@">
+        </md-input-container>
+
+        <h3>Contact phone:</h3>
+        <md-input-container class="md-block">
+            <input ng-model ="teacherDetail.teacher.contact_phone" type="text" name="teacher_input" id="teacher_input" placeholder="123456789">
+        </md-input-container>
+
+        <md-button type="submit" value="Save changes">Update</md-button>
+    </form>
 </div>

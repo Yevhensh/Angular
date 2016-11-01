@@ -1,4 +1,4 @@
-<h1><a ui-sref="teachers">Click to see the teacher List</a></h1>
+<!-- <h1><a ui-sref="teachers">Click to see the teacher List</a></h1>
 <h1 class="text-uppercase">Teacher Create</h1>
 
 <form ng-submit="addTeacher()">
@@ -42,4 +42,40 @@
 <div>
   <input type="submit" value="Save"/>
 </div>
-</form>
+</form> -->
+
+<div class="item">
+    <h1>Teacher Create</h1>
+    <md-button class="md-primary" ui-sref="teachers">Back to Teachers</md-button>
+    <form ng-submit="addStudent()" role="form">
+        <md-input-container class="md-block">
+          <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="teacher.first_name" placeholder="First Name">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="teacher.last_name" placeholder="Last Name">
+        </md-input-container>
+
+        <h3>E-mail:</h3>
+        <md-input-container class="md-block">
+          <input type="e-mail" ng-model="teacher.email" placeholder="asd@asa">
+        </md-input-container>
+
+        <h3>Contact Phone:</h3>
+        <md-input-container class="md-block">
+          <input type="text" ng-model="teacher.contact_phone" placeholder="1234567890">
+        </md-input-container>
+
+        <div class="menus" layout="row" layout-align="space-between center">
+          <md-input-container class="md-block">
+            <input type="number" min="1" ng-model="teacher.school_id" placeholder="School"/>
+          </md-input-container>
+
+          <md-input-container class="md-block">
+            <input type="number" min="1" ng-model="teacher.group_id" placeholder="Group">
+          </md-input-container>
+        </div>
+
+        <md-button type="submit" value="Save">Submit</md-button>
+    </form>
+</div>
