@@ -19,6 +19,7 @@
     <md-card ng-repeat="student in $ctrl.students | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list">
         <md-card-title>
             <md-card-title-text>
+                <span><img ng-src="{{student.avatar_url_thumb}}" height="70"></span>
                 <span class="md-headline">
                     <a ui-sref="studentDetail({studentId: student.id})"><p>Name: {{ student.first_name }}</p></a>
                 </span>

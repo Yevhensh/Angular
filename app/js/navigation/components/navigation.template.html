@@ -6,7 +6,8 @@
     <div class="main-nav">
         <section class="m-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
             <div>
-                <md-button ui-sref="main" class="m-button" >Home</md-button>
+                <md-button ui-sref="main" class="m-button">Home</md-button>
+                <md-button ng-if="isAuthenticated()" ui-sref="profile" class="m-button">Profile</md-button>
                 <md-button ui-sref="login" ng-if="!isAuthenticated()" class="m-button">Login</md-button>
                 <md-button ng-if="isAuthenticated()" ng-click="logout()" ui-sref="login" class="m-button">Logout</md-button>
                 <md-button ui-sref="contacts" class="m-button">About</md-button>
@@ -30,4 +31,5 @@
         </md-content>
     </div>
 </div>
+
 
