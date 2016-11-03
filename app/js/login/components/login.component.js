@@ -18,6 +18,7 @@ function LoginController($state, Auth, $window, messages) {
     Auth.login(user)
       .success(function(result){
           $window.location.href = '/main';
+          console.log(result)
       })
       .error(function(response) {
         ctrl.failResponse = true;

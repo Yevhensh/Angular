@@ -5,9 +5,9 @@ module.exports = angular
     .module('app.type.service', [])
     .factory('Type', Type);
 
-Type.$inject = ['$window'];
+Type.$inject = ['$window', 'jwtHelper'];
 
-function Type($window) {
+function Type($window, jwtHelper) {
 
     function getType(){
         var token = $window.localStorage.getItem('auth_token') ||
@@ -15,7 +15,8 @@ function Type($window) {
         var user = "";
         if (token != undefined) {
             var parsed = JSON.parse(token);
-            user = parsed.user.type;
+            var val = jwtHelper.decodeToken(parsed.auth_token);
+            user = val.type;
         }
         return user;
     }
