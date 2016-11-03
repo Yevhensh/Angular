@@ -14,7 +14,7 @@ module.exports = angular
         $scope.toggleLeft = buildToggler('left');
 
         $scope.logout = logout;
-        $scope.type = Type.type;
+        $scope.type = Type();
         $scope.isAuthenticated = isAuth;
         var auth = false;
 
@@ -33,13 +33,5 @@ module.exports = angular
                 $mdSidenav(componentId).toggle();
             }
         }
-        //getting height
-        // function setSideHeight(){
-        //     var h = document.body.offsetHeight.toString();
-        //     $scope.sheight = {
-        //         "min-height" : h + "px"
-        //     }
-        // }
-        //
-        // setSideHeight();
+
     }

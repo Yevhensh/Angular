@@ -24,6 +24,36 @@
         <md-sidenav class="md-sidenav-left m-side" md-component-id="left"
                     md-disable-backdrop md-whiteframe="4" flex="15">
             <md-content layout-margin>
+                <h3 class="md-title main-menu">MAIN MENU</h3>
+                <md-divider><div class="m-divide"></div></md-divider>
+                <div permissions="Admin" class="Admin">
+                    <md-button><p ui-sref="schoolView">School</p></md-button>
+                    <md-button><p ui-sref="levels">Levels</p></md-button>
+                    <md-button><p ui-sref="groups">Groups</p></md-button>
+                    <md-button><p ui-sref="teachers">Teachers</p></md-button>
+                    <md-button><p ui-sref="students">Students</p></md-button>
+                    <md-button><p ui-sref="parents">Parents</p></md-button>
+                    <md-button><p ui-sref="news">News</p></md-button>
+                    <md-button><p ui-sref="albums">Albums</p></md-button>
+                </div>
+                <div permissions="Teacher" class="Teacher">
+                    <md-button><p ui-sref="main">Group</p></md-button>
+                    <md-button><p ui-sref="reports">Reports</p></md-button>
+                    <md-button><p ui-sref="news">News</p></md-button>
+                    <md-button><p ui-sref="students">Students</p></md-button>
+                    <md-button><p ui-sref="main">Album</p></md-button>
+                    <md-button><p ui-sref="main">Chat</p></md-button>
+                </div>
+                <div permissions="Parent" class="Parent">
+                    <md-button><p ui-sref="students">Students</p></md-button>
+                    <md-button><p ui-sref="albums">Albums</p></md-button>
+                    <md-button><p ui-sref="main">Report</p></md-button>
+                    <md-button><p ui-sref="main">Chat</p></md-button>
+                </div>
+                <div permissions="Superadmin" class="Superadmin">
+                    <md-button><p ui-sref="admins">Admins</p></md-button>
+                    <md-button><p ui-sref="schools">Schools</p></md-button>
+                </div>
             </md-content>
         </md-sidenav>
         <md-content flex>
