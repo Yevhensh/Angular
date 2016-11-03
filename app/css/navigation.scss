@@ -1,5 +1,7 @@
 /* Navbar */
 
+@import url('https://fonts.google.com/specimen/Roboto+Slab?selection.family=Roboto');
+
 .wrapper-primary-image {
   position: absolute;
   width: 100%;
@@ -36,6 +38,36 @@
 .m-side {
   height: 100%;
   position: static;
+}
+
+.m-side {
+  .Admin {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+  }
+  .main-menu {
+    color: #004D40;
+    margin: 10px 20px 0 10px;
+    font-family: Roboto Helvetica sans-serif;
+  }
+  .m-divide {
+    margin-left: -10px;
+    width: 150px;
+  }
+  button {
+    color: #455A64;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+  }
+  p {
+    width: 100%;
+    text-align: center;
+  }
+
 }
 
 .over {
