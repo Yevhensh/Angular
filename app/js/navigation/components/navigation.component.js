@@ -8,9 +8,9 @@ module.exports = angular
         templateUrl: '/app/js/navigation/components/navigation.template.html'
     });
 
-    NavController.$inject = ['$scope', '$mdSidenav', 'Auth', 'Type'];
+    NavController.$inject = ['$scope', '$mdSidenav', '$window', 'Auth', 'Type'];
 
-    function NavController($scope, $mdSidenav, Auth, Type){
+    function NavController($scope, $mdSidenav, $window, Auth, Type){
         $scope.toggleLeft = buildToggler('left');
 
         $scope.logout = logout;
@@ -25,7 +25,7 @@ module.exports = angular
         }
         function logout() {
             Auth.logout();
-            Type();
+            $window.location.href = '/main';
         }
         
         function buildToggler(componentId) {
