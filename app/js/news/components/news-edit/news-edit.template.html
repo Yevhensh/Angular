@@ -8,23 +8,28 @@
             <p class="count">{{50 - newsDetail.news.title.length}} symbols left</p>
         </md-input-container>
 
+        <md-input-container class="md-block">
+        <h3>Image:</h3>
+            <input ng-model="newsDetail.news.image" type="text" name="image">
+        </md-input-container>
+
         <div class="menus" layout="row" layout-align="space-between center">
             <md-input-container class="md-block">
-            <h3>Type of news:</h3>
-            <md-select ng-model="newsDetail.news.viewable_type">
+            <label>Type:</label>
+            <md-select ng-model="newsDetail.news.imageable_type">
             <md-option ng-repeat="type in types" value="{{type}}">{{type}}</md-option>
             </md-select>
             </md-input-container>
 
             <md-input-container class="md-block">
-            <h3>Type's id of news:</h3>
-                <input ng-model="newsDetail.news.viewable_id" type="number" step="1">
+            <label>Type's id:</label>
+                <input ng-model="newsDetail.news.imageable_id" type="number" step="1">
             </md-input-container>
         </div>
 
         <md-input-container class="md-block">
         <h3>Description:</h3>
-            <input ng-model="newsDetail.news.description" type="text" name="description" ng-trim="false" maxlength="512">
+            <textarea ng-model="newsDetail.news.description" type="text" name="description" ng-trim="false" maxlength="512"></textarea>
             <p class="count">{{512 - newsDetail.news.description.length}} symbols left</p>
         </md-input-container>
         <md-button type="submit" value="Update">Update</md-button>

@@ -27,7 +27,7 @@ module.exports = angular
             Auth.logout();
             $window.location.href = '/main';
         }
-        
+
         function buildToggler(componentId) {
             return function() {
                 $mdSidenav(componentId).toggle();
