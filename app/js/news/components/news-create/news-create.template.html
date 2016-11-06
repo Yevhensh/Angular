@@ -15,8 +15,8 @@
 
         <md-input-container class="md-block" flex-gt-sm>
             <label>News description</label>
-            <textarea ui-tinymce ng-model="news.description"></textarea>
-            <!-- <p class="count">{{512 - news.description.length}} symbols left</p> -->
+            <textarea ui-tinymce ng-model="news.description" ng-trim="false" maxlength="512"></textarea>
+            <p class="count">{{512 - news.description.length}} symbols left</p>
         </md-input-container>
 
         <div class="menus" layout="row" layout-align="space-between center">
