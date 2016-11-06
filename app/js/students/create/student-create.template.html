@@ -56,6 +56,11 @@
     <h1>Student Create</h1>
     <md-button class="md-primary" ui-sref="students">Back to Schools</md-button>
     <form ng-submit="addStudent()" role="form">
+
+        <md-input-container class="md-block">
+        <input type='file' ng-model="student.avatar" base-sixty-four-input accept="image/*" maxsize="1000" placeholder="Student photo">
+        </md-input-container>
+
         <md-input-container class="md-block">
           <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="student.first_name" placeholder="First Name">
         </md-input-container>
