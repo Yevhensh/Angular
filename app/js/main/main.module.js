@@ -15,13 +15,16 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     teachersModule = require('../teachers/teachers.module.js'),
     mainTypeService = require('./services/type.service.js'),
     permissionsDirective = require('./directives/permissions.directive.js'),
-    profileModule = require('../profile/profile.module.js');
+    profileModule = require('../profile/profile.module.js'),
+    cable = require('../cable.js');
+    // cableModule = require('../cable/cable.module.js');
 
 
 module.exports = angular.module("app.main", [
   // modules
   require('angular-ui-router'),
   require('angular-resource'),
+  // require('actioncable'),
   mainComponent.name,
   navigationComponent.name,
   studentsComponent.name,
@@ -39,5 +42,7 @@ module.exports = angular.module("app.main", [
   teachersModule.name,
   mainTypeService.name,
   permissionsDirective.name,
-  profileModule.name
+  profileModule.name,
+  cable.name
+  // cableModule.name
 ]);

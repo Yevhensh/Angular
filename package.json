@@ -36,16 +36,18 @@
     "@angular/core": "^2.0.2",
     "@angular/platform-browser": "^2.0.2",
     "@angular/router": "*",
+    "actioncable": "^5.0.0",
     "angular": "^1.5.5",
+    "angular-actioncable": "^1.1.0",
     "angular-animate": "^1.5.8",
     "angular-aria": "^1.5.8",
     "angular-material": "^1.1.1",
-    "angular-ui-router": "^0.3.1",
     "angular-resource": "^1.5.8",
-    "sass-graph": "^2.1.1",
-    "sass": "0.5.0",
+    "angular-ui-router": "^0.3.1",
     "jquery": "2.1.0",
     "lodash": "^4.12.0",
-    "rxjs": "^5.0.0-rc.1"
+    "rxjs": "^5.0.0-rc.1",
+    "sass": "0.5.0",
+    "sass-graph": "^2.1.1"
   }
 }
