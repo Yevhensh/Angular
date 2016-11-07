@@ -1,9 +1,9 @@
 ActionCable = require('actioncable');
 
-var cable = ActionCable.createConsumer('wss://localhost:28080');
+var cable = ActionCable.createConsumer('ws://localhost:3000/cable');
 
 cable.subscriptions.create({ channel: "ChatChannel", room: "Best Room" }, {
-// 
+//
 //   received: (data) ->
 //   @appendLine(data)
 //

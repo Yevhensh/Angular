@@ -16,8 +16,8 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     mainTypeService = require('./services/type.service.js'),
     permissionsDirective = require('./directives/permissions.directive.js'),
     profileModule = require('../profile/profile.module.js'),
-    cable = require('../cable.js');
-    // cableModule = require('../cable/cable.module.js');
+    // cable = require('../cable.js');
+    cableModule = require('../cable/cable.module.js');
 
 
 module.exports = angular.module("app.main", [
@@ -43,6 +43,6 @@ module.exports = angular.module("app.main", [
   mainTypeService.name,
   permissionsDirective.name,
   profileModule.name,
-  cable.name
-  // cableModule.name
+  // cable.name
+  cableModule.name
 ]);

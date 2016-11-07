@@ -2,14 +2,17 @@
 
 ActionCable = require('actioncable');
 
-module.exports = angular.module('app.chat')
+module.exports = angular.module('app.chat.component', [])
   .component('chat',{
      templateUrl: './app/js/cable/cable.template.html',
      controller: ['$scope',
       function CableController($scope){
-        var cable = ActionCable.createConsumer('wss://localhost:3000/cable');
+        var cable = ActionCable.createConsumer('ws://localhost:3000/cable');
 
-        cable.subscriptions.create('AppearanceChannel', {
+        // cable.subscriptions.create('AppearanceChannel', {
+        //   // normal channel code goes here...
+        // });
+        cable.subscriptions.create('ChatChannel', {
           // normal channel code goes here...
         });
       }]
