@@ -14,8 +14,10 @@ module.exports = angular
         var getNews = function(){
             News.get(function(data){
                 ctrl.news = data.news;
+                $scope.desc = ctrl.news.description;
             });
         };
+
 
         ctrl.deleteNews = function (newsId){
             News.delete({ id: newsId });
