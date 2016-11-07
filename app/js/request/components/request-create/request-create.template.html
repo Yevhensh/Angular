@@ -1,0 +1,57 @@
+
+<h1>Apply To Join The Primary School Report System</h1>
+<div class="school_edit_form">
+  <p id="contactlink">Or <a href="contacts">contact us</a> per e-mail or phone for additional information</p>
+</div>
+
+<div class="school_edit_form">
+<form name="requestForm" ng-submit="addRequest()" id="usrform">
+  <h2>General School Information</h2>
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Name:</label>
+    <input type="text" ng-model="request.name" name="Name" id="school_input" required >
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Address:</label>
+    <input type="text" ng-model="request.address" name="Address" id="school_input" required>
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>E-mail:</label>
+    <input type="email" ng-model="request.email" name="E-mail" id="school_input" required>
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Contact phone:</label>
+    <input type="text" ng-model="request.contact_phone" name="Contact phone " id="school_input" required>
+  </md-input-container>
+
+  <h2>School Administrator Information</h2>
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>First Name:</label>
+    <input type="text" ng-model="request.admin_fname" name="Admin first name " id="school_input" required>
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Last Name:</label>
+    <input type="text" ng-model="request.admin_lname" name="Admin last name " id="school_input" required>
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>E-mail:</label>
+    <input type="email" ng-model="request.admin_email" name="Admin e-mail " id="school_input">
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Contact Phone:</label>
+    <input type="text" ng-model="request.admin_contact_phone" name="Admin contact phone " id="school_input">
+  </md-input-container>
+
+  <h3>Additional information / Comments:</h3>
+  <textarea rows="5" cols="50" ng-model="request.additionalinfo" name="Additional info" form="usrform" id="school_input" placeholder="Enter text here..."></textarea>
+  <md-button type="submit" value="Save" class="btn btn-primary" ng-disabled="requestForm.$invalid">Submit</md-button>
+  <md-button type="reset" class="md-raised md-warn">Reset</md-button>
+</form>
+</div>
+
