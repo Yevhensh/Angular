@@ -6,6 +6,10 @@ module.exports = angular
             name: 'attendances',
             url: '/attendances',
             template: '<attendance-list></attendance-list>'
+        }).state({
+            name: 'attendanceEdit',
+            url: '/attendances/:id/edit',
+            template: '<attendance-edit></attendance-edit>'
         });
         //     .state({
         //     name: 'groupCreate',

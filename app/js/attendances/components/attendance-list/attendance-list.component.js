@@ -7,20 +7,34 @@ module.exports = angular
         controller: AttendanceListController
     });
 
-AttendanceListController.$inject = ['Attendance', '$window', '$scope'];
+AttendanceListController.$inject = ['Attendance', '$window', '$scope', 'StudentResource'];
 
-function AttendanceListController(Attendance, $window, $scope) {
+function AttendanceListController(Attendance, $window, $scope, StudentResource) {
+    var ctrl = this;
+    $scope.myDate = new Date();
+
+    $scope.minDate = new Date(
+        $scope.myDate.getFullYear(),
+        $scope.myDate.getMonth() - 2,
+        $scope.myDate.getDate());
+
+    $scope.maxDate = new Date(
+        $scope.myDate.getFullYear(),
+        $scope.myDate.getMonth() + 2,
+        $scope.myDate.getDate());
+
+    $scope.onlyWeekendsPredicate = function(date) {
+        var day = date.getDay();
+        return day === 0 || day === 6;
+    };
+
+
     var getAttendances = function(){
         Attendance.get(function(data){
-            $scope.attendances = data;
+            $scope.attendances = data.attendances;
         });
     };
-
-    $scope.deleteAttendance = function (attendanceId){
-        Attendance.delete({ id: attendanceId });
-        getAttendances();
-        $window.location.href = '/levels'
-    };
-
+    
     getAttendances();
 }
+
