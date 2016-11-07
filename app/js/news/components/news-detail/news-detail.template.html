@@ -2,6 +2,7 @@
 <div class="item">
     <md-button class="md-primary" ui-sref="newss">Back to news</md-button>
     <md-card>
+    <img ng-src="{{$ctrl.item.news.image}}" class="md-card-image content-image" alt="{{$ctrl.item.news.title}} ">
         <md-card-title>
             <md-card-title-text class="item">
                 <span class="md-headline">{{$ctrl.item.news.title}}</span>
