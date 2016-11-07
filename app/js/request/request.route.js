@@ -2,9 +2,9 @@
 module.exports = angular
   .module('app.request.route', [])
   .config(function($stateProvider) {
-    $stateProvider.state({ 
-	  name: 'request',
-	  url: '/request', 
-	  template: '<request></request>'
+    $stateProvider.state({
+       name: 'requestCreate',
+  	   url: '/requests',
+  	   template: '<requestcreate></requestcreate>'
 	  });
   });
