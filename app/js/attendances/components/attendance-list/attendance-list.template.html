@@ -2,10 +2,9 @@
     <h1> Attendances </h1>
     <div layout="row" >
         <div class="wrapper-a-date">
-            <md-datepicker ng-model="myDate" class="a-date" md-placeholder="Enter date"></md-datepicker>
+            <md-datepicker ng-model="myDate" class="a-date" ng-change="getAttendances()" md-placeholder="Enter date"></md-datepicker>
         </div>
     </div>
-    {{ myDate }}
 
     <div class="item item-small" style="width:90%">
         {{ attendances }}
@@ -15,13 +14,12 @@
                 <md-card flex="90" class="l-card">
                     <md-content class="ful">
                         <md-list >
-                            <div ng-hide="true">{{ i=0 }}</div>
                             <md-list-item class="md-3-line l-item" ng-repeat="att in attendances" class="att-list">
                                 <div class="md-list-item-text">
                                     <p> Name: {{ att.student.first_name }}</p>
+                                    <p> Surname: {{ att.student.last_name }}</p>
                                 </div>
-                                <p>Presence : </p>
-                                <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="true" ng-false-value="false" class="md-warn">
+                                <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="true" ng-false-value="false" class="md-warn presence">
                                 </md-switch>
                                 <md-divider ng-if="!$last"></md-divider>
                             </md-list-item>
