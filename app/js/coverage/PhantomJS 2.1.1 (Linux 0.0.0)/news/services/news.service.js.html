@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for students/services/student.service.js</title>
+    <title>Code coverage report for news/services/news.service.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">students/services/</a> student.service.js
+      <a href="../../index.html">all files</a> / <a href="index.html">news/services/</a> news.service.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -62,8 +62,7 @@
 17
 18
 19
-20
-21</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+20</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -72,11 +71,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -86,22 +84,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var coreServices  = require('../../common/core.services.js');
 &nbsp;
 module.exports = angular
-    .module('app.students.resource', [
-      coreServices.name,
-      require('angular-resource')
+    .module('app.news.resource', [
+        coreServices.name,
+        require('angular-resource')
     ])
-    .factory('StudentResource', StudentResource);
+    .factory('News', News);
 &nbsp;
+    News.$inject = ['$resource','appSettings'];
 &nbsp;
-    StudentResource.$inject = ['$resource','appSettings'];
-    function StudentResource($resource, appSettings){
-            return $resource(appSettings.SERVER_PATH + 'students/:id', null,
+    function News($resource, appSettings){
+        return $resource(appSettings.SERVER_PATH + "news/:id", null,
             {
-              'update':{'method':'PUT'}
+                'update':{'method':'PUT'}
             }
-          );
+        );
     }
-&nbsp;
 &nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
