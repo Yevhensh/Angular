@@ -1,0 +1,20 @@
+<h1>Show page</h1>
+<div class="item">
+    <md-button class="md-primary" ui-sref="admins">Back to admins</md-button>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text class="item">
+                <span class="md-headline"><img ng-src="{{adminDetail.user.avatar_url_medium}}"></span>
+                <span class="md-headline">{{ adminDetail.admin.first_name }}</span>
+                <span class="md-headline">{{ adminDetail.admin.last_name }}</span>
+                <span class="md-subhead">Email: {{ adminDetail.user.email }}</span>
+                <span class="md-subhead">Phone: {{ adminDetail.user.contact_phone }}</span>
+                <span class="md-subhead">School: {{ adminDetail.user.school_id }}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="md-raised md-primary" ui-sref="adminEdit({adminId: adminDetail.user.id})">Edit</md-button>
+          <md-button class="md-raised md-warn" ng-click="deleteAdmin(adminDetail)">Delete</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
