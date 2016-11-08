@@ -8,19 +8,24 @@
 
     <div class="item item-small" style="width:90%">
         {{ attendances }}
+        {{ myDate }}
         <br></br>
         <div class="person-list">
             <div layout="row" class="height">
                 <md-card flex="90" class="l-card">
                     <md-content class="ful">
-                        <md-list >
-                            <md-list-item class="md-3-line l-item" ng-repeat="att in attendances" class="att-list">
-                                <div class="md-list-item-text">
-                                    <p> Name: {{ att.student.first_name }}</p>
-                                    <p> Surname: {{ att.student.last_name }}</p>
+                        <md-list class="a-list-container">
+                            <md-list-item class="md-3-line att-list" ng-repeat="att in attendances">
+                                <div layout="row" class="att-full">
+                                    <div class="md-list-item-text" flex="75">
+                                        <p> Name: {{ att.student.first_name }}</p>
+                                        <p> Surname: {{ att.student.last_name }}</p>
+                                    </div>
+                                    <h4 class="presence-text" flex="15"> Presence: </h4>
+                                    <md-switch ng-model="att.present" name="switcher" aria-label="Switch 2" ng-true-value="true" ng-change="switchPresence(att, att.present)"
+                                               ng-false-value="false" class="md-warn presence" flex="10">
+                                    </md-switch>
                                 </div>
-                                <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="true" ng-false-value="false" class="md-warn presence">
-                                </md-switch>
                                 <md-divider ng-if="!$last"></md-divider>
                             </md-list-item>
                         </md-list>

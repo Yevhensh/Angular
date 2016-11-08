@@ -12,13 +12,25 @@
     text-align: left;
   }
 
-  .att-list {
-    min-height: 5px;
-    max-height: 5px;
-    height: 5px;
+  .a-list-container {
+    padding: 0;
   }
 
-  .presence {
+  .att-list {
+    margin: 0;
 
+  }
+
+  .att-full {
+    width: 100%;
+  }
+
+  .presence-text {
+    line-height: 88px;
+    color: #616161;
+  }
+  .presence {
+    margin-top: 50px;
+    transform: scale(1.1, 1.1);
   }
 }

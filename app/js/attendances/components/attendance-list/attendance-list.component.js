@@ -1,5 +1,4 @@
 'use strict';
-
 module.exports = angular
     .module('app.attendanceList.component', [])
     .component('attendanceList', {
@@ -15,21 +14,14 @@ function AttendanceListController(Attendance, $window, $scope, StudentResource) 
     $scope.students = StudentResource.get();
 
     $scope.getAttendances = function(){
-        Attendance.get().$promise.then(function(data){
+        Attendance.get(function(data){
                 var att = getCurrentAttendances(data.attendances);
                 $scope.journal = data.attendances[0].journal_id;
-                var setAfterCreate = false;
                 if(att.length){
                     $scope.attendances = att;
                 }
                 else {
                     createAttendances();
-                    setAfterCreate = true;
-                }
-                return setAfterCreate;
-            }).then(function(set){
-                if(set) {
-                    setCreatedAttendances();
                 }
             });
     };
@@ -51,7 +43,10 @@ function AttendanceListController(Attendance, $window, $scope, StudentResource) 
         var students = $scope.students.students;
         var date = parseCurrentDate();
         for (var i=0; i<students.length; i++){
-            Attendance.save({time: date, present: false, student_id: students[i].id, journal_id: $scope.journal});
+            Attendance.save({time: date, present: false, student_id: students[i].id, journal_id: $scope.journal})
+                .$promise.then(function(){
+                    setCreatedAttendances();
+                });
         }
     };
 
@@ -66,11 +61,25 @@ function AttendanceListController(Attendance, $window, $scope, StudentResource) 
     var parseCurrentDate = function(){
         var year = $scope.myDate.getFullYear();
         var month = $scope.myDate.getMonth() + 1;
+        if (month < 10) {
+            month = "0" + month;
+        }
         var day = $scope.myDate.getDate();
         if (day < 10){
             day = "0" + day;
         }
         return year + "-" + month + "-" + day;
+    };
+
+    $scope.switchPresence = function(attendance, dat){
+        Attendance.get({ id: attendance.id }, function(dbAtt){
+            dbAtt.attendance.present = dat;
+            Attendance.update( {id:attendance.id}, dbAtt);
+            // console.log(attendance);
+            // console.log(dat);
+        });
+        console.log(attendance);
+        console.log(dat);
     };
 
     $scope.getAttendances();
