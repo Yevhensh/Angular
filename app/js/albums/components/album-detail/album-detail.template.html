@@ -6,14 +6,14 @@
             <md-card-title-text class="item">
                 <span class="md-headline">{{ albumDetail.album.title }}</span>
                 <span class="md-subhead">{{ albumDetail.album.created_at | date}}</span>
-                <span class="md-subhead">
-                  <img ng-src="{{albumDetail.album.image}}" alt="{{album.title}}"/>
-                </span>
+                <div ng-repeat="photos in albumDetail.photos" >
+                    <img  ng-src="{{photos.image_url_medium}}" >
+                </div>
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
-          <md-button class="md-raised md-primary" ui-sref="albumEdit({ albumId: albumDetail.album.id })">Edit</md-button>
-          <md-button class="md-raised md-warn" ng-click="deleteAlbum(albumDetail)">Delete</md-button>
+            <md-button class="md-raised md-primary" ui-sref="albumEdit({ albumId: albumDetail.album.id })">Edit</md-button>
+            <md-button class="md-raised md-warn" ng-click="deleteAlbum(albumDetail)">Delete</md-button>
         </md-card-actions>
     </md-card>
 </div>
