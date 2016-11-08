@@ -7,10 +7,14 @@ module.exports = angular
     controller: ParentCreateController
   });
 
-  ParentCreateController.$inject = ['$scope', '$state', 'ParentResource'];
+  ParentCreateController.$inject = ['$scope', '$state', 'ParentResource', 'School'];
 
-  function ParentCreateController ($scope, $state, ParentResource) {
+  function ParentCreateController ($scope, $state, ParentResource, School) {
     $scope.parent = new ParentResource();
+    
+    School.get(function(data){
+      $scope.schools = data.schools;
+    });
 
     $scope.addParent = function() {
       $scope.parent.$save(function() {
@@ -18,4 +22,3 @@ module.exports = angular
       });
     }
   }
-
