@@ -1,7 +1,7 @@
 var coreServices  = require('../../common/core.services.js');
 
 module.exports = angular
-    .module("app.news.resource", [
+    .module('app.news.resource', [
         coreServices.name,
         require('angular-resource')
     ])

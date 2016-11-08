@@ -28,7 +28,7 @@
         <md-card-content>
           <span class="md-subhead">{{news.imageable_type}}</span>
           <span class="md-subhead">{{news.imageable_id}}</span>
-          <p class="content" ng-bind-html="$ctrl.news.description"></p> <!-- {{news.description}}</p> -->
+          <p class="content">{{news.description}}</p>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
             <md-button class="md-raised md-primary" ui-sref="newsEdit({ id: news.id })">edit</md-button>

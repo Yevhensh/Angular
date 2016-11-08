@@ -1,4 +1,5 @@
 require('angular-ui-tinymce')
+require('angular-sanitize')
 
 var contactsComponent = require('../contacts/contacts.module.js'),
     studentsComponent = require('../students/students.module.js'),
