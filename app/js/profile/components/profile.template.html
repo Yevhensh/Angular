@@ -1,60 +1,74 @@
-<!-- <md-toolbar layout="row" layout-align="center center"> -->
-<h1>User Profile</h1>
-<!-- </md-toolbar> -->
-<md-whiteframe class="md-whiteframe-1dp" flex="100" layout="column" layout-wrap layout-align="center center">
-    <md-card>
-        <img ng-src="{{$ctrl.user.avatar_url_medium}}" class="md-card-image" alt="Avatar" accept="image/*" required maxsize="1000">
-        <p>Upload a different photo.</p>
-        <form>
-            <input type='file' ng-model='$ctrl.user.avatar' base-sixty-four-input>
-        </form>
-    </md-card>
-
-    <div>
-        <md-input-container class="md-icon-float md-block">
-            <p>
-                <md-icon class="material-icons md-light md-24">assignment_ind</md-icon>
-                Role:
-                <span ng-bind="$ctrl.user.type"></span>
-            </p>
-        </md-input-container>
-
+<div layout layout-align="center center">
+    <md-card layout="column" layout-align="center center" flex="50">
+        <h2>User profile</h2>
         <form name="userForm">
+
+        <div flex layout="row" layout-align="space-between">
+        <div layout-margin>
+            <md-card-avatar layout="column"  layout-align="center center">
+                <img ng-src="{{$ctrl.user.avatar_url_medium}}" class="md-card-image" alt="Avatar">
+                <choose-file layout="row" layout-align="right end">
+                    <input id="fileInput" type="file" class="ng-hide" ng-model="$ctrl.user.avatar" base-sixty-four-input accept="image/*" maxsize="1000">
+                    <md-input-container flex class="md-block">
+                        <input type="text" ng-model="fileName" disabled>
+                        <div class="hint">Select different avatar</div>
+                    </md-input-container>
+                    <div>
+                        <md-button id="uploadButton" class="md-fab md-mini">
+                            <md-icon class="material-icons">attach_file</md-icon>
+                        </md-button>
+                    </div>
+                </choose-file>
+            </md-card-avatar>
+        </div>
+
+        <div layout-margin>
+            <md-card-header-text>
+                <p>
+                    <md-icon class="material-icons md-light md-24">assignment_ind</md-icon>
+                    Role:
+                    <span ng-bind="$ctrl.user.type"></span>
+                </p>
+            </md-card-header-text>
+
             <md-input-container class="md-icon-float md-block">
                 <md-icon class="material-icons md-light md-24">face</md-icon>
                 <label>First Name</label>
                 <input ng-model="$ctrl.user.first_name" name="first_name" type="text" ng-required="true">
-                <span ng-show="userForm.first_name.$invalid" style="color: red">The first name is required.</span>
+                <div md-colors="{color:'accent'}" ng-show="userForm.first_name.$invalid">The first name is required.</div>
             </md-input-container>
 
             <md-input-container class="md-icon-float md-block">
                 <label>Last Name</label>
                 <md-icon class="material-icons md-light md-24">face</md-icon>
                 <input ng-model="$ctrl.user.last_name" name="last_name" type="text" ng-required="true">
-                <span ng-show="userForm.last_name.$invalid" style="color: red">The last name is required.</span>
+                <div md-colors="{color:'accent'}" ng-show="userForm.last_name.$invalid">The last name is required.</div>
             </md-input-container>
 
             <md-input-container class="md-block">
                 <label>Contact email</label>
                 <md-icon class="material-icons md-light md-24"> email </md-icon>
                 <input ng-model="$ctrl.user.email" name="email" ng-required="true" type="email">
-                <span style="color:red" ng-show="userForm.email.$dirty && userForm.email.$invalid">
-                <span ng-show="userForm.email.$error.required">Email is required.</span>
-                <span ng-show="userForm.email.$error.email">Invalid email address.</span>
+                <span ng-show="userForm.email.$dirty && userForm.email.$invalid"></span>
+                <div md-colors="{color:'accent'}" ng-show="userForm.email.$error.required">Email is required.</div>
+                <div md-colors="{color:'accent'}" ng-show="userForm.email.$error.email">Invalid email address.</div>
             </md-input-container>
 
-            <md-input-container md-no-float="" class="md-block">
+            <md-input-container class="md-icon-float md-block">
                 <label>Contact phone</label>
                 <md-icon class="material-icons md-light md-24"> phone </md-icon>
                 <input ng-model="$ctrl.user.contact_phone" name="phone" type="tel" ng-pattern="/^[0-9\+]{1,}[0-9\-]{3,15}$/">
-                <span ng-show="userForm.phone.$error.pattern" style="color: red">Not a valid number phone!</span>
+                <div md-colors="{color:'accent'}" ng-show="userForm.phone.$error.pattern">Not a valid number phone!</div>
             </md-input-container>
-
-            <div ng-hide="$ctr.responseMessage===''">
-                <span md-colors="{color:'accent'}">{{$ctrl.responseMessage}}</span>
-            </div>
-
-            <md-button class="md-raised md-primary" ng-click="$ctrl.submit()" ng-disabled="userForm.$invalid">Update profile</md-button>
+        </div>
+        </div>
         </form>
-      <div>
-</md-whiteframe>
+
+        <p  ng-hide="$ctr.responseMessage===''" md-colors="{color:'accent'}">{{$ctrl.responseMessage}}</p>
+
+        <md-card-actions layout-align="center center">
+            <md-button class="md-raised md-primary" ng-click="$ctrl.submit()" ng-disabled="userForm.$invalid" style="background-color: #00897B">Update profile</md-button>
+        </md-card-actions>
+
+    </md-card>
+</div>

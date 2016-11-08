@@ -17,16 +17,19 @@
 <md-button ui-sref="newsCreate" class="md-raised md-primary">News create</md-button>
 <div class="item" style="width:90%">
     <md-card ng-repeat="news in $ctrl.news | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list">
+    <img ng-src="{{news.image}}" class="md-card-image content-image" alt="{{news.title}} ">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">
-                    <a ui-sref="news({ id: news.id })"><p class="content">{{news.title}}</p></a>
+                    <a ui-sref="news({ id: news.id })">{{news.title}}</a>
                 </span>
-                <span class="md-subhead">{{news.viewable_type}}</span>
-                <span class="md-subhead">{{news.viewable_id}}</span>
-                <span class="md-subhead"><p class="content">{{news.description}}</p></span>
             </md-card-title-text>
         </md-card-title>
+        <md-card-content>
+          <span class="md-subhead">{{news.imageable_type}}</span>
+          <span class="md-subhead">{{news.imageable_id}}</span>
+          <p class="content" ng-bind-html="$ctrl.news.description"></p> <!-- {{news.description}}</p> -->
+        </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
             <md-button class="md-raised md-primary" ui-sref="newsEdit({ id: news.id })">edit</md-button>
             <md-button class="md-raised md-warn" ng-click="$ctrl.deleteNews(news.id)">delete</md-button>

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = angular
-    .module('app.newsCreate.component', [])
+    .module('app.newsCreate.component', ['ui.tinymce'])
     .component('newsCreate', {
         controller: NewsCreateController,
         templateUrl: '/app/js/news/components/news-create/news-create.template.html'

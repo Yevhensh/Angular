@@ -3,6 +3,7 @@
   height: 350px;
   margin: 20px;
   display: inline-block;
+  background-color: #e6fff3;
 }
 
 .items-list-small {
@@ -29,6 +30,11 @@
   width: 25%;
 }
 
+.item-login {
+  text-align: left;
+  width: 25%;
+}
+
 .content {
   max-height: 30px;
   width: 450px;
@@ -39,6 +45,10 @@
 
 .content-small {
   width: 225px;
+}
+
+.content-image {
+  height: 40%;
 }
 
 .count {

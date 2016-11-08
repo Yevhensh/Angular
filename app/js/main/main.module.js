@@ -1,3 +1,5 @@
+require('angular-ui-tinymce')
+
 var contactsComponent = require('../contacts/contacts.module.js'),
     studentsComponent = require('../students/students.module.js'),
     schoolsModule = require('../schools/schools.module.js'),

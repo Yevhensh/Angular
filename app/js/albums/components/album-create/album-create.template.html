@@ -4,7 +4,7 @@
     <form ng-submit="addAlbum()">
       <md-input-container class="md-block" flex-gt-sm>
           <label for="title">Title:</label>
-          <input ng-model ="album.title" type="text" name="title" id="title">
+          <input ng-model ="album.title" type="text" name="title" id="title" required>
       </md-input-container>
 
       <md-input-container class="md-block" flex-gt-sm>
@@ -16,8 +16,15 @@
           <md-input-container class="md-block">
           <label for="imageable_type">Belongs to:</label>
           <md-select ng-model ="album.imageable_type">
-          <md-option ng-repeat="type in types" value="{{type}}">{{type}}</md-option>
+            <md-option>School</md-option>
+            <md-option>Level</md-option>
+            <md-option>Group</md-option>
           </md-select>
+          </md-input-container>
+
+          <md-input-container class="md-block">
+              <label for="school_id">Belongs to school_id:</label>
+              <input ng-model ="album.school_id" type="number" step="1">
           </md-input-container>
 
           <md-input-container class="md-block">

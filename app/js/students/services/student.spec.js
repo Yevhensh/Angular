@@ -16,13 +16,4 @@ describe('Students factory ', function() {
     expect(StudentResource).toBeDefined();
   });
 
-
-  it ('should be correct', function() {
-    expect(1 + 1).toEqual(2);
-  });
-
-
 });
-
-
-
