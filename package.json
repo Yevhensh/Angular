@@ -45,6 +45,7 @@
     "angular-base64-upload": "^0.1.19",
     "angular-jwt": "^0.1.7",
     "angular-material": "^1.1.1",
+    "angular-module-sanitize": "^1.2.19",
     "angular-resource": "^1.5.8",
     "angular-sanitize": "^1.5.8",
     "angular-ui-router": "^0.3.1",
