@@ -7,13 +7,13 @@ module.exports = angular
     controller: TeacherCreateController
   });
 
-  TeacherCreateController.$inject = ['$scope', '$state', 'TeacherResource', 'School'];
+  TeacherCreateController.$inject = ['$scope', '$state', 'TeacherResource', 'Group'];
 
-  function TeacherCreateController ($scope, $state, TeacherResource, School) {
+  function TeacherCreateController ($scope, $state, TeacherResource, Group) {
     $scope.teacher = new TeacherResource();
 
-    School.get(function(data){
-      $scope.schools = data.schools;
+    Group.get(function(data){
+      $scope.groups = data.groups;
     });
 
     $scope.addTeacher = function() {

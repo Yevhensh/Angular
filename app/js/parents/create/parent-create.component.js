@@ -12,8 +12,8 @@ module.exports = angular
   function ParentCreateController ($scope, $state, ParentResource, School) {
     $scope.parent = new ParentResource();
     
-    School.get(function(data){
-      $scope.schools = data.schools;
+    Student.get(function(data){
+      $scope.students = data.students;
     });
 
     $scope.addParent = function() {
