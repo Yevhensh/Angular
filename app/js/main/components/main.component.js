@@ -51,6 +51,7 @@ function MainController($scope, Auth, Type, StudentResource, Attendance, Dailyre
         .then(function(res){
           Attendance.get(function(data){
             $scope.attendances = data;
+            $scope.myDate = new Date(data.attendances[0].time);
           })
         });
   };

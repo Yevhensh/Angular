@@ -2,7 +2,7 @@
 @import "./items.scss";
 @import "./persons.scss";
 @import "./style.scss";
-@import "./attendance.scss";
+@import "./dailyreports.scss";
 
 .main {
   .wrapper-a-date {
@@ -10,7 +10,14 @@
     text-align: center;
   }
 
+  .dailyreport {
+    float: right;
+    margin-right: 12%;
+    margin-bottom: 20px;
+  }
+
   .a-date {
+    text-align: center;
     margin: 0 auto;
   }
 

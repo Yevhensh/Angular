@@ -6,8 +6,28 @@ module.exports = angular
         controller: DailyreportListController
     });
 
-DailyreportListController.$inject = ['Dailyreport', '$window', '$scope'];
+DailyreportListController.$inject = ['Dailyreport', '$window', '$scope', 'StudentResource', 'Attendance'];
 
-function DailyreportListController(Dailyreport, $window, $scope, $state) {
+function DailyreportListController(Dailyreport, $window, $scope, StudentResource, Attendance) {
+    $scope.students = StudentResource.get();
 
+    var getAttend = function(){
+        Attendance.get(function(data){
+            $scope.attendances = data;
+            $scope.myDate = new Date(data.attendances[0].time);
+        }).$promise.then(function(res){
+            StudentResource.get(function(data){
+               $scope.students = data.students;
+            });
+            //     .$promise.then(function(res){
+            //     $scope.getCurrentAttendance($scope.students[0].id)
+            // });
+        })
+    };
+
+    getAttend();
+
+    // Dailyreport.get(function(data){
+    //
+    // })
 }

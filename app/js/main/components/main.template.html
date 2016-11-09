@@ -8,7 +8,11 @@
     </div>
 
     <div permissions="Teacher">
-        <h1>Teacher</h1>
+        <h1>Attendance report</h1>
+        <div class="wrapper-a-date">
+            <md-datepicker ng-model="myDate" class="a-date" md-placeholder="Enter date"></md-datepicker>
+        </div>
+        <md-button ui-sref="dailyreports" class="dailyreport">Daily Report</md-button>
         <div class="item item-small" style="width:90%">
             <div class="person-list">
                 <div layout="row" class="height">
