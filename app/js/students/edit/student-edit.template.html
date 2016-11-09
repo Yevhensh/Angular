@@ -19,20 +19,19 @@
           <input type="text" ng-model="studentDetail.student.last_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$">
         </md-input-container>
 
-        <div class="menus" layout="row" layout-align="space-between center">
-          <md-input-container class="md-block">
+            <md-input-container class="md-block">
           <h3>Age:</h3>
             <input type="number" min="2" max ="10" ng-model="studentDetail.student.age">
           </md-input-container>
+
           <md-input-container class="md-block">
-          <h3>School:</h3>
-              <input type="number" ng-model="studentDetail.student.school_id">
+            <label>Group</label>
+            <md-select ng-model="studentDetail.student.group_name" class="md-no-underline">
+                <md-option ng-repeat="group in groups" ng-value="group.name">
+                {{group.name}}
+              </md-option>
+            </md-select>
           </md-input-container>
-          <md-input-container class="md-block">
-          <h3>Group:</h3>
-              <input type="number" ng-model="studentDetail.student.group_id">
-          </md-input-container>
-        </div>
 
         <div><md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox></div>
         <div ng-show="isDisabled">
