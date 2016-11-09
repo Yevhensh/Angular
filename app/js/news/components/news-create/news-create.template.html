@@ -4,25 +4,32 @@
     <form ng-submit="addNews()" role="form">
         <md-input-container class="md-block" flex-gt-sm>
             <label>News title</label>
-            <input ng-model="news.title">
+            <input ng-model="news.title" ng-trim="false" maxlength="50">
+            <p class="count">{{50 - news.title.length}} symbols left</p>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>News image</label>
+            <input type='file' ng-model="news.image" base-sixty-four-input accept="image/*" maxsize="1000">
         </md-input-container>
 
         <md-input-container class="md-block" flex-gt-sm>
             <label>News description</label>
-            <input ng-model="news.description">
+            <textarea ui-tinymce ng-model="news.description" ng-trim="false" maxlength="512"></textarea>
+            <p class="count">{{512 - news.description.length}} symbols left</p>
         </md-input-container>
 
         <div class="menus" layout="row" layout-align="space-between center">
             <md-input-container class="md-block">
             <label>News type</label>
-            <md-select ng-model="news.viewable_type">
+            <md-select ng-model="news.imageable_type">
             <md-option ng-repeat="type in types" value="{{type}}">{{type}}</md-option>
             </md-select>
             </md-input-container>
 
             <md-input-container class="md-block">
                 <label>News type's id</label>
-                <input ng-model="news.viewable_id" type="number" step="1">
+                <input ng-model="news.imageable_id" type="number" step="1">
             </md-input-container>
         </div>
         <md-button type="submit" value="Save">Submit</md-button>

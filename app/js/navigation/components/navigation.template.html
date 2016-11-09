@@ -7,7 +7,7 @@
         <section class="m-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
             <div>
                 <md-button ui-sref="main" class="m-button">Home</md-button>
-                <md-button ng-if="isAuthenticated()" ui-sref="profile" class="m-button">Profile</md-button>
+                 <md-button ng-if="isAuthenticated()" ui-sref="profile" class="m-button"><img class="avatar-frame" alt="Profile" ng-src="{{user.avatar_url_thumb}}"/></md-button>
                 <md-button ui-sref="login" ng-if="!isAuthenticated()" class="m-button">Login</md-button>
                 <md-button ng-if="isAuthenticated()" ng-click="logout()" ui-sref="login" class="m-button">Logout</md-button>
                 <md-button ui-sref="contacts" class="m-button">About</md-button>
@@ -15,14 +15,13 @@
         </section>
         <div class="m-toggle">
             <md-button class="md-icon-button md-primary" style="width:50px;height:50px;" aria-label="Settings" ng-click="toggleLeft()">
-                <md-icon md-svg-icon="./app/img/menu.svg" style="width:30px;height:30px;"></md-icon>
+                <md-icon ng-show="isAuthenticated()" md-svg-icon="./app/img/menu.svg" style="width:30px;height:30px;"></md-icon>
             </md-button>
         </div>
     </div>
 
     <div layout="row" class="m-content">
-        <md-sidenav class="md-sidenav-left m-side" md-component-id="left"
-                    md-disable-backdrop md-whiteframe="4" flex="15">
+        <md-sidenav ng-show="isAuthenticated()" class="md-sidenav-left m-side" md-component-id="left" md-disable-backdrop md-whiteframe="4" flex="15">
             <md-content layout-margin>
                 <h3 class="md-title main-menu">MAIN MENU</h3>
                 <md-divider><div class="m-divide"></div></md-divider>
@@ -32,12 +31,12 @@
                     <md-button><p ui-sref="teachers">Teachers</p></md-button>
                     <md-button><p ui-sref="students">Students</p></md-button>
                     <md-button><p ui-sref="parents">Parents</p></md-button>
-                    <md-button><p ui-sref="news">News</p></md-button>
+                    <md-button><p ui-sref="newss">News</p></md-button>
                     <md-button><p ui-sref="albums">Albums</p></md-button>
                 </div>
                 <div permissions="Teacher" class="Teacher">
                     <md-button><p ui-sref="main">Reports</p></md-button>
-                    <md-button><p ui-sref="news">News</p></md-button>
+                    <md-button><p ui-sref="newss">News</p></md-button>
                     <md-button><p ui-sref="students">Students</p></md-button>
                     <md-button><p ui-sref="albums">Album</p></md-button>
                     <md-button><p ui-sref="main">Chat</p></md-button>
@@ -59,5 +58,3 @@
         </md-content>
     </div>
 </div>
-
-

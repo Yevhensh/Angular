@@ -1,54 +1,45 @@
-<!-- <p class="parent_search">
-    <button <a ui-sref="parents">Back to the parent list</a></button>
-</p>
-
-<h1>Create new parent</h1>
-
-<div class="parent_edit_form">
-  <form ng-submit="addParent()">
-    First Name:<br/>
-    <input ng-model ="parent.first_name" type="text" name="name" id="parent_input" placeholder="parent name"/><br/>
-    Last Name:<br/>
-    <input ng-model ="parent.last_name" type="text" name="name" id="parent_input" placeholder="parent name"/><br/>
-    E-mail:<br/>
-    <input ng-model ="parent.email" type="text" name="email" id="parent_input"
-    placeholder="example@mail.com"/><br/>
-    Contact phone:<br/>
-    <input ng-model ="parent.contact_phone" type="text" name="contact_phone" id="parent_input" placeholder="+123456789"/><br/>
-    School:<br/>
-    <input ng-model ="parent.school_id" type="number" name="school_id" id="parent_input"
-    placeholder="1"/><br/>
-    <input type="submit"  value="Create" id="parent_save"/>
-  </form>
-</div>
- -->
-
 <div class="item">
-    <h1>Teacher Create</h1>
+    <h1>Parent Create</h1>
     <md-button class="md-primary" ui-sref="parents">Back to Parents</md-button>
-    <form ng-submit="addStudent()" role="form">
+    <form ng-submit="addParent()" role="form">
         <md-input-container class="md-block">
-          <input type="text" ng-model ="parent.first_name" placeholder="First Name">
+          <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="parent.first_name" placeholder="First Name">
         </md-input-container>
 
         <md-input-container class="md-block">
-          <input type="text" ng-model ="parent.last_name" placeholder="Last Name">
+          <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="parent.last_name" placeholder="Last Name">
         </md-input-container>
 
         <h3>E-mail:</h3>
         <md-input-container class="md-block">
-          <input type="e-mail" ng-model ="parent.email" placeholder="example@mail.com">
+          <input type="e-mail" ng-model="parent.email" placeholder="asd@asa">
         </md-input-container>
 
         <h3>Contact Phone:</h3>
         <md-input-container class="md-block">
-          <input type="text" ng-model ="parent.contact_phone" placeholder="+123456789">
+          <input type="text" ng-model="parent.contact_phone" placeholder="+1234567890">
         </md-input-container>
 
-        <h3>School:</h3>
+        <h3>Password:</h3>
         <md-input-container class="md-block">
-          <input ng-model ="parent.school_id" type="number" name="school_id" id="parent_input" placeholder="1">
+          <input type="text" ng-model="parent.password">
         </md-input-container>
+
+        <h3>Password confirmation:</h3>
+        <md-input-container class="md-block">
+          <input type="text" ng-model="parent.password_confirmation">
+        </md-input-container>
+
+        <div class="menus" layout="row" layout-align="space-between center">
+          <md-input-container class="md-block">
+            <label>Student</label>
+            <md-select ng-model="parent.student_id" class="md-no-underline">
+                <md-option ng-repeat="student in students" ng-value="student.id">
+                {{student.name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
 
         <md-button type="submit" value="Save">Submit</md-button>
     </form>

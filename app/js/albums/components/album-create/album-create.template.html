@@ -1,0 +1,42 @@
+<div class="item">
+    <h1>Create the Album</h1>
+    <md-button class="md-primary" ui-sref="albums">Back to Albums</md-button>
+    <form ng-submit="addAlbum()">
+        <md-input-container class="md-block" flex-gt-sm>
+            <label for="title">Title:</label>
+            <input ng-model="album.title" type="text" name="title" id="title" required>
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label for="image">Image:</label>
+            <input ng-model="album.image" type="text" name="image" id="image">
+        </md-input-container>
+
+        <div class="menus" layout="row" layout-align="space-between center">
+            <md-input-container class="md-block">
+                <label for="imageable_type">Belongs to:</label>
+                <md-select ng-model="album.imageable_type">
+                    <md-option>School</md-option>
+                    <md-option>Level</md-option>
+                    <md-option>Group</md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label for="school_id">Belongs to school_id:</label>
+                <input ng-model="album.school_id" type="number" step="1">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label for="imageable_id">Belongs to id:</label>
+                <input ng-model="album.imageable_id" type="number" step="1">
+            </md-input-container>
+        </div>
+
+        <md-input-container class="md-block">
+            <input type="file" ng-model="album.photos" name="files" base-sixty-four-input multiple accept="image/*" maxsize="2000">
+        </md-input-container>
+
+        <md-button type="submit" value="Save">Save</md-button>
+    </form>
+</div>

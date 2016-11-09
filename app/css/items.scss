@@ -1,13 +1,13 @@
 .items-list {
   width: 500px;
-  height: 350px;
   margin: 20px;
   display: inline-block;
+  background-color: #e6fff3;
 }
 
 .items-list-small {
   width: 250px;
-  height: 250px;
+  height: 350px;
 }
 
 .items-list a {
@@ -29,6 +29,14 @@
   width: 25%;
 }
 
+.item-login {
+  text-align: left;
+  width: 25%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+}
+
 .content {
   max-height: 30px;
   width: 450px;
@@ -39,6 +47,10 @@
 
 .content-small {
   width: 225px;
+}
+
+.content-image {
+  height: 50%;
 }
 
 .count {

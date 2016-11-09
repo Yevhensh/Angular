@@ -17,6 +17,7 @@ module.exports = angular
             });
         };
 
+
         ctrl.deleteNews = function (newsId){
             News.delete({ id: newsId });
             getNews();

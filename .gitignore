@@ -1,8 +1,9 @@
 logs/*
 !.gitkeep
 node_modules/
-bower_components/
+./app/js/common/core.services.js
 tmp
 .DS_Store
 .idea
 npm-debug.log
+coverage/

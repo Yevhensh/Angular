@@ -8,7 +8,6 @@
                 <span class="md-headline">{{ studentDetail.student.first_name }}</span>
                 <span class="md-headline">{{ studentDetail.student.last_name }}</span>
                 <span class="md-subhead">Age: {{ studentDetail.student.age }}</span>
-                <span class="md-subhead">School: {{ studentDetail.student.school_id }}</span>
                 <span class="md-subhead">Group: {{ studentDetail.student.group_id }}</span>
             </md-card-title-text>
         </md-card-title>
@@ -23,9 +22,11 @@
             </div>
         </md-card-title-text>
         </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button class="md-raised md-primary" ui-sref="studentEdit({studentId: studentDetail.student.id})">Edit</md-button>
-          <md-button class="md-raised md-warn" ng-click="deleteStudent(studentDetail)">Delete</md-button>
-        </md-card-actions>
+        <div permissions="Admin">
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary" ui-sref="studentEdit({studentId: studentDetail.student.id})">Edit</md-button>
+            <md-button class="md-raised md-warn" ng-click="deleteStudent(studentDetail)">Delete</md-button>
+          </md-card-actions>
+        </div>
     </md-card>
 </div>

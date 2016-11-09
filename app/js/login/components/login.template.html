@@ -1,17 +1,15 @@
-<div layout layout-align="center center">
-    <section layout="column" flex layout-align="center center" class="login">
+<div layout-xs layout-align="center center">
+    <section class="item item-login">
         <md-card class="md-whiteframe-4dp">
-            <md-toolbar>
+            <md-toolbar style="background-color: #00897B">
                 <div layout="column" layout-padding layout-align="center center">
-                    <div>
-                        <md-icon class="logo">home</md-icon>
-                    </div>
+                    <div><md-icon class="logo">home</md-icon></div>
                     <div class="md-headline md-padding">Login</div>
                 </div>
             </md-toolbar>
             <md-card-content>
                 <form name="Login" ng-submit="$ctrl.login(ctrl.user)">
-                    <div ng-if="$ctrl.failResponse===true">{{$ctrl.failMessage}}</div>
+                    <div ng-if="$ctrl.failResponse===true" style="color: rgb(221,44,0)">{{$ctrl.failMessage}}</div>
                     <div>
                         <div ng-if="$ctrl.isInvalid"></div>
                     </div>
@@ -30,7 +28,7 @@
                     </div>
                     <md-input-container class="md-block">
                         <div layout="row" layout-align="center center">
-                            <md-button type="submit" class="md-raised md-primary" flex="50">Login</md-button>
+                            <md-button type="submit" class="md-raised md-primary" flex="50" style="background-color: #00897B">Login</md-button>
                         </div>
                     </md-input-container>
                 </form>

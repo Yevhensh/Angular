@@ -8,9 +8,9 @@ module.exports = angular
         templateUrl: '/app/js/navigation/components/navigation.template.html'
     });
 
-    NavController.$inject = ['$scope', '$mdSidenav', '$window', 'Auth', 'Type'];
+    NavController.$inject = ['$scope', '$mdSidenav', '$window', 'Auth', 'Type', 'UserService'];
 
-    function NavController($scope, $mdSidenav, $window, Auth, Type){
+    function NavController($scope, $mdSidenav, $window, Auth, Type, UserService){
         $scope.toggleLeft = buildToggler('left');
 
         $scope.logout = logout;
@@ -25,13 +25,24 @@ module.exports = angular
         }
         function logout() {
             Auth.logout();
-            $window.location.href = '/main';
+            $window.location.href = '/';
         }
-        
+
         function buildToggler(componentId) {
             return function() {
                 $mdSidenav(componentId).toggle();
             }
         }
 
+        if (isAuth()) {
+        $scope.setting = {
+            userId: Auth.getCurrentUserId()
+        };
+        $scope.user = UserService.getUser($scope.setting.userId).then(handleSuccess, handleError);
+
+        function handleSuccess(data) {
+            $scope.user = data.user;
+        }
+        function handleError(data) {ctrl.errors = response.data.errors;}
+    }
     }

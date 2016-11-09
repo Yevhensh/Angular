@@ -1,43 +1,8 @@
-<!-- <h1 class="text-uppercase">Parent List</h1>
-
-<div layout="row">
-  <md-button class="md-warn" ui-sref="parentCreate">Add New parent</md-button>
-  <md-input-container class="md-icon-float md-block">
-    <label>Search:</label>
-    <input ng-model="$ctrl.query" type="text">
-  </md-input-container>
-
-  <div>
-    <div layout="row">
-      <md-input-container style="margin-right: 10px;">
-        <label>Sort by:</label>
-        <md-select ng-model="$ctrl.orderProp">
-          <md-option value="first_name">Name</md-option>
-          <md-option value="group_id">Group</md-option>
-        </md-select>
-      </md-input-container>
-    </div>
-  </div>
-</div>
-
-<table>
-  <tr><th>Name</th><th>Surname</th></tr>
-  <tr ng-repeat="parent in $ctrl.parents | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-    <td>{{ parent.first_name }}</td>
-    <td>{{ parent.last_name }}</td>
-    <td>
-      <md-button md-no-ink class="md-primary" ui-sref="parentDetail({parentId: parent.id})">View</md-button>
-    </td>
-  </tr>
-</table>
- -->
-
 <div class="item" layout="row" layout-align="space-between">
   <md-input-container>
   <label>Sort by:</label>
     <md-select ng-model="$ctrl.orderProp">
       <md-option value="first_name">Name</md-option>
-      <md-option value="group_id">Group</md-option>
     </md-select>
   </md-input-container>
 
@@ -65,7 +30,6 @@
                       </div>
                       <div class="wrapper-button-persons">
                           <md-button ui-sref="parentDetail({parentId: parent.id})" class="button-persons">show</md-button>
-                          <!-- <md-button ui-sref="Put URL to Parent Edit Page class="button-persons">edit</md-button> -->
                       </div>
                       <md-divider ng-if="!$last"></md-divider>
                   </md-list-item>
