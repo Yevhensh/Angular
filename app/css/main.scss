@@ -2,11 +2,73 @@
 @import "./items.scss";
 @import "./persons.scss";
 @import "./style.scss";
+@import "./dailyreports.scss";
 
 .main {
+  .wrapper-a-date {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dailyreport {
+    float: right;
+    margin-right: 12%;
+    margin-bottom: 20px;
+  }
+
+  .a-date {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  .a-list-container {
+    padding: 0;
+  }
+
+  .att-list {
+    margin: 0;
+
+  }
+
+  .green {
+    color: green;
+  }
+
+  .red {
+    color: red;
+  }
+
+  ul {
+    line-height: 100%;
+    li {
+      div {
+        display: inline-block;
+        padding-right: 30px;
+        width: 70px;
+      }
+    }
+  }
+
+  .att-full {
+    width: 100%;
+  }
+
+  .presence-text {
+    line-height: 88px;
+    color: #616161;
+  }
+  .presence {
+    margin-top: 50px;
+    transform: scale(1.1, 1.1);
+  }
 }
 
 /* Footer */
 .footer {
   height: 1000px;
 }
+
