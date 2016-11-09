@@ -17,7 +17,7 @@
 <md-button ui-sref="newsCreate" class="md-raised md-primary">News create</md-button>
 <div class="item" style="width:90%">
     <md-card ng-repeat="news in $ctrl.news | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list">
-    <img ng-src="{{news.image}}" class="md-card-image content-image" alt="{{news.title}} ">
+    <img ng-src="{{news.image_url_medium}}" class="md-card-image content-image" alt="{{news.title}} ">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">

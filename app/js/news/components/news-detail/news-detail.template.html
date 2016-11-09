@@ -2,11 +2,13 @@
 <div class="item">
     <md-button class="md-primary" ui-sref="newss">Back to news</md-button>
     <md-card>
-    <img ng-src="{{$ctrl.item.news.image}}" class="md-card-image content-image" alt="{{$ctrl.item.news.title}} ">
+    <img ng-src="{{$ctrl.item.news.image_url_medium}}" class="md-card-image content-image" alt="{{$ctrl.item.news.title}} ">
         <md-card-title>
             <md-card-title-text class="item">
                 <span class="md-headline">{{$ctrl.item.news.title}}</span>
                 <span class="md-subhead">{{$ctrl.item.news.description}}</span>
+                <span class="md-subhead">{{$ctrl.item.users[0].first_name}}</span>
+                <span class="md-subhead">{{$ctrl.item.news.created_at}}</span>
             </md-card-title-text>
         </md-card-title>
     </md-card>
