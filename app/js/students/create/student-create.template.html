@@ -1,62 +1,7 @@
-<!-- <h1><a ui-sref="students">Click to see the Student List</a></h1>
-<h1 class="text-uppercase">Student Create</h1>
-
-<form ng-submit="addStudent()">
-<div>
-  <label for="first_name">First Name</label>
-  <div>
-    <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="student.first_name" placeholder="First Name"/>
-  </div>
-</div>
-<div>
-  <label for="last_name">Last Name</label>
-  <div>
-    <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="student.last_name" placeholder="Last Name"/>
-  </div>
-</div>
-<div>
-  <label for="age">Age</label>
-  <div>
-    <input type="number" min="2" max ="10" ng-model="student.age" placeholder="Age"/>
-  </div>
-</div>
-<div>
-  <label for="school_id">School</label>
-  <div>
-    <input type="number" min="1" ng-model="student.school_id" placeholder="School"/>
-  </div>
-</div>
-<div>
-  <label for="group_id">Group</label>
-  <div>
-    <input type="number" min="1" ng-model="student.group_id" placeholder="Group"/>
-  </div>
-</div>
-<md-checkbox ng-model="isDisabled" aria-label="Health Info:">Health Info:</md-checkbox>
-<div ng-show="isDisabled">
-  <div>
-    <label for="health_problem">Health Problem</label>
-    <div>
-      <input type="text" ng-model="student.health_info.health_problem" placeholder="Health Problem"/>
-    </div>
-  </div>
-  <div>
-    <label for="description">Description</label>
-    <div>
-      <input type="text" ng-model="student.health_info.description" placeholder="Description"/>
-    </div>
-  </div>
-</div>
-<div>
-  <input type="submit" value="Save"/>
-</div>
-</form> -->
-
 <div class="item">
     <h1>Student Create</h1>
-    <md-button class="md-primary" ui-sref="students">Back to Schools</md-button>
+    <md-button class="md-primary" ui-sref="students">Back to Students</md-button>
     <form ng-submit="addStudent()" role="form">
-
         <md-input-container class="md-block">
         <input type='file' ng-model="student.avatar" base-sixty-four-input accept="image/*" maxsize="1000" placeholder="Student photo">
         </md-input-container>
@@ -69,17 +14,18 @@
           <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="student.last_name" placeholder="Last Name">
         </md-input-container>
 
-        <div class="menus" layout="row" layout-align="space-between center">
           <md-input-container class="md-block">
             <input type="number" min="2" max ="10" ng-model="student.age" placeholder="Age">
           </md-input-container>
+
           <md-input-container class="md-block">
-            <input type="number" min="1" ng-model="student.school_id" placeholder="School">
+            <label>Group</label>
+            <md-select ng-model="student.group_id" class="md-no-underline">
+                <md-option ng-repeat="group in groups" ng-value="group.id">
+                {{group.name}}
+              </md-option>
+            </md-select>
           </md-input-container>
-          <md-input-container class="md-block">
-            <input type="number" min="1" ng-model="student.group_id" placeholder="Group">
-          </md-input-container>
-        </div>
 
         <div><md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox></div>
         <div ng-show="isDisabled">

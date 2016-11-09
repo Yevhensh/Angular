@@ -7,13 +7,17 @@ module.exports = angular
     controller: StudentCreateController
   });
 
-  StudentCreateController.$inject = ['$scope', '$state',  'StudentResource'];
+  StudentCreateController.$inject = ['$scope', '$state', 'StudentResource', 'Group'];
 
-  function StudentCreateController ($scope, $state,  StudentResource) {
+  function StudentCreateController ($scope, $state,  StudentResource, Group) {
     $scope.student = new StudentResource();
 
+    Group.get(function(data){
+      $scope.groups = data.groups;
+    });
+
     $scope.addStudent = function() {
-      $scope.student.$save(function() {
+        $scope.student.$save(function() {
         $state.go('students');
       });
     }
