@@ -1,15 +1,15 @@
 'use strict';
 
 module.exports = angular
-    .module('app.newsList.component', ['ngSanitize'])
+    .module('app.newsList.component', [])
     .component('newsList', {
         templateUrl: '/app/js/news/components/news-list/news-list.template.html',
         controller: NewsListController
     });
 
-    NewsListController.$inject = ['News', '$window', '$sce'];
+    NewsListController.$inject = ['News', '$window'];
 
-    function NewsListController(News, $window, $sce) {
+    function NewsListController(News, $window) {
         var ctrl = this;
         var getNews = function(){
             News.get(function(data){
