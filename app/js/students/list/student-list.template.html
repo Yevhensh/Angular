@@ -2,9 +2,9 @@
   <md-input-container>
   <label>Sort by:</label>
     <md-select ng-model="$ctrl.orderProp">
-      <!-- <md-option permissions="Admin" value="group_id">Group</md-option> -->
-      <md-option value="age">Age</md-option>
+      <md-option value="group_id">Group</md-option>
       <md-option value="first_name">Alphabetical</md-option>
+      <md-option value="age">Age</md-option>
     </md-select>
   </md-input-container>
 
@@ -14,9 +14,9 @@
   </md-input-container>
 </div>
 <div class="person-list">
-  <!-- <div permissions="Admin"> -->
+  <div permissions="Admin">
     <md-button ui-sref="studentCreate" class="md-raised md-primary">Add New Student</md-button>
-  <!-- </div> -->
+  </div>
     <div layout="row" class="height">
         <md-card flex="70" class="l-card">
             <md-toolbar class="md-theme-light">
