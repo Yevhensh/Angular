@@ -1,48 +1,19 @@
-<!-- <p class="teacher_search">
-    <button <a ui-sref="teachers">Back to the teacher list</a></button>
-</p>
-
-<div class="borderlist">
-
-  <p><span>First name:</span></p>
-    <div class="border_teacher">
-      <p>{{ teacherDetail.teacher.first_name }}</p>
-    </div><p><span>Last name:</span></p>
-    <div class="border_teacher">
-      <p>{{ teacherDetail.teacher.last_name }}</p>
-    </div>
-  <p><span>E-mail:</span></p>
-    <div class="border_teacher">
-      <p>{{ teacherDetail.teacher.email }}</p>
-    </div>
-    <p><span>Contact phone:</span></p>
-    <div class="border_teacher">
-      <p>{{ teacherDetail.teacher.contact_phone }}</p>
-    </div>
-  <p class="teacher_search">
-    <button <a ui-sref="teacherEdit({ teacherId: teacherDetail.teacher.id })" id="teacher_button">Edit teacher</a></button>
-  </p>
-
-  <p class="teacher_search">
-    <button <a ng-click="deleteteacher(teacherDetail)" id="teacher_button">Delete teacher</a></button>
-  </p>
-</div> -->
 <h1>Show page</h1>
 <div class="item">
   <md-button class="md-primary" ui-sref="teachers">Back to Teachers</md-button>
   <md-card>
     <md-card-title>
       <md-card-title-text class="item">
-        <span class="md-headline"><img ng-src="{{studentDetail.student.avatar_url_medium}}"></span>
-        <span class="md-headline">{{ teacherDetail.teacher.first_name }}</span>
-        <span class="md-headline">{{ teacherDetail.teacher.last_name }}</span>
-        <span class="md-subhead">E-mail: {{ teacherDetail.teacher.email }}</span>
-        <span class="md-subhead">Contact phone: {{ teacherDetail.teacher.contact_phone }}</span>
+        <span class="md-headline"><img ng-src="{{teacherDetail.user.avatar_url_medium}}"></span>
+        <span class="md-headline">{{ teacherDetail.user.first_name }}</span>
+        <span class="md-headline">{{ teacherDetail.user.last_name }}</span>
+        <span class="md-subhead">E-mail: {{ teacherDetail.user.email }}</span>
+        <span class="md-subhead">Contact phone: {{ teacherDetail.user.contact_phone }}</span>
       </md-card-title-text>
     </md-card-title>
     <md-card-actions layout="row" layout-align="end center">
-      <md-button class="md-raised md-primary" ui-sref=ui-sref="teacherEdit({ teacherId: teacherDetail.teacher.id })">Edit</md-button>
-      <md-button class="md-raised md-warn" ng-click="deleteteacher(teacherDetail)">Delete</md-button>
+      <md-button class="md-raised md-primary" ui-sref="teacherEdit({ teacherId: teacherDetail.user.id })">Edit</md-button>
+      <md-button class="md-raised md-warn" ng-click="deleteTeacher(teacherDetail)">Delete</md-button>
     </md-card-actions>
   </md-card>
 </div>

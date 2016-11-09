@@ -15,14 +15,13 @@
         </section>
         <div class="m-toggle">
             <md-button class="md-icon-button md-primary" style="width:50px;height:50px;" aria-label="Settings" ng-click="toggleLeft()">
-                <md-icon md-svg-icon="./app/img/menu.svg" style="width:30px;height:30px;"></md-icon>
+                <md-icon ng-show="isAuthenticated()" md-svg-icon="./app/img/menu.svg" style="width:30px;height:30px;"></md-icon>
             </md-button>
         </div>
     </div>
 
     <div layout="row" class="m-content">
-        <md-sidenav class="md-sidenav-left m-side" md-component-id="left"
-                    md-disable-backdrop md-whiteframe="4" flex="15">
+        <md-sidenav ng-show="isAuthenticated()" class="md-sidenav-left m-side" md-component-id="left" md-disable-backdrop md-whiteframe="4" flex="15">
             <md-content layout-margin>
                 <h3 class="md-title main-menu">MAIN MENU</h3>
                 <md-divider><div class="m-divide"></div></md-divider>

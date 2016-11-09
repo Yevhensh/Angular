@@ -38,10 +38,11 @@ module.exports = angular
         $scope.setting = {
             userId: Auth.getCurrentUserId()
         };
-        $scope.user = UserService.getUser($scope.setting.userId).then(handleSuccess);
+        $scope.user = UserService.getUser($scope.setting.userId).then(handleSuccess, handleError);
 
         function handleSuccess(data) {
             $scope.user = data.user;
         }
+        function handleError(data) {ctrl.errors = response.data.errors;}
     }
     }
