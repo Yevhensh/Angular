@@ -1,62 +1,25 @@
-<!-- <h1><a ui-sref="parents">Click to see the parent List</a></h1>
-
-<h1 class="text-uppercase">parent Edit</h1>
-
-<form class="form-horizontal" role="form" ng-submit="updateParent()">
-<div class="form-group">
-  <label for="first_name" class="col-sm-2 control-label">First Name</label>
-  <div class="col-sm-10">
-    <input type="text" ng-model="parentDetail.parent.first_name" class="form-control" id="first_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{parentDetail.parent.first_name}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="last_name" class="col-sm-2 control-label">Last Name</label>
-  <div class="col-sm-10">
-    <input type="text" ng-model="parentDetail.parent.last_name" class="form-control" id="last_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$" value="{{parentDetail.parent.last_name}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="email" class="col-sm-2 control-label">E-mail</label>
-  <div class="col-sm-10">
-    <input type="email" ng-model="parentDetail.parent.email" class="form-control" id="email" value="{{parentDetail.parent.email}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <label for="contact_phone" min="1" class="col-sm-2 control-label">Phone</label>
-  <div class="col-sm-10">
-    <input type="text" ng-model="parentDetail.parent.contact_phone" class="form-control" id="contact_phone" value="{{parentDetail.parent.contact_phone}}"/>
-  </div>
-</div>
-<div class="form-group">
-  <div class="col-sm-offset-2 col-sm-10">
-    <input type="submit" class="btn btn-primary" value="Update"/>
-  </div>
-</div>
-</form>
- -->
-
 <div class="item">
     <h1>Parent Edit</h1>
     <md-button class="md-primary" ui-sref="parents">Back to Parents</md-button>
     <form ng-submit="updateParent()">
         <md-input-container class="md-block">
         <h3>First Name:</h3>
-          <input type="text" ng-model="parentDetail.parent.first_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$">
+          <input type="text" ng-model="parentDetail.user.first_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$">
         </md-input-container>
 
         <md-input-container class="md-block">
         <h3>Last Name:</h3>
-          <input type="text" ng-model="parentDetail.parent.last_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$">
+          <input type="text" ng-model="parentDetail.user.last_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$">
         </md-input-container>
 
         <md-input-container class="md-block">
         <h3>E-mail:</h3>
-          <input type="email" ng-model="parentDetail.parent.email">
+          <input type="email" ng-model="parentDetail.user.email">
         </md-input-container>
 
         <md-input-container class="md-block">
         <h3>Phone:</h3>
-          <input type="text" ng-model="parentDetail.parent.contact_phone">
+          <input type="text" ng-model="parentDetail.user.contact_phone">
         </md-input-container>
 
         <md-button type="submit" value="Update">Update</md-button>
