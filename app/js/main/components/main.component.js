@@ -8,8 +8,9 @@ module.exports = angular
     transclude: true
   });
 
-MainController.$inject = ['$scope', 'Auth', 'Type'];
-function MainController($scope, Auth, Type){
+MainController.$inject = ['$scope', 'Auth', 'Type', 'StudentResource', 'Attendance', 'Dailyreport'];
+function MainController($scope, Auth, Type, StudentResource, Attendance, Dailyreport){
+  // login actions
   $scope.currentNavItem = 'home';
   $scope.googleUrl = 'http://google.com';
   $scope.logout = logout;
@@ -29,4 +30,30 @@ function MainController($scope, Auth, Type){
     Auth.logout();
   }
   setType();
+
+  $scope.switchPresence = function(attendance, dat){
+    Attendance.get({ id: attendance.id }, function(dbAtt){
+      dbAtt.attendance.present = dat;
+      console.log("report_times" + dbAtt.attendance.report_times);
+      $scope.upd = Attendance.update( {id:attendance.id}, dbAtt).$promise
+        .then(function(res){
+          Attendance.get(function(data){
+            console.log("im in attendances");
+            $scope.attendances = data;
+          })
+        });
+    })
+  };
+  // user teacher actions
+  $scope.students = StudentResource.get();
+  var getCreateDailyReports = function(){
+    Dailyreport.save({day: ""}).$promise
+        .then(function(res){
+          Attendance.get(function(data){
+            $scope.attendances = data;
+          })
+        });
+  };
+
+  getCreateDailyReports();
 }

@@ -7,15 +7,16 @@
     </div>
 
     <div class="item item-small" style="width:90%">
+        {{ upd }}
+        <br></br>
         {{ attendances }}
         {{ myDate }}
-        <br></br>
         <div class="person-list">
             <div layout="row" class="height">
                 <md-card flex="90" class="l-card">
                     <md-content class="ful">
                         <md-list class="a-list-container">
-                            <md-list-item class="md-3-line att-list" ng-repeat="att in attendances">
+                            <md-list-item class="md-3-line att-list" ng-repeat="att in attendances.attendances">
                                 <div layout="row" class="att-full">
                                     <div class="md-list-item-text" flex="75">
                                         <p> Name: {{ att.student.first_name }}</p>
