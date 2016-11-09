@@ -47,7 +47,7 @@
 <div class="item">
     <h1>Teacher Create</h1>
     <md-button class="md-primary" ui-sref="teachers">Back to Teachers</md-button>
-    <form ng-submit="addStudent()" role="form">
+    <form ng-submit="addTeacher()" role="form">
         <md-input-container class="md-block">
           <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="teacher.first_name" placeholder="First Name">
         </md-input-container>
@@ -66,13 +66,24 @@
           <input type="text" ng-model="teacher.contact_phone" placeholder="1234567890">
         </md-input-container>
 
+        <h3>Password:</h3>
+        <md-input-container class="md-block">
+          <input type="text" ng-model="teacher.password" placeholder="1234567890">
+        </md-input-container>
+
+        <h3>Password confirmation:</h3>
+        <md-input-container class="md-block">
+          <input type="text" ng-model="teacher.password_confirmation" placeholder="1234567890">
+        </md-input-container>
+
         <div class="menus" layout="row" layout-align="space-between center">
           <md-input-container class="md-block">
-            <input type="number" min="1" ng-model="teacher.school_id" placeholder="School"/>
-          </md-input-container>
-
-          <md-input-container class="md-block">
-            <input type="number" min="1" ng-model="teacher.group_id" placeholder="Group">
+            <label>Group</label>
+            <md-select ng-model="teacher.group_id" class="md-no-underline">
+                <md-option ng-repeat="group in groups" ng-value="group.id">
+                {{group.name}}
+              </md-option>
+            </md-select>
           </md-input-container>
         </div>
 

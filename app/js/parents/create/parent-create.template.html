@@ -45,10 +45,26 @@
           <input type="text" ng-model ="parent.contact_phone" placeholder="+123456789">
         </md-input-container>
 
-        <h3>School:</h3>
+        <h3>Password:</h3>
         <md-input-container class="md-block">
-          <input ng-model ="parent.school_id" type="number" name="school_id" id="parent_input" placeholder="1">
+          <input type="text" ng-model="parent.password">
         </md-input-container>
+
+        <h3>Password confirmation:</h3>
+        <md-input-container class="md-block">
+          <input type="text" ng-model="parent.password_confirmation">
+        </md-input-container>
+
+        <div class="menus" layout="row" layout-align="space-between center">
+          <md-input-container class="md-block">
+            <label>Student</label>
+            <md-select ng-model="parent.student_id" class="md-no-underline">
+                <md-option ng-repeat="student in students" ng-value="student.id">
+                {{student.last_name}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+        </div>
 
         <md-button type="submit" value="Save">Submit</md-button>
     </form>
