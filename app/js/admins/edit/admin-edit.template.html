@@ -1,0 +1,38 @@
+<div class="item">
+  <h1 class="text-uppercase">Admin Edit</h1>
+  <md-button class="md-primary" ui-sref="admins">Back to Admins</md-button>
+  <form ng-submit="updateAdmin()" role="form">
+    {{adminDetail.admins.id}} {{users}}
+
+      <md-input-container class="md-block">
+      <input type='file' ng-model="adminDetail.admin.avatar" base-sixty-four-input accept="image/*" maxsize="1000" placeholder="Admin photo">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="adminDetail.user.first_name" ng-value="adminDetail.user.first_name" placeholder="First Name">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="adminDetail.user.last_name" ng-value="adminDetail.user.last_name" placeholder="Last Name">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <input type="email" ng-model="adminDetail.user.email" ng-model="adminDetail.user.email"placeholder="E-mail">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <input type="text" ng-model="adminDetail.user.contact_phone" ng-value="adminDetail.user.contact_phone" placeholder="Contact phone">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+          <label>School</label>
+          <md-select ng-model="aadminDetail.user.school_id" class="md-no-underline">
+            <md-option ng-repeat="school in schools" ng-value="school.id">
+            {{school.name}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+        <md-button type="submit" value="Update">Update</md-button>
+  </form>
+</div>
