@@ -14,7 +14,7 @@
 </div>
 
 <h1> News </h1>
-<md-button ui-sref="newsCreate" class="md-raised md-primary">News create</md-button>
+<md-button ui-sref="newsCreate" class="md-raised md-primary stylecolor">News create</md-button>
 <div class="item" style="width:90%">
     <md-card ng-repeat="news in $ctrl.news | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list">
     <img ng-src="{{news.image_url_medium}}" class="md-card-image content-image" alt="{{news.title}} ">
@@ -31,7 +31,7 @@
           <p class="content">{{news.description}}</p>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-raised md-primary" ui-sref="newsEdit({ id: news.id })">edit</md-button>
+            <md-button class="md-raised md-primary stylecolor" ui-sref="newsEdit({ id: news.id })">edit</md-button>
             <md-button class="md-raised md-warn" ng-click="$ctrl.deleteNews(news.id)">delete</md-button>
         </md-card-actions>
     </md-card>

@@ -2,7 +2,6 @@
     <h1>Edit the group</h1>
     <md-button class="md-primary" ui-sref="groups">Back to groups</md-button>
     <form ng-submit="updateGroup()">
-        {{ groupDetail.group }}
         <md-input-container class="md-block" type="text" name="title">
             <h3>Name:</h3>
             <input ng-model="groupDetail.group.name">

@@ -14,7 +14,7 @@
 </div>
 
 <h1> Levels </h1>
-<md-button ui-sref="levelCreate" class="md-raised md-primary">Level create</md-button>
+<md-button ui-sref="levelCreate" class="md-raised md-primary stylecolor">Level create</md-button>
 <div class="item item-small" style="width:90%">
     <md-card ng-repeat="level in $ctrl.levels | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list items-list-small">
         <md-card-title>
@@ -26,7 +26,7 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-raised md-primary" ui-sref="levelEdit({ id: level.id })">edit</md-button>
+            <md-button class="md-raised md-primary stylecolor" ui-sref="levelEdit({ id: level.id })">edit</md-button>
             <md-button class="md-raised md-warn" ng-click="$ctrl.deleteLevel(level.id)">delete</md-button>
         </md-card-actions>
     </md-card>
