@@ -7,20 +7,32 @@ module.exports = angular
         controller: NewsEditController
     });
 
-    NewsEditController.$inject = ['News','$scope', '$state', '$stateParams'];
+NewsEditController.$inject = ['News','$scope', '$state', '$stateParams', 'Group', 'Level', 'School'];
 
-    function NewsEditController (News, $scope, $state, $stateParams) {
-        $scope.updateNews = function() {
-            $scope.newsDetail.$update({ id: $stateParams.id }, function() {
-                $state.go('newss');
-            });
-        };
+function NewsEditController (News, $scope, $state, $stateParams, Group, Level, School) {
+    Group.get(function(data){
+      $scope.groups = data.groups;
+    });
 
-        $scope.loadNews = function() {
-            $scope.newsDetail = News.get({ id: $stateParams.id });
-        };
+    Level.get(function(data){
+      $scope.levels = data.levels;
+    });
 
-        $scope.types = ["Group","Level","School"];
+    School.get(function(data){
+      $scope.schools = data.schools;
+    });
 
-        $scope.loadNews();
-    }
+    $scope.updateNews = function() {
+        $scope.newsDetail.$update({ id: $stateParams.id }, function() {
+            $state.go('newss');
+        });
+    };
+
+    $scope.loadNews = function() {
+        $scope.newsDetail = News.get({ id: $stateParams.id });
+    };
+
+    $scope.types = ["Group","Level","School"];
+
+    $scope.loadNews();
+}

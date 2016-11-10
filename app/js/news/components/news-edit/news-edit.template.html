@@ -10,7 +10,7 @@
 
         <md-input-container class="md-block">
         <h3>Image:</h3>
-            <input ng-model="newsDetail.news.image" type="text" name="image">
+             <input ng-model="newsDetail.news.image" type="text" name="image">
         </md-input-container>
 
         <div class="menus" layout="row" layout-align="space-between center">
@@ -22,8 +22,12 @@
             </md-input-container>
 
             <md-input-container class="md-block">
-            <label>Type's id:</label>
-                <input ng-model="newsDetail.news.imageable_id" type="number" step="1">
+            <label>{{newsDetail.news.imageable_type}} name:</label>
+            <md-select ng-switch="newsDetail.news.imageable_type" ng-model="newsDetail.news.imageable_id" class="md-no-underline">
+                <md-option ng-switch-when="Group" ng-repeat="group in groups" ng-value="group.id">{{group.name}}</md-option>
+                <md-option ng-switch-when="Level" ng-repeat="level in levels" ng-value="level.id">{{level.name}}</md-option>
+                <md-option ng-switch-when="School" ng-repeat="school in schools" ng-value="school.id">{{school.name}}</md-option>
+            </md-select>
             </md-input-container>
         </div>
 
