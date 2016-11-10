@@ -40,7 +40,6 @@
     <input ng-model="$ctrl.query">
   </md-input-container>
 </div>
-
 <h1> Groups </h1>
 <md-button ui-sref="groupCreate" class="md-raised md-primary">Group create</md-button>
 <div class="item item-small" style="width:90%">
@@ -48,7 +47,7 @@
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">
-                <a ui-sref=ui-sref="group({ id: group.id })"><p class="content content-small">{{group.name}}</p></a>
+                <a ui-sref="group({ id: group.id })"><p class="content content-small">{{group.name}}</p></a>
                 </span>
                 <span class="md-subhead">Students count:</span>
             </md-card-title-text>

@@ -43,20 +43,16 @@ function ProfileController(userResource,UserService,Auth) {
     ctrl.user = data.user;
   };
   function handleError(data) {
-    ctrl.responseMessage = response.statusText + "\r\n";
-  }
-
+    ctrl.responseMessage = response.statusText;
+  };
 
   ctrl.submit = function () {
-
     ctrl.responseMessage = '';
     UserService.updateUser(ctrl.setting.userId, ctrl.user).then(handleSuccess, handleError);
     function handleSuccess(data) {
-      ctrl.isUpdate = true;
       ctrl.responseMessage = 'You successfully updated';
       ctrl.user = data.user;
     }
-
     function handleError(data) {
       ctrl.errors = response.data.errors;
     }

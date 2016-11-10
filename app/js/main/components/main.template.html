@@ -8,7 +8,43 @@
     </div>
 
     <div permissions="Teacher">
-        <h1>Teacher</h1>
+        <h1>Attendance report</h1>
+        <div class="wrapper-a-date">
+            <md-datepicker ng-model="myDate" class="a-date" md-placeholder="Enter date"></md-datepicker>
+        </div>
+        <md-button ui-sref="dailyreports" class="dailyreport">Daily Report</md-button>
+        <div class="item item-small" style="width:90%">
+            <div class="person-list">
+                <div layout="row" class="height">
+                    <md-card flex="90" class="l-card">
+                        <md-content class="ful">
+                            <md-list class="a-list-container">
+                                <md-list-item class="md-3-line att-list" ng-repeat="att in attendances.attendances">
+                                    <div layout="row" class="att-full">
+                                        <div class="md-list-item-text" flex="15">
+                                            <p> Name: {{ att.student.first_name }}</p>
+                                            <p> Surname: {{ att.student.last_name }}</p>
+                                        </div>
+                                        <ul flex="60">
+                                            <p ng-show="!att.report_times[0]" class="red">Absent</p>
+                                            <li ng-repeat="time in att.report_times">
+                                                <div class="green"> {{ time.start | date : "H:mm:ss" }} </div>
+                                                <div class="red"> {{ time.end | date : "H:mm:ss" }} </div>
+                                            </li>
+                                        </ul>
+                                        <h4 class="presence-text" flex="15"> Presence: </h4>
+                                        <md-switch ng-model="att.present" name="switcher" aria-label="Switch 2" ng-true-value="true" ng-change="switchPresence(att, att.present)"
+                                                   ng-false-value="false" class="md-warn presence" flex="10">
+                                        </md-switch>
+                                    </div>
+                                    <md-divider ng-if="!$last"></md-divider>
+                                </md-list-item>
+                            </md-list>
+                        </md-content>
+                    </md-card>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div permissions="Parent">

@@ -1,41 +1,18 @@
-<!-- <h1><a ui-sref="parents">Click to see the Parent List</a></h1>
-<h1 class="text-uppercase">Parent View</h1>
-<md-button class="md-raised" ui-sref="parentEdit({parentId: parentDetail.parent.id})">Edit</md-button>
-<md-button class="md-raised  md-primary" ng-click="deleteParent(parentDetail)">Delete</md-button>
-
-<md-content class="md-padding" layout-xs="column" layout="row">
-  <div flex-xs flex-gt-xs="50" layout="column">
-    <md-card md-theme-watch>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-headline">{{ parentDetail.parent.first_name }}</span>
-          <span class="md-headline">{{ parentDetail.parent.last_name }}</span>
-          <span class="md-subhead">E-mail: {{ parentDetail.parent.email }}</span>
-          <span class="md-subhead">Phone: {{ parentDetail.parent.contact_phone }}</span>
-          <span class="md-subhead">School: {{ parentDetail.parent.school_id}}</span>
-        </md-card-title-text>
-      </md-card-title>
-    </md-card>
-  </div>
-</md-content>
- -->
-
 <h1>Show page</h1>
 <div class="item">
   <md-button class="md-primary" ui-sref="parents">Back to Parents</md-button>
   <md-card>
     <md-card-title>
       <md-card-title-text class="item">
-        <!-- <span class="md-headline"><img ng-src="{{parentDetail.parent.avatar_url_medium}}"></span> -->
-        <span class="md-headline">{{ parentDetail.parent.first_name }}</span>
-        <span class="md-headline">{{ parentDetail.parent.last_name }}</span>
-        <span class="md-subhead">E-mail: {{ parentDetail.parent.email }}</span>
-        <span class="md-subhead">Phone: {{ parentDetail.parent.contact_phone }}</span>
-        <span class="md-subhead">School: {{ parentDetail.parent.school_id}}</span>
+        <!-- <span class="md-headline"><img ng-src="{{parentDetail.pauserrent.avatar_url_medium}}"></span> -->
+        <span class="md-headline">{{ parentDetail.user.first_name }}</span>
+        <span class="md-headline">{{ parentDetail.user.last_name }}</span>
+        <span class="md-subhead">E-mail: {{ parentDetail.user.email }}</span>
+        <span class="md-subhead">Phone: {{ parentDetail.user.contact_phone }}</span>
       </md-card-title-text>
     </md-card-title>
     <md-card-actions layout="row" layout-align="end center">
-      <md-button class="md-raised md-primary" ui-sref="parentEdit({parentId: parentDetail.parent.id})">Edit</md-button>
+      <md-button class="md-raised md-primary" ui-sref="parentEdit({parentId: parentDetail.user.id})">Edit</md-button>
       <md-button class="md-raised md-warn" ng-click="deleteParent(parentDetail)">Delete</md-button>
     </md-card-actions>
   </md-card>
