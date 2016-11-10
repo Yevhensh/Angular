@@ -7,10 +7,22 @@ module.exports = angular
         templateUrl: '/app/js/news/components/news-create/news-create.template.html'
     });
 
-NewsCreateController.$inject = ['News', '$state', '$scope', '$stateParams'];
+NewsCreateController.$inject = ['News', '$state', '$scope', '$stateParams', 'Group', 'Level', 'School'];
 
-function NewsCreateController(News, $state, $scope, $stateParams) {
+function NewsCreateController(News, $state, $scope, $stateParams, Group, Level, School) {
     $scope.news = new News();
+
+    Group.get(function(data){
+      $scope.groups = data.groups;
+    });
+
+    Level.get(function(data){
+      $scope.levels = data.levels;
+    });
+
+    School.get(function(data){
+      $scope.schools = data.schools;
+    });
 
     $scope.addNews = function(){
         $scope.news.$save(function(){
