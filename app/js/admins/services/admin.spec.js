@@ -16,12 +16,6 @@ describe('Admins factory ', function() {
     expect(AdminResource).toBeDefined();
   });
 
-
-  it ('should be correct', function() {
-    expect(1 + 1).toEqual(2);
-  });
-
-
 });
 
 
