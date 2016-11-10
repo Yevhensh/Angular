@@ -12,5 +12,6 @@ module.exports = angular
 
       Album.get(function(data){
         ctrl.albums = data.albums;
+        ctrl.photos = data.photos;
       });
   }
