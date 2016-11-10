@@ -25,7 +25,7 @@
                 <span class="md-subhead">{{ album.created_at | date}}</span>
                 <span class="md-subhead">
                   <a ui-sref="album({ albumId: album.id })">
-                    <img ng-src="{{album.image}}" class="content-image" alt="{{album.title}}"/>
+                    <img ng-src="{{$ctrl.photos[0].image}}" class="content-image" alt="{{album.title}}"/>
                   </a>
                 </span>
             </md-card-title-text>
