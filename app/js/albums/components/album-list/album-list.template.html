@@ -14,7 +14,7 @@
 </div>
 
 <h1>Albums</h1>
-<md-button ui-sref="albumCreate" class="md-raised md-primary">New</md-button>
+<md-button ui-sref="albumCreate" class="md-raised md-primary stylecolor">New</md-button>
 <div class="item" style="width:90%">
     <md-card ng-repeat="album in $ctrl.albums | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list">
         <md-card-title>

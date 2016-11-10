@@ -32,7 +32,9 @@
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
             <md-button class="md-raised md-primary stylecolor" ui-sref="newsEdit({ id: news.id })">edit</md-button>
+        <div permissions="Admin">
             <md-button class="md-raised md-warn" ng-click="$ctrl.deleteNews(news.id)">delete</md-button>
+        </div>
         </md-card-actions>
     </md-card>
 </div>

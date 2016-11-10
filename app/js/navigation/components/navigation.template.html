@@ -1,7 +1,6 @@
 <div class="wrapper-primary-image">
     <img src="./app/img/school-building.svg" ui-sref="startpage" class="primary-image"/>
 </div>
-<!--Angular elements -->
 <div layout="column" ng-cloak>
     <div class="main-nav">
         <section class="m-title" layout="row" layout-sm="column" layout-align="center center" layout-wrap>
@@ -35,17 +34,17 @@
                     <md-button><p ui-sref="albums">Albums</p></md-button>
                 </div>
                 <div permissions="Teacher" class="Teacher">
-                    <md-button><p ui-sref="main">Reports</p></md-button>
-                    <md-button><p ui-sref="newss">News</p></md-button>
                     <md-button><p ui-sref="students">Students</p></md-button>
-                    <md-button><p ui-sref="albums">Album</p></md-button>
+                    <md-button><p ui-sref="main">Reports</p></md-button>
                     <md-button><p ui-sref="main">Chat</p></md-button>
+                    <md-button><p ui-sref="newss">News</p></md-button>
+                    <md-button><p ui-sref="albums">Album</p></md-button>
                 </div>
                 <div permissions="Parent" class="Parent">
                     <md-button><p ui-sref="students">Students</p></md-button>
-                    <md-button><p ui-sref="albums">Albums</p></md-button>
                     <md-button><p ui-sref="main">Report</p></md-button>
                     <md-button><p ui-sref="main">Chat</p></md-button>
+                    <md-button><p ui-sref="albums">Albums</p></md-button>
                 </div>
                 <div permissions="Superadmin" class="Superadmin">
                     <md-button><p ui-sref="admins">Admins</p></md-button>
