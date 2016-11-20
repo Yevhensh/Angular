@@ -13,7 +13,7 @@
         </md-card-title>
         <md-card-title>
         <md-card-title-text>
-          <md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox>
+          <md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:"><h2>Health Info:</h2></md-checkbox>
             <div ng-show="isDisabled">
               <p><span class="md-headline">Problem:</span>
               <span class="md-subhead">{{ student.health_info.health_problem }}</span></p>
@@ -22,7 +22,20 @@
             </div>
         </md-card-title-text>
         </md-card-title>
-        <div permissions="Admin">
+        <md-card-actions layout="row" layout-align="center center">
+          <md-card-title layout="row" layout-align="center center">
+            <md-card-title-text class="item">
+                <h2 class="md-headline stylecolor">Parents</h2>
+                <md-button ng-if="student.parents[0].id" class="animate-if">
+                  <h3 class="button-persons" ui-sref="parentDetail({parentId: student.parents[0].id})">{{ student.parents[0].first_name }}</h3>
+                </md-button>
+                <md-button ng-if="student.parents[0].id" class="animate-if">
+                  <h3 class="button-persons" ui-sref="parentDetail({parentId: student.parents[1].id})">{{ student.parents[1].first_name }}</h3>
+                </md-button>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card-actions>
+      <div permissions="Admin">
           <md-card-actions layout="row" layout-align="end center">
             <md-button class="md-raised md-primary stylecolor" ui-sref="studentEdit({studentId: student.id})">Edit</md-button>
             <md-button class="md-raised md-warn" ng-click="deleteStudent(student)">Delete</md-button>
