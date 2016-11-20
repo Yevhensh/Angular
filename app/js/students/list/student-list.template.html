@@ -1,7 +1,7 @@
 <div class="item" layout="row" layout-align="space-between">
   <md-input-container>
   <label>Sort by:</label>
-    <md-select ng-model="$ctrl.orderProp">
+    <md-select ng-model="orderProp">
       <md-option value="group_id">Group</md-option>
       <md-option value="first_name">Alphabetical</md-option>
       <md-option value="age">Age</md-option>
@@ -10,7 +10,7 @@
 
   <md-input-container class="md-block">
     <label>Search:</label>
-    <input ng-model="$ctrl.query" type="text">
+    <input ng-model="query" type="text">
   </md-input-container>
 </div>
 <div class="person-list">
@@ -25,7 +25,7 @@
 
             <md-content class="ful">
                 <md-list >
-                  <md-list-item class="md-3-line l-item" ng-repeat="student in $ctrl.students | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+                  <md-list-item class="md-3-line l-item" ng-repeat="student in students | filter:query | orderBy:orderProp">
                   <img ng-src="{{student.avatar_url_thumb}}" height="50">
                       <div class="md-list-item-text">
                           <h3 ui-sref="studentDetail({studentId: student.id})">Name: {{ student.first_name }}</h3>

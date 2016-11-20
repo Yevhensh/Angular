@@ -4,11 +4,11 @@
     <md-card>
         <md-card-title>
             <md-card-title-text class="item">
-                <span class="md-headline"><img ng-src="{{studentDetail.student.avatar_url_medium}}"></span>
-                <span class="md-headline">{{ studentDetail.student.first_name }}</span>
-                <span class="md-headline">{{ studentDetail.student.last_name }}</span>
-                <span class="md-subhead">Age: {{ studentDetail.student.age }}</span>
-                <span class="md-subhead">Group: {{ studentDetail.student.group_id }}</span>
+                <span class="md-headline"><img ng-src="{{student.avatar_url_medium}}"></span>
+                <span class="md-headline">{{ student.first_name }}</span>
+                <span class="md-headline">{{ student.last_name }}</span>
+                <span class="md-subhead">Age: {{ student.age }}</span>
+                <span class="md-subhead">Group: {{ student.group_id }}</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-title>
@@ -16,16 +16,16 @@
           <md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox>
             <div ng-show="isDisabled">
               <p><span class="md-headline">Problem:</span>
-              <span class="md-subhead">{{ studentDetail.student.health_info.health_problem }}</span></p>
+              <span class="md-subhead">{{ student.health_info.health_problem }}</span></p>
               <p><span class="md-headline">Description: </span>
-              <span class="md-subhead">{{ studentDetail.student.health_info.description }}</span></p>
+              <span class="md-subhead">{{ student.health_info.description }}</span></p>
             </div>
         </md-card-title-text>
         </md-card-title>
         <div permissions="Admin">
           <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-raised md-primary stylecolor" ui-sref="studentEdit({studentId: studentDetail.student.id})">Edit</md-button>
-            <md-button class="md-raised md-warn" ng-click="deleteStudent(studentDetail)">Delete</md-button>
+            <md-button class="md-raised md-primary stylecolor" ui-sref="studentEdit({studentId: student.id})">Edit</md-button>
+            <md-button class="md-raised md-warn" ng-click="deleteStudent(student)">Delete</md-button>
           </md-card-actions>
         </div>
     </md-card>
