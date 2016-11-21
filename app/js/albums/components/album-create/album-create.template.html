@@ -4,32 +4,44 @@
     <form ng-submit="addAlbum()">
         <md-input-container class="md-block" flex-gt-sm>
             <label for="title">Title:</label>
-            <input ng-model="album.title" type="text" name="title" id="title" required>
+            <input ng-model="album.title" type="text" name="title"
+                                          id="title" maxlength="25" required />
         </md-input-container>
 
         <div class="menus" layout="row" layout-align="space-between center">
             <md-input-container class="md-block">
                 <label for="imageable_type">Belongs to:</label>
                 <md-select ng-model="album.imageable_type">
-                    <md-option>School</md-option>
-                    <md-option>Level</md-option>
-                    <md-option>Group</md-option>
+                  <md-option ng-repeat="type in types" value="{{type}}">
+                    {{type}}
+                  </md-option>
                 </md-select>
             </md-input-container>
 
             <md-input-container class="md-block">
-                <label for="school_id">Belongs to school_id:</label>
-                <input ng-model="album.school_id" type="number" step="1">
+            <label>Name of {{album.imageable_type}}</label>
+            <md-select ng-switch="album.imageable_type"
+                       ng-model="album.imageable_id" class="md-no-underline">
+                <md-option ng-switch-when="Group" ng-repeat="group in groups"
+                                                  ng-value="group.id">
+                  {{group.name}}
+               </md-option>
+                <md-option ng-switch-when="Level" ng-repeat="level in levels"
+                                                  ng-value="level.id">
+                  {{level.name}}
+                </md-option>
+                <md-option ng-switch-when="School" ng-repeat="school in schools"
+                                                   ng-value="school.id">
+                  {{school.name}}
+                </md-option>
+            </md-select>
             </md-input-container>
 
-            <md-input-container class="md-block">
-                <label for="imageable_id">Belongs to id:</label>
-                <input ng-model="album.imageable_id" type="number" step="1">
-            </md-input-container>
         </div>
 
         <md-input-container class="md-block">
-            <input type="file" ng-model="album.photos" name="files" base-sixty-four-input multiple accept="image/*" maxsize="2000">
+            <input type="file" ng-model="album.photos" name="files"
+               base-sixty-four-input multiple accept="image/*" maxsize="2000"/>
         </md-input-container>
 
         <md-button type="submit" value="Save">Save</md-button>
