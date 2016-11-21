@@ -6,9 +6,13 @@
             <md-card-title-text class="item">
                 <span class="md-headline">{{ albumDetail.album.title }}</span>
                 <span class="md-subhead">{{ albumDetail.album.created_at | date}}</span>
-                <div ng-repeat="photos in albumDetail.photos" >
-                    <img  ng-src="{{photos.image_url_medium}}" >
-                </div>
+                <md-card layout="column" layout-align="center center" style="padding-bottom: 10px">
+                    <jk-carousel data="albumDetail.photos"
+                                 item-template-url="'./app/js/albums/components/album-detail/item-template.html'"
+                                 max-width="500" max-height="500" auto-slide="true" auto-slide-time="2000">
+                    </jk-carousel>
+                </md-card>
+            </md-card-title-text>
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
