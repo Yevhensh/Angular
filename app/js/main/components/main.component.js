@@ -14,47 +14,43 @@ function MainController($scope, Auth, Type, StudentResource, Attendance, Dailyre
   $scope.currentNavItem = 'home';
   $scope.googleUrl = 'http://google.com';
   $scope.logout = logout;
-  function setType(){
+  $scope.setType = function(){
       $scope.type = Type();
-  }
+      console.log(Type());
+      if($scope.type == 'Teacher'){
+        getAttendance();
+      }
+  };
 
   $scope.isAuthenticated = isAuth;
   var auth = false;
 
   function isAuth() {
     if(!auth===Auth.isAuthenticated()) {
-      return true
+      return true;
     }
   }
   function logout() {
     Auth.logout();
   }
-  setType();
 
-  $scope.switchPresence = function(attendance, dat){
-    Attendance.get({ id: attendance.id }, function(dbAtt){
-      dbAtt.attendance.present = dat;
-      console.log("report_times" + dbAtt.attendance.report_times);
-      $scope.upd = Attendance.update( {id:attendance.id}, dbAtt).$promise
+  $scope.switchPresence = function(attendance, presence, self){
+    Attendance.update( { id: attendance.id }, attendance ).$promise
         .then(function(res){
-          Attendance.get(function(data){
-            console.log("im in attendances");
-            $scope.attendances = data;
-          })
-        });
-    })
-  };
-  // user teacher actions
-  $scope.students = StudentResource.get();
-  var getCreateDailyReports = function(){
-    Dailyreport.save({day: ""}).$promise
-        .then(function(res){
-          Attendance.get(function(data){
-            $scope.attendances = data;
-            $scope.myDate = new Date(data.attendances[0].time);
-          })
+          var att = res.attendance;
+          for(var i=0; i<$scope.attendances.length; i++){
+            if ($scope.attendances[i].id == att.id){
+              $scope.attendances[i] = att;
+              break;
+            }
+          }
         });
   };
-
-  getCreateDailyReports();
+  function getAttendance(){
+    Attendance.get(function(data){
+      console.log(data);
+      $scope.attendances = data.attendances;
+      $scope.myDate = new Date(data.attendances[0].time);
+    });
+  }
 }
