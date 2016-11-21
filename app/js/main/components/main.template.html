@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" data-ng-init="setType()">
     <div permissions="Admin">
         <h1>Admin</h1>
     </div>
@@ -19,7 +19,7 @@
                     <md-card flex="90" class="l-card">
                         <md-content class="ful">
                             <md-list class="a-list-container">
-                                <md-list-item class="md-3-line att-list" ng-repeat="att in attendances.attendances">
+                                <md-list-item class="md-3-line att-list" ng-repeat="att in attendances">
                                     <div layout="row" class="att-full">
                                         <div class="md-list-item-text" flex="15">
                                             <p> Name: {{ att.student.first_name }}</p>
@@ -33,7 +33,7 @@
                                             </li>
                                         </ul>
                                         <h4 class="presence-text" flex="15"> Presence: </h4>
-                                        <md-switch ng-model="att.present" name="switcher" aria-label="Switch 2" ng-true-value="true" ng-change="switchPresence(att, att.present)"
+                                        <md-switch ng-model="att.present" name="switcher" aria-label="Switch 2" ng-true-value="true" ng-change="switchPresence(att, att.present, this)"
                                                    ng-false-value="false" class="md-warn presence" flex="10">
                                         </md-switch>
                                     </div>
