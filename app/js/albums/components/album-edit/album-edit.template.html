@@ -4,29 +4,40 @@
     <form ng-submit="updateAlbum()">
       <md-input-container class="md-block">
         <h3 for="title">Title:</h3>
-        <input ng-model ="albumDetail.album.title" type="text" name="title" id="title">
+        <input ng-model ="albumDetail.album.title" type="text" name="title"
+                                     id="title" maxlength="25" required />
       </md-input-container>
 
       <div class="menus" layout="row" layout-align="space-between center">
         <md-input-container class="md-block">
           <h3 for="imageable_type">Belongs to:</h3>
           <md-select ng-model ="albumDetail.album.imageable_type">
-            <md-option>School</md-option>
-            <md-option>Level</md-option>
-            <md-option>Group</md-option>
+            <md-option ng-repeat="type in types" value="{{type}}">
+              {{type}}
+            </md-option>
           </md-select>
         </md-input-container>
 
         <md-input-container class="md-block">
-            <label for="school_id">Belongs to school_id:</label>
-            <input ng-model ="albumDetail.album.school_id" type="number" step="1">
+
+        <label>Name of {{albumDetail.album.imageable_type}}</label>
+        <md-select ng-switch="albumDetail.album.imageable_type"
+              ng-model="albumDetail.album.imageable_id" class="md-no-underline">
+            <md-option ng-switch-when="Group" ng-repeat="group in groups"
+                                              ng-value="group.id">
+              {{group.name}}
+           </md-option>
+            <md-option ng-switch-when="Level" ng-repeat="level in levels"
+                                              ng-value="level.id">
+              {{level.name}}
+            </md-option>
+            <md-option ng-switch-when="School" ng-repeat="school in schools"
+                                               ng-value="school.id">
+              {{school.name}}
+            </md-option>
+        </md-select>
         </md-input-container>
 
-        <md-input-container class="md-block">
-          <h3 for="imageable_id">Belongs to id:</h3>
-          <input ng-model ="albumDetail.album.imageable_id" type="number" step="1">
-        </md-input-container>
-      </div>
       <md-button type="submit" value="Update">Update</md-button>
     </form>
 </div>
