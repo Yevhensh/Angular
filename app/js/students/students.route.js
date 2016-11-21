@@ -7,18 +7,22 @@ module.exports = angular
     $stateProvider.state({
       name: 'students',
       url: '/students',
-      template: '<student-list></student-list>'
+      templateUrl: '/app/js/students/list/student-list.template.html',
+      controller: 'StudentListController'
     }).state({
       name: 'studentEdit',
       url: '/students/{studentId}/edit',
-      template: '<student-edit></student-edit>'
+      templateUrl: './app/js/students/edit/student-edit.template.html',
+      controller: 'StudentEditController'
     }).state({
       name: 'studentDetail',
       url: 'students/{studentId}',
-      template: '<student-detail></student-detail>'
+      templateUrl: './app/js/students/detail/student-detail.template.html',
+      controller: 'StudentDetailController'
     }).state({
       name: 'studentCreate',
       url: '/students/new',
-      template: '<student-create></student-create>'
+      templateUrl: '/app/js/students/create/student-create.template.html',
+      controller: 'StudentCreateController'
     });
   });
