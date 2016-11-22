@@ -1,7 +1,8 @@
 'use strict';
+require('angular-jk-carousel');
 
 module.exports = angular
-  .module('app.albumDetail.component', [])
+  .module('app.albumDetail.component', ['jkAngularCarousel'])
   .component('albumDetail', {
     templateUrl: './app/js/albums/components/album-detail/album-detail.template.html',
     controller: AlbumDetailController
