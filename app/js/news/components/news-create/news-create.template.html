@@ -1,5 +1,5 @@
-<div class="item">
-    <h1>Create the News</h1>
+<h1>Create the News</h1>
+<div class="item item-medium">
     <md-button class="md-primary" ui-sref="newss">Back to News</md-button>
     <form ng-submit="addNews()" role="form">
         <md-input-container class="md-block" flex-gt-sm>
@@ -19,7 +19,7 @@
             <p class="count">{{512 - news.description.length}} symbols left</p>
         </md-input-container>
 
-        <div class="menus" layout="row" layout-align="space-between center">
+        <div class="menus" layout="row" layout-align="space-around center">
             <md-input-container class="md-block">
             <label>News type</label>
             <md-select ng-model="news.imageable_type">

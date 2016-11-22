@@ -1,4 +1,4 @@
-<div class="item" layout="row" layout-align="space-between">
+<div class="item" layout="row" layout-align="space-around">
   <md-input-container>
   <label>Sort by:</label>
     <md-select ng-model="$ctrl.orderProp">
@@ -15,7 +15,7 @@
 
 <h1> News </h1>
 <md-button ui-sref="newsCreate" class="md-raised md-primary stylecolor">News create</md-button>
-<div class="item" style="width:90%">
+<div class="item">
     <md-card ng-repeat="news in $ctrl.news | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list">
     <img ng-src="{{news.image_url_medium}}" class="md-card-image content-image" alt="{{news.title}} ">
         <md-card-title>
@@ -30,7 +30,7 @@
           <span class="md-subhead"> {{news.imageable_id}}</span>
           <p class="content">{{news.description}}</p>
         </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
+        <md-card-actions layout="row" layout-align="space-around end">
             <md-button class="md-raised md-primary stylecolor" ui-sref="newsEdit({ id: news.id })">edit</md-button>
         <div permissions="Admin">
             <md-button class="md-raised md-warn" ng-click="$ctrl.deleteNews(news.id)">delete</md-button>

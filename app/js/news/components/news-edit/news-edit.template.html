@@ -1,5 +1,5 @@
-<div class="item">
-    <h1>Edit the News</h1>
+<h1>Edit the News</h1>
+<div class="item item-medium">
     <md-button class="md-primary" ui-sref="newss">Back to News</md-button>
     <form ng-submit="updateNews()">
         <md-input-container class="md-block">
@@ -13,7 +13,7 @@
              <input ng-model="newsDetail.news.image" type="text" name="image">
         </md-input-container>
 
-        <div class="menus" layout="row" layout-align="space-between center">
+        <div class="menus" layout="row" layout-align="space-around center">
             <md-input-container class="md-block">
             <label>Type:</label>
             <md-select ng-model="newsDetail.news.imageable_type">
