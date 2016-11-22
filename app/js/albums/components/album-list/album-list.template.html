@@ -1,4 +1,4 @@
-<div class="item" layout="row" layout-align="space-between">
+<div class="item" layout="row" layout-align="space-around">
   <md-input-container>
   <label>Sort by:</label>
     <md-select ng-model="$ctrl.orderProp">
@@ -15,20 +15,18 @@
 
 <h1>Albums</h1>
 <md-button ui-sref="albumCreate" class="md-raised md-primary stylecolor">New</md-button>
-<div class="item" style="width:90%">
-    <md-card ng-repeat="album in $ctrl.albums | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list">
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">
-                    <a ui-sref="album({ albumId: album.id })"><p class="content">{{album.title}}</p></a>
-                </span>
-                <span class="md-subhead">{{ album.created_at | date}}</span>
-                <span class="md-subhead">
-                  <a ui-sref="album({ albumId: album.id })">
-                    <img ng-src="{{$ctrl.photos[0].image}}" class="content-image" alt="{{album.title}}"/>
-                  </a>
-                </span>
-            </md-card-title-text>
-        </md-card-title>
+<div class="item">
+    <md-card ng-repeat="album in $ctrl.albums | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list items-list-album">
+    <img ng-src="{{album.image}}" class="md-card-image content-image" alt="{{album.title}}"/>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">
+            <a ui-sref="album({ albumId: album.id })">{{album.title}}</a>
+          </span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <span class="md-subhead">{{ album.created_at | date}}</span>
+      </md-card-content>
     </md-card>
 </div>

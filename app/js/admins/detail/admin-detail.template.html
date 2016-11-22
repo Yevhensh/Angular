@@ -1,20 +1,28 @@
 <h1>Show page</h1>
 <div class="item">
     <md-button class="md-primary" ui-sref="admins">Back to admins</md-button>
-    <md-card>
-        <md-card-title>
-            <md-card-title-text class="item">
-                <span class="md-headline"><img ng-src="{{adminDetail.user.avatar_url_medium}}"></span>
-                <span class="md-headline">{{ adminDetail.admin.first_name }}</span>
-                <span class="md-headline">{{ adminDetail.admin.last_name }}</span>
-                <span class="md-subhead">Email: {{ adminDetail.user.email }}</span>
-                <span class="md-subhead">Phone: {{ adminDetail.user.contact_phone }}</span>
-                <span class="md-subhead">School: {{ adminDetail.user.school_id }}</span>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button class="md-raised md-primary stylecolor" ui-sref="adminEdit({adminId: adminDetail.user.id})">Edit</md-button>
-          <md-button class="md-raised md-warn" ng-click="deleteAdmin(adminDetail)">Delete</md-button>
-        </md-card-actions>
-    </md-card>
+</div>
+<div layout layout-align="center center">
+  <md-card layout="row" layout-align="space-around" flex="50">
+    <div layout-margin>
+      <md-card-avatar layout="column"  layout-align="center center">
+        <img ng-src="{{adminDetail.user.avatar_url_medium}}">
+      </md-card-avatar>
+
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-raised md-primary stylecolor" ui-sref="adminEdit({adminId: adminDetail.user.id})">Edit</md-button>
+        <md-button class="md-raised md-warn" ng-click="deleteAdmin(adminDetail)">Delete</md-button>
+      </md-card-actions>
+    </div>
+
+    <div layout-margin>
+      <md-card-title-text class="item">
+        <p class="md-headline">{{ adminDetail.admin.first_name }}</p>
+        <p class="md-headline">{{ adminDetail.admin.last_name }}</p>
+        <p class="md-subhead">Email: {{ adminDetail.user.email }}</p>
+        <p class="md-subhead">Phone: {{ adminDetail.user.contact_phone }}</p>
+        <p class="md-subhead">School: {{ adminDetail.user.school_id }}</p>
+      </md-card-title-text>
+    </div>
+  </md-card>
 </div>

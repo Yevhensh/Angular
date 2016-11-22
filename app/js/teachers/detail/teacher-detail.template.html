@@ -1,22 +1,27 @@
 <h1>Show page</h1>
 <div class="item">
-  <md-button class="md-primary" ui-sref="teachers">Back to Teachers</md-button>
-  <md-card>
-    <md-card-title>
+    <md-button class="md-primary" ui-sref="teachers">Back to teachers</md-button>
+</div>
+<div layout layout-align="center center">
+  <md-card layout="row" layout-align="space-around" flex="50">
+    <div layout-margin>
+      <md-card-avatar layout="column"  layout-align="center center">
+        <img ng-src="{{teacherDetail.user.avatar_url_medium}}">
+      </md-card-avatar>
+
+      <md-card-actions layout="row" layout-align="space-around end">
+        <md-button class="md-raised md-primary stylecolor" ui-sref="teacherEdit({ teacherId: teacherDetail.user.id })">Edit</md-button>
+        <md-button class="md-raised md-warn" ng-click="deleteTeacher(teacherDetail)">Delete</md-button>
+      </md-card-actions>
+    </div>
+
+    <div layout-margin>
       <md-card-title-text class="item">
-        <span class="md-headline"><img ng-src="{{teacherDetail.user.avatar_url_medium}}"></span>
-        <span class="md-headline">{{ teacherDetail.user.first_name }}</span>
-        <span class="md-headline">{{ teacherDetail.user.last_name }}</span>
-        <span class="md-subhead">E-mail: {{ teacherDetail.user.email }}</span>
-        <span class="md-subhead">Contact phone: {{ teacherDetail.user.contact_phone }}</span>
+        <p class="md-headline">{{ teacherDetail.user.first_name }}</p>
+        <p class="md-headline">{{ teacherDetail.user.last_name }}</p>
+        <p class="md-subhead">E-mail: {{ teacherDetail.user.email }}</p>
+        <p class="md-subhead">Contact phone: {{ teacherDetail.user.contact_phone }}</p>
       </md-card-title-text>
-    </md-card-title>
-    <md-card-actions layout="row" layout-align="end center">
-      <md-button class="md-raised md-primary stylecolor" ui-sref="teacherEdit({ teacherId: teacherDetail.user.id })">Edit</md-button>
-      <md-button class="md-raised md-warn" ng-click="deleteTeacher(teacherDetail)">Delete</md-button>
-    </md-card-actions>
+    </div>
   </md-card>
 </div>
-
-
-

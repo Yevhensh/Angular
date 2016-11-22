@@ -1,4 +1,4 @@
-<div class="item" layout="row" layout-align="space-between">
+<div class="item" layout="row" layout-align="space-around">
   <md-input-container>
   <label>Sort by:</label>
     <md-select ng-model="$ctrl.orderProp">
@@ -14,19 +14,19 @@
 </div>
 <h1> Groups </h1>
 <md-button ui-sref="groupCreate" class="md-raised md-primary stylecolor">Group create</md-button>
-<div class="item item-small" style="width:90%">
-    <md-card ng-repeat="group in groups | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list items-list-small">
+<div class="item">
+    <md-card ng-repeat="group in groups | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">
-                <a ui-sref="group({ id: group.id })"><p class="content content-small">{{group.name}}</p></a>
-                </span>
-                <span class="md-subhead">Students count:</span>
+              <span class="md-headline">
+                <a ui-sref="group({ id: group.id })">{{group.name}}</a>
+              </span>
+              <span class="md-subhead">Students count:</span>
             </md-card-title-text>
         </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-raised md-primary stylecolor" ui-sref="groupEdit({ id: group.id })">edit</md-button>
-            <md-button class="md-raised md-warn" ng-click="deleteGroup(group.id)">delete</md-button>
+        <md-card-actions layout="row" layout-align="space-around end">
+          <md-button class="md-raised md-primary stylecolor" ui-sref="groupEdit({ id: group.id })">edit</md-button>
+          <md-button class="md-raised md-warn" ng-click="deleteGroup(group.id)">delete</md-button>
         </md-card-actions>
     </md-card>
 </div>

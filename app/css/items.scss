@@ -1,13 +1,12 @@
 .items-list {
-  width: 500px;
+  /*width: 500px;*/
   margin: 20px;
   display: inline-block;
   background-color: #e6fff3;
 }
 
-.items-list-small {
-  width: 250px;
-  height: 350px;
+.items-list-album {
+  width: 500px;
 }
 
 .items-list a {
@@ -20,7 +19,7 @@
 
 .item {
   text-align: center;
-  width: 50%;
+  width: 90%;
   word-wrap: break-word;
   margin: 0 auto;
 }
@@ -29,12 +28,15 @@
   width: 25%;
 }
 
+.item-medium {
+  width: 45%;
+}
+
 .item-login {
   text-align: left;
   width: 25%;
   margin-top: 5%;
   margin-bottom: 5%;
-
 }
 
 .content {

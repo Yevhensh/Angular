@@ -1,32 +1,34 @@
 <h1>Show page</h1>
 <div class="item">
     <md-button class="md-primary" ui-sref="students">Back to students</md-button>
-    <md-card>
-        <md-card-title>
-            <md-card-title-text class="item">
-                <span class="md-headline"><img ng-src="{{studentDetail.student.avatar_url_medium}}"></span>
-                <span class="md-headline">{{ studentDetail.student.first_name }}</span>
-                <span class="md-headline">{{ studentDetail.student.last_name }}</span>
-                <span class="md-subhead">Age: {{ studentDetail.student.age }}</span>
-                <span class="md-subhead">Group: {{ studentDetail.student.group_id }}</span>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-title>
-        <md-card-title-text>
-          <md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox>
-            <div ng-show="isDisabled">
-              <p><span class="md-headline">Problem:</span>
-              <span class="md-subhead">{{ studentDetail.student.health_info.health_problem }}</span></p>
-              <p><span class="md-headline">Description: </span>
-              <span class="md-subhead">{{ studentDetail.student.health_info.description }}</span></p>
-            </div>
-        </md-card-title-text>
-        </md-card-title>
-        <div permissions="Admin">
-          <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-raised md-primary stylecolor" ui-sref="studentEdit({studentId: studentDetail.student.id})">Edit</md-button>
-            <md-button class="md-raised md-warn" ng-click="deleteStudent(studentDetail)">Delete</md-button>
-          </md-card-actions>
+</div>
+<div layout layout-align="center center">
+  <md-card layout="row" layout-align="space-around" flex="50">
+    <div layout-margin>
+      <md-card-avatar layout="column"  layout-align="center center">
+       <img ng-src="{{studentDetail.student.avatar_url_medium}}">
+      </md-card-avatar>
+
+      <md-card-actions layout="row" layout-align="space-around center">
+        <md-button class="md-raised md-primary stylecolor" ui-sref="studentEdit({studentId: studentDetail.student.id})">Edit</md-button>
+        <md-button class="md-raised md-warn" ng-click="deleteStudent(studentDetail)">Delete</md-button>
+      </md-card-actions>
+    </div>
+
+    <div layout-margin>
+      <md-card-title-text class="item">
+        <p class="md-headline">{{ studentDetail.student.first_name }}</p>
+        <p class="md-headline">{{ studentDetail.student.last_name }}</p>
+        <p class="md-subhead">Age: {{ studentDetail.student.age }}</p>
+        <p class="md-subhead">Group: {{ studentDetail.student.group_id }}</p>
+        <md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox>
+        <div ng-show="isDisabled">
+          <h4 class="md-headline">Problem:</h4>
+          <p class="md-subhead">{{ studentDetail.student.health_info.health_problem }}</p>
+          <h4 class="md-headline">Description: </h4>
+          <p class="md-subhead">{{ studentDetail.student.health_info.description }}</p>
         </div>
-    </md-card>
+      </md-card-title-text>
+    </div>
+  </md-card>
 </div>

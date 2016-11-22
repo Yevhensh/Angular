@@ -1,4 +1,4 @@
-<div class="item" layout="row" layout-align="space-between">
+<div class="item" layout="row" layout-align="space-around">
   <md-input-container>
   <label>Sort by:</label>
     <md-select ng-model="$ctrl.orderProp">
@@ -14,8 +14,8 @@
 </div>
 
 <h1> Schools </h1>
-<md-button ui-sref="schoolCreate" class="md-raised md-primary">Create new school</md-button>
-<div class="item item-small" style="width:90%">
+<md-button ui-sref="schoolCreate" class="md-raised md-primary stylecolor">Create new school</md-button>
+<div class="item">
     <md-card ng-repeat="school in $ctrl.schools | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list items-list-small">
         <md-card-title>
             <md-card-title-text>
