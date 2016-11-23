@@ -9,25 +9,29 @@ module.exports = angular
 DailyreportListController.$inject = ['Dailyreport', '$window', '$scope', 'StudentResource', 'Attendance'];
 
 function DailyreportListController(Dailyreport, $window, $scope, StudentResource, Attendance) {
-    $scope.students = StudentResource.get();
+    $scope.students = StudentResource.get().$promise
+        .then(function(data){
+            $scope.getStudent(data.students[0].id);
+        });
 
-    var getAttend = function(){
-        Attendance.get(function(data){
-            $scope.attendances = data;
-            $scope.myDate = new Date(data.attendances[0].time);
-        }).$promise.then(function(res){
-            StudentResource.get(function(data){
-               $scope.students = data.students;
-            });
-            //     .$promise.then(function(res){
-            //     $scope.getCurrentAttendance($scope.students[0].id)
-            // });
-        })
+    // var getDailyReports = function(){
+    //     Dailyreport.get(function(data){
+    //         $scope.dailyreports = data;
+    //     });
+    // };
+
+    var getStudents = function(){
+        StudentResource.get(function(data){
+            $scope.students = data.students;
+        });
     };
 
-    getAttend();
-
-    // Dailyreport.get(function(data){
-    //
-    // })
+    $scope.getStudent = function(student){
+        Dailyreport.get({id: 1, student_id: student}).$promise
+            .then(function(data){
+                $scope.daily_report = data.daily_report;
+            });
+    }
+    getStudents();
+    // getDailyReports();
 }
