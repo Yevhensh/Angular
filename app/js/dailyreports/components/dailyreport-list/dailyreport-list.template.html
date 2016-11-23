@@ -3,12 +3,11 @@
     <div class="wrapper-a-date">
         <md-datepicker ng-model="myDate" class="a-date" md-placeholder="Enter date"></md-datepicker>
     </div>
-    {{ att }}
     <div class="students">
         <div layout="row">
             <md-card flex="30" class="l-card l-card-s">
                 <md-content class="ful">
-                    <md-list >
+                    <md-list ng-init="getDailyReport(students[0].id)">
                         <md-list-item class="md-3-line l-item" ng-repeat="student in students">
                             <img ng-src="{{student.avatar_url_thumb}}" height="50">
                             <div class="md-list-item-text">
@@ -16,7 +15,7 @@
                                 <h4>Surname: {{ student.last_name }} </h4>
                             </div>
                             <div class="wrapper-button-persons">
-                                <md-button class="button-persons">report</md-button>
+                                <md-button class="button-persons" ng-click="getDailyReport(student.id)">report</md-button>
                             </div>
                             <md-divider ng-if="!$last"></md-divider>
                         </md-list-item>
@@ -25,7 +24,22 @@
             </md-card>
             <md-card flex="70" class="l-card l-card-a">
                 <h2>Attendance Report</h2>
+                <div layout="row" class="daily-right">
+                    <div class="md-list-item-text" flex="60">
+                        <p> Name: {{ daily_report.attendance.student.first_name }}</p>
+                        <p> Surname: {{ daily_report.attendance.student.last_name }}</p>
+                    </div>
+                    <ul flex="40" class="dail-times">
+                        <p ng-show="!daily_report.attendance.report_times[0]" class="red">Absent</p>
+                        <p ng-show="daily_report.attendance.report_times[0]">Present Times</p>
+                        <li ng-repeat="time in daily_report.attendance.report_times">
+                            <div class="green"> {{ time.start | date : "H:mm:ss" }} </div>
+                            <div class="red"> {{ time.end | date : "H:mm:ss" }} </div>
+                        </li>
+                    </ul>
+                </div>
             </md-card>
         </div>
     </div>
+    {{daily_report}}
 </div>
