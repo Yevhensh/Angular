@@ -1,4 +1,4 @@
-<div class="item" layout="row" layout-align="space-between">
+<div class="item" layout="row" layout-align="space-around">
   <md-input-container>
   <label>Sort by:</label>
     <md-select ng-model="$ctrl.orderProp">
@@ -31,7 +31,7 @@
                       <div class="wrapper-button-persons">
                           <md-button ui-sref="parentDetail({parentId: parent.id})" class="button-persons">show</md-button>
                       </div>
-                      <md-divider ng-if="!$last"></md-divider>
+                      <md-divider></md-divider>
                   </md-list-item>
                 </md-list>
             </md-content>

@@ -24,9 +24,22 @@
             </md-card>
             <md-card flex="70" class="l-card l-card-a">
                 <h2>Attendance Report</h2>
-                <div>
+                <div layout="row" class="daily-right">
+                    <div class="md-list-item-text" flex="60">
+                        <p> Name: {{ daily_report.attendance.student.first_name }}</p>
+                        <p> Surname: {{ daily_report.attendance.student.last_name }}</p>
+                    </div>
+                    <ul flex="40" class="dail-times">
+                        <p ng-show="!daily_report.attendance.report_times[0]" class="red">Absent</p>
+                        <p ng-show="daily_report.attendance.report_times[0]">Present Times</p>
+                        <li ng-repeat="time in daily_report.attendance.report_times">
+                            <div class="green"> {{ time.start | date : "H:mm:ss" }} </div>
+                            <div class="red"> {{ time.end | date : "H:mm:ss" }} </div>
+                        </li>
+                    </ul>
                 </div>
             </md-card>
         </div>
     </div>
+    {{daily_report}}
 </div>

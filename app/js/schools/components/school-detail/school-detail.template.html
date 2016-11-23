@@ -1,9 +1,9 @@
 <h1>Show page</h1>
-<div class="item">
+<div class="item item-medium">
     <md-button class="md-primary" ui-sref="schools">Back to schools</md-button>
     <md-card>
         <md-card-title>
-            <md-card-title-text class="item">
+            <md-card-title-text>
                 <span class="md-headline">{{ schoolDetail.school.name }}</span>
                 <span class="md-subhead"><strong>E-mail: </strong>{{ schoolDetail.school.email }}</span>
                 <span class="md-subhead"><strong>Address: </strong>{{ schoolDetail.school.address }}</span>
@@ -11,8 +11,8 @@
                 <span class="md-subhead">{{$ctrl.item.news.description}}</span>
             </md-card-title-text>
         </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button class="md-raised md-primary" ui-sref="schoolEdit({ schoolId: schoolDetail.school.id })" id="school_button">Edit school</md-button>
+        <md-card-actions layout="row" layout-align="space-around center">
+          <md-button class="md-raised md-primary stylecolor" ui-sref="schoolEdit({ schoolId: schoolDetail.school.id })" id="school_button">Edit school</md-button>
           <md-button class="md-raised md-warn" ng-click="deleteSchool(schoolDetail)" id="school_button">Delete school</md-button>
         </md-card-actions>
     </md-card>

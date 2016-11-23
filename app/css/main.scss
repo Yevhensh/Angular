@@ -4,7 +4,7 @@
 @import "./style.scss";
 @import "./dailyreports.scss";
 
-.main {
+.main, .daily_reports{
   .wrapper-a-date {
     width: 100%;
     text-align: center;
@@ -31,7 +31,6 @@
 
   .att-list {
     margin: 0;
-
   }
 
   .green {
@@ -71,4 +70,3 @@
 .footer {
   height: 1000px;
 }
-

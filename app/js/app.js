@@ -1,6 +1,5 @@
 var angular = require('angular'),
-    mainModule = require('./main/main.module.js'),
-    css = require('../css/main.scss');
+    mainModule = require('./main/main.module.js');
 require("../css/main.scss");
 
 angular.module('app',

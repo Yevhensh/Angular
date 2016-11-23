@@ -11,7 +11,7 @@ DailyreportListController.$inject = ['Dailyreport', '$window', '$scope', 'Studen
 function DailyreportListController(Dailyreport, $window, $scope, StudentResource, Attendance) {
     $scope.students = StudentResource.get().$promise
         .then(function(data){
-            $scope.getStudent(data.students[0].id);
+            $scope.getDailyReport(data.students[0].id);
         });
 
     // var getDailyReports = function(){
@@ -26,7 +26,7 @@ function DailyreportListController(Dailyreport, $window, $scope, StudentResource
         });
     };
 
-    $scope.getStudent = function(student){
+    $scope.getDailyReport = function(student){
         Dailyreport.get({id: 1, student_id: student}).$promise
             .then(function(data){
                 $scope.daily_report = data.daily_report;
