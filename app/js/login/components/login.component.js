@@ -6,8 +6,8 @@ module.exports = angular
       controller: LoginController
     });
 
-LoginController.$inject = ['$state', 'Auth', '$window', 'messages'];
-function LoginController($state, Auth, $window, messages) {
+LoginController.$inject = ['$state', 'Auth', 'messages'];
+function LoginController($state, Auth, messages) {
   var ctrl = this;
   ctrl.failMessage = messages.NO_AUTH;
   ctrl.failResponse = false;
@@ -17,8 +17,7 @@ function LoginController($state, Auth, $window, messages) {
     ctrl.errors = {};
     Auth.login(user)
       .success(function(result){
-          $window.location.href = '/main';
-          console.log(result)
+        $state.go('main');
       })
       .error(function(response) {
         ctrl.failResponse = true;
