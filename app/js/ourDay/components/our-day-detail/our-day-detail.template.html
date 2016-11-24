@@ -1,0 +1,19 @@
+<h1> Our Day </h1>
+
+<div class="item">
+    <md-button class="md-primary" ui-sref="ourDayList">Back to ourDayList</md-button>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text class="item">
+                <span class="md-headline">{{ ourDayDetail.our_day.description }}</span>
+                <div ng-repeat="photo in ourDayDetail.photos" >
+                    <img  ng-src="{{photo.image_url_medium}}" >
+                </div>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary stylecolor" ui-sref="ourDayEdit({ ourDayId: ourDayDetail.our_day.id })">Edit</md-button>
+            <md-button class="md-raised md-warn" ng-click="deleteOurDay(ourDayDetail)">Delete</md-button>
+        </md-card-actions>
+    </md-card>
+</div>

@@ -1,0 +1,32 @@
+<h1>My Day</h1>
+<md-button ui-sref="myDayEdit({ myDayId: $ctrl.myDay.id })" class="button-persons">Update</md-button>
+<md-content style="width:25%;">
+  <md-input-container class="md-block">
+    <label>Search:</label>
+    <input ng-model="$ctrl.query" type="text">
+  </md-input-container>
+    <md-list >
+      <md-list-item class="md-3-line l-item" ng-repeat="student in $ctrl.students | filter:$ctrl.query">
+        <img ng-src="{{student.avatar_url_thumb}}" height="50">
+          <div class="md-list-item-text">
+              <h3 ui-sref="studentDetail({studentId: student.id})">Name: {{ student.first_name }}</h3>
+              <h4>Surname: {{ student.last_name }} </h4>
+          </div>
+          <div class="wrapper-button-persons">
+              <md-button ng-click="showMyDay(student.id)" class="button-persons">show</md-button>
+          </div>
+          <md-divider ng-if="!$last"></md-divider>
+
+      </md-list-item>
+    </md-list>
+</md-content>
+
+<div id="absent"></div>
+
+<h1>{{$ctrl.myDay.day}}</h1>
+<h1>{{$ctrl.myDay.description}}</h1>
+<md-list>
+  <md-list-item ng-repeat="photo in $ctrl.myDayPhotos">
+    <img ng-src="{{photo.image_url_large}}"/>
+  </md-list-item>
+</md-list>

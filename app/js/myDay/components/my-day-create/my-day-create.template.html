@@ -1,0 +1,12 @@
+<h1> Create My Day </h1>
+<md-button class="md-primary" ui-sref="myDayList">Back to MyDayList</md-button>
+<md-input-container class="md-block">
+    <input type="file" ng-model="myDay.photos" name="files" multiple
+       base-sixty-four-input multiple accept="image/*" maxsize="2000"/>
+</md-input-container>
+
+<form ng-submit="addMyDay()">
+  <textarea ng-model="myDay.description" id="myDay" name="myDay" cols="50" rows="20">
+  </textarea>
+  <md-button type="submit" value="Save">Save</md-button>
+</form>

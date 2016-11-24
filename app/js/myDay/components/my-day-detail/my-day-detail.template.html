@@ -1,0 +1,41 @@
+<h1> My Day </h1>
+<h1> {{myDays}} </h1>
+<h1> {{studentDetail} </h1>
+
+<md-content class="ful" style="float:left;">
+  <md-input-container class="md-block">
+    <label>Search:</label>
+    <input ng-model="$ctrl.query" type="text">
+  </md-input-container>
+    <md-list >
+      <md-list-item class="md-3-line l-item" ng-repeat="student in $ctrl.students | filter:$ctrl.query">
+        <img ng-src="{{student.avatar_url_thumb}}" height="50">
+          <div class="md-list-item-text">
+              <h3 ui-sref="studentDetail({studentId: student.id})">Name: {{ student.first_name }}</h3>
+              <h4>Surname: {{ student.last_name }} </h4>
+          </div>
+          <div class="wrapper-button-persons">
+              <md-button onclick="showMyDay()" class="button-persons">show</md-button>
+          </div>
+          <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+</md-content>
+
+<!-- <div class="item">
+    <md-button class="md-primary" ui-sref="myDayList">Back to myDayList</md-button>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text class="item">
+                <span class="md-headline">{{ myDayDetail.my_day.description }}</span>
+                <div ng-repeat="photo in myDayDetail.photos" >
+                    <img  ng-src="{{photo.image_url_medium}}" >
+                </div>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary stylecolor" ui-sref="myDayEdit({ myDayId: myDayDetail.my_day.id })">Edit</md-button>
+            <md-button class="md-raised md-warn" ng-click="deleteMyDay(myDayDetail)">Delete</md-button>
+        </md-card-actions>
+    </md-card>
+</div> -->
