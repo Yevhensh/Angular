@@ -14,11 +14,6 @@ function DailyreportListController(Dailyreport, $window, $scope, StudentResource
             $scope.getDailyReport(data.students[0].id);
         });
 
-    // var getDailyReports = function(){
-    //     Dailyreport.get(function(data){
-    //         $scope.dailyreports = data;
-    //     });
-    // };
 
     var getStudents = function(){
         StudentResource.get(function(data){
@@ -30,8 +25,11 @@ function DailyreportListController(Dailyreport, $window, $scope, StudentResource
         Dailyreport.get({id: 1, student_id: student}).$promise
             .then(function(data){
                 $scope.daily_report = data.daily_report;
-            });
+                try {
+                    $scope.myDate = new Date(data.daily_report.day);
+                }
+                catch(e){}
+            })
     }
     getStudents();
-    // getDailyReports();
 }

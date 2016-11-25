@@ -47,7 +47,6 @@ function MainController($scope, Auth, Type, StudentResource, Attendance, Dailyre
   };
   function getAttendance(){
     Attendance.get(function(data){
-      console.log(data);
       $scope.attendances = data.attendances;
       $scope.myDate = new Date(data.attendances[0].time);
     });
