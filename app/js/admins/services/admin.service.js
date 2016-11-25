@@ -1,7 +1,9 @@
 'use strict'
 
 module.exports = angular
-    .module('app.admins.resource', [])
+    .module('app.admins.resource', [
+      require('angular-resource')
+    ])
     .factory('AdminResource', AdminResource);
 
     AdminResource.$inject = ['$resource','appSettings'];
