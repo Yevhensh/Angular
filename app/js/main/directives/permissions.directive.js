@@ -4,7 +4,6 @@ module.exports = angular
     .directive('permissions', ['Type', function(Type){
         return {
             restrict: 'A',
-            scope: false,
             link: function(scope, element, attr){
                 var attrVal = attr["permissions"];
                 attrVal = attrVal.toString();
