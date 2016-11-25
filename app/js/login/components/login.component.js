@@ -17,7 +17,12 @@ function LoginController($state, Auth, messages, Type, $window) {
     ctrl.errors = {};
     Auth.login(user)
       .success(function(result){
-        $window.location.href = '/';
+        if (Type() == 'Parent') {
+          $window.location.href = '/dailyreports';
+        }
+        else {
+          $window.location.href = '/';
+        }
         $state.go('main');
       })
       .error(function(response) {
