@@ -21,8 +21,7 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     attendanceService = require('./services/attendance.service.js'),
     permissionsDirective = require('./directives/permissions.directive.js'),
     profileModule = require('../profile/profile.module.js'),
-    dailyReportsModule = require('../dailyreports/dailyreports.module.js'),
-    coreServices  = require('../common/core.services.js');
+    dailyReportsModule = require('../dailyreports/dailyreports.module.js');
 
 module.exports = angular.module("app.main", [
   // modules
@@ -48,6 +47,5 @@ module.exports = angular.module("app.main", [
   permissionsDirective.name,
   profileModule.name,
   dailyReportsModule.name,
-  attendanceService.name,
-  coreServices.name
+  attendanceService.name
 ]);
