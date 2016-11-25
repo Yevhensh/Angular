@@ -1,12 +1,10 @@
-var coreServices  = require('../../common/core.services.js');
+'use strict'
 
 module.exports = angular
     .module('app.admins.resource', [
-      coreServices.name,
       require('angular-resource')
     ])
     .factory('AdminResource', AdminResource);
-
 
     AdminResource.$inject = ['$resource','appSettings'];
     function AdminResource($resource, appSettings){
