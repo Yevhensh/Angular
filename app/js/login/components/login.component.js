@@ -21,7 +21,7 @@ function LoginController($state, Auth, messages, Type, $window) {
           $window.location.href = '/dailyreports';
         }
         else {
-          $window.location.href = '/';
+          $window.location.href = '/main';
         }
         $state.go('main');
       })
