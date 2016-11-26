@@ -24,7 +24,7 @@
             <md-content class="ful">
               <md-list>
                 <md-list-item class="md-3-line l-item" ng-repeat="admin in $ctrl.admins | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-                <img ng-src="{{admin.avatar_url_thumb}}">
+                <img ng-src="{{admin.avatar_url_thumb}}" height="50">
                   <div class="md-list-item-text">
                     <p> <strong>Name: </strong> {{ admin.first_name }}</p>
                     <p> <strong>Surname: </strong> {{ admin.last_name }} </p>
