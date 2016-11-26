@@ -14,13 +14,12 @@ function MainController($scope, Auth, Type, StudentResource, Attendance, Dailyre
   $scope.currentNavItem = 'home';
   $scope.googleUrl = 'http://google.com';
   $scope.logout = logout;
-  $scope.setType = function(){
+  function setType(){
       $scope.type = Type();
-      console.log(Type());
       if($scope.type == 'Teacher'){
         getAttendance();
       }
-  };
+  }
 
   $scope.isAuthenticated = isAuth;
   var auth = false;
@@ -48,9 +47,14 @@ function MainController($scope, Auth, Type, StudentResource, Attendance, Dailyre
   };
   function getAttendance(){
     Attendance.get(function(data){
-      console.log(data);
       $scope.attendances = data.attendances;
-      $scope.myDate = new Date(data.attendances[0].time);
+      try {
+        $scope.myDate = new Date(data.attendances[0].time);
+      }
+      catch(e){
+        $scope.myDate = new Date();
+      }
     });
   }
+  setType();
 }

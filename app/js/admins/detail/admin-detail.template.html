@@ -6,7 +6,7 @@
   <md-card layout="row" layout-align="space-around" flex="50">
     <div layout-margin>
       <md-card-avatar layout="column"  layout-align="center center">
-        <img ng-src="{{adminDetail.user.avatar_url_medium}}">
+        <img class="border-image" ng-src="{{admin.avatar_url_medium}}">
       </md-card-avatar>
 
       <md-card-actions layout="row" layout-align="space-around end">
@@ -17,11 +17,12 @@
 
     <div layout-margin>
       <md-card-title-text class="item">
-        <p class="md-headline">{{ adminDetail.admin.first_name }}</p>
-        <p class="md-headline">{{ adminDetail.admin.last_name }}</p>
-        <p class="md-subhead">Email: {{ adminDetail.user.email }}</p>
-        <p class="md-subhead">Phone: {{ adminDetail.user.contact_phone }}</p>
-        <p class="md-subhead">School: {{ adminDetail.user.school_id }}</p>
+        <p class="md-headline">{{ admin.first_name }}</p>
+        <p class="md-headline">{{ admin.last_name }}</p>
+        <p class="md-subhead"><b>Email:</b> {{ admin.email }}</p>
+        <p class="md-subhead"><b>Phone:</b> {{admin.contact_phone }}</p>
+        <p class="md-subhead"><b>School:</b> {{ admin.school.name }}</p>
+        <p class="md-subhead"><b>Address:</b> {{ admin.school.address }}</p>
       </md-card-title-text>
     </div>
   </md-card>

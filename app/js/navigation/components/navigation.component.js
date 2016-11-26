@@ -25,7 +25,6 @@ module.exports = angular
         }
         function logout() {
             Auth.logout();
-            $window.location.href = '/';
         }
 
         function buildToggler(componentId) {
