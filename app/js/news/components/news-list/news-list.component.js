@@ -7,9 +7,9 @@ module.exports = angular
         controller: NewsListController
     });
 
-    NewsListController.$inject = ['News', '$window'];
+    NewsListController.$inject = ['News', '$window', '$scope'];
 
-    function NewsListController(News, $window) {
+    function NewsListController(News, $window, $scope) {
         var ctrl = this;
         var getNews = function(){
             News.get(function(data){
