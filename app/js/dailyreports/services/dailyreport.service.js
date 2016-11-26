@@ -10,7 +10,7 @@ module.exports = angular
 Dailyreport.$inject = ['$resource','appSettings'];
 
 function Dailyreport($resource, appSettings){
-    return $resource(appSettings.SERVER_PATH + "daily_reports/:id?student_id", null,
+    return $resource(appSettings.SERVER_PATH + "daily_reports/:id", null,
         {
             'update':{'method':'PUT'}
         }

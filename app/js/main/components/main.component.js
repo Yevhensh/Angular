@@ -19,7 +19,7 @@ function MainController($scope, Auth, Type, StudentResource, Attendance, Dailyre
       if($scope.type == 'Teacher'){
         getAttendance();
       }
-  };
+  }
 
   $scope.isAuthenticated = isAuth;
   var auth = false;
@@ -48,7 +48,12 @@ function MainController($scope, Auth, Type, StudentResource, Attendance, Dailyre
   function getAttendance(){
     Attendance.get(function(data){
       $scope.attendances = data.attendances;
-      $scope.myDate = new Date(data.attendances[0].time);
+      try {
+        $scope.myDate = new Date(data.attendances[0].time);
+      }
+      catch(e){
+        $scope.myDate = new Date();
+      }
     });
   }
   setType();
