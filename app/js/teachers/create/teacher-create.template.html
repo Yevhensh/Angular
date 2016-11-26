@@ -3,6 +3,10 @@
     <md-button class="md-primary" ui-sref="teachers">Back to Teachers</md-button>
     <form ng-submit="addTeacher()" role="form">
         <md-input-container class="md-block">
+          <input type='file' ng-model="teacher.avatar" base-sixty-four-input accept="image/*" maxsize="1000" placeholder="Teacher photo">
+        </md-input-container>
+
+        <md-input-container class="md-block">
           <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="teacher.first_name" placeholder="First Name">
         </md-input-container>
 

@@ -2,6 +2,11 @@
     <h1>Teacher Edit</h1>
     <md-button class="md-primary" ui-sref="teachers">Back to Teachers</md-button>
     <form ng-submit="updateTeacher()">
+        <md-input-container class="md-block">
+          <img ng-src="{{teacherDetail.user.avatar_url_medium}}"  alt="Avatar">
+           <p>Upload a different photo.</p>
+           <input type='file' ng-model="teacherDetail.user.avatar" value='{{teacherDetail.user.avatar}}' base-sixty-four-input accept="image/*" maxsize="1000" placeholder="Teacher photo">
+        </md-input-container>
         <h3>First Name:</h3>
         <md-input-container class="md-block">
             <input ng-model ="teacherDetail.user.first_name" type="text" name="fname" id="teacher_input">

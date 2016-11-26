@@ -2,6 +2,13 @@
     <h1>Parent Edit</h1>
     <md-button class="md-primary" ui-sref="parents">Back to Parents</md-button>
     <form ng-submit="updateParent()">
+
+        <md-input-container class="md-block">
+          <img ng-src="{{parentDetail.user.avatar_url_medium}}"  alt="Avatar">
+           <p>Upload a different photo.</p>
+           <input type='file' ng-model="parentDetail.user.avatar" value='{{parentDetail.user.avatar}}' base-sixty-four-input accept="image/*" maxsize="1000" placeholder="Parent photo">
+        </md-input-container>
+
         <md-input-container class="md-block">
         <h3>First Name:</h3>
           <input type="text" ng-model="parentDetail.user.first_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$">
