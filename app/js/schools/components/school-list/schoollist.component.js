@@ -1,17 +1,14 @@
 'use strict';
 
-var angular = require('angular');
-
 module.exports = angular
-  .module('app.schoollist.component',['ngMaterial'])
+  .module('app.schoollist.component',[])
   .component('schoollist', {
         controller: SchoolListController,
         templateUrl: '/app/js/schools/components/school-list/school-list.template.html'
     });
   SchoolListController.$inject = ['School', '$scope', '$state'];
-   function SchoolListController(School, $state) {
-       var ctrl = this;
-       School.get(function(data){
-           ctrl.schools = data.schools;
-       });
-     }
+  function SchoolListController(School, $scope, $state) {
+    School.get(function(data){
+      $scope.schools = data.schools;
+    });
+  }

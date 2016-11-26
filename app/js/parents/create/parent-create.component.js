@@ -8,9 +8,9 @@ module.exports = angular
   });
 
   ParentCreateController.$inject = ['$scope', '$state', 'ParentResource'];
-
   function ParentCreateController ($scope, $state, ParentResource) {
     $scope.parent = new ParentResource();
+    
     $scope.addParent = function() {
       $scope.parent.$save(function() {
         $state.go('parents');

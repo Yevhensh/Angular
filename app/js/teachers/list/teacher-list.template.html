@@ -23,7 +23,7 @@
 
             <md-content class="ful">
                 <md-list >
-                  <md-list-item class="md-3-line l-item" ng-repeat="teacher in $ctrl.teachers | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+                  <md-list-item class="md-3-line l-item" ng-repeat="teacher in teachers | filter:$ctrl.query | orderBy:$ctrl.orderProp">
                       <img ng-src="{{teacher.avatar_url_thumb}}" height="50">
                       <div class="md-list-item-text">
                           <span class="md-subhead"><strong>ID: </strong> {{ teacher.id }}</span></br>

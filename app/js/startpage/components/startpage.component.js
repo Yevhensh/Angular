@@ -7,6 +7,4 @@ module.exports = angular
         templateUrl: '/app/js/startpage/components/startpage.template.html',
         controller: StartpageController,
     });
-function StartpageController($scope) {
-  var ctrl = this;
-}
+function StartpageController() {}
