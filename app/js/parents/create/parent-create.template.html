@@ -1,5 +1,5 @@
 <div class="item item-medium">
-    <h1>Parent Create</h1>
+    <h1>Create new Parent</h1>
     <md-button class="md-primary" ui-sref="parents">Back to Parents</md-button>
     <form ng-submit="addParent()" role="form">
 
@@ -17,7 +17,7 @@
 
         <h3>E-mail:</h3>
         <md-input-container class="md-block">
-          <input type="e-mail" ng-model="parent.email" placeholder="asd@asa">
+          <input type="e-mail" ng-model="parent.email" placeholder="example@mail.com">
         </md-input-container>
 
         <h3>Contact Phone:</h3>
@@ -27,12 +27,12 @@
 
         <h3>Password:</h3>
         <md-input-container class="md-block">
-          <input type="password" ng-model="parent.password">
+          <input type="password" ng-model="parent.password" placeholder="Min 6 symbols">
         </md-input-container>
 
         <h3>Password confirmation:</h3>
         <md-input-container class="md-block">
-          <input type="password" ng-model="parent.password_confirmation">
+          <input type="password" ng-model="parent.password_confirmation" placeholder="Min 6 symbols">
         </md-input-container>
         <md-button type="submit" value="Save">Submit</md-button>
     </form>
