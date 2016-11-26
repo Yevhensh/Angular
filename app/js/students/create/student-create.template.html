@@ -1,5 +1,5 @@
-<div class="item item-medium">
-    <h1>Student Create</h1>
+<div class="item">
+  <h1>Student Create</h1>
     <md-button class="md-primary" ui-sref="students">Back to Students</md-button>
     <form ng-submit="addStudent()" role="form">
         <md-input-container class="md-block">
@@ -28,22 +28,31 @@
           </md-input-container>
 
           <md-input-container class="md-block">
-            <label>Parent</label>
-            <md-select ng-model="students_users.parent_id" class="md-no-underline">
+          <h2 layout="row" layout-align="center center" class="md-headline">Parents</h2>
+          <md-select  ng-model="student.parents.first.id" class="md-no-underline">
+                <md-option multiple ng-repeat="parent in parents" ng-value="parent.id">
+                <div>{{parent.first_name}}  {{parent.last_name}}</div>
+              </md-option>
+            </md-select>
+          </md-input-container>
+          <md-select ng-model="student.parents.second.id" class="md-no-underline">
                 <md-option ng-repeat="parent in parents" ng-value="parent.id">
                 <div>{{parent.first_name}}  {{parent.last_name}}</div>
               </md-option>
             </md-select>
           </md-input-container>
-        <div><md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox></div>
-        <div ng-show="isDisabled">
-          <md-input-container class="md-block">
-            <input type="text" ng-model="student.health_info.health_problem" placeholder="Health Problem">
-          </md-input-container>
 
-          <md-input-container class="md-block">
-            <input type="text" ng-model="student.health_info.description" placeholder="Description">
-          </md-input-container>
+          <div>
+            <md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox>
+          </div>
+          <div ng-show="isDisabled">
+            <md-input-container class="md-block">
+              <input type="text" ng-model="student.health_info.health_problem" placeholder="Health Problem">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <input type="text" ng-model="student.health_info.description" placeholder="Description">
+            </md-input-container>
         </div>
 
         <md-button type="submit" value="Save">Submit</md-button>
