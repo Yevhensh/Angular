@@ -39,9 +39,7 @@ function DailyreportListController(Dailyreport, $window, $scope, StudentResource
 
     $scope.sendDailyReport = function(){
         Dailyreport.update({id: 1, sended: true}, null);
-        $scope.daily_reports.forEach(function(item){
-          item.send = true;
-        });
+        $scope.daily_report.sended = true;
     };
 
     getStudents();
