@@ -17,7 +17,9 @@
         </md-card-title>
         <md-card-actions layout="row" layout-align="space-around end">
             <md-button class="md-raised md-primary stylecolor" ui-sref="albumEdit({ albumId: albumDetail.album.id })">Edit</md-button>
+        <div permissions="Admin">
             <md-button class="md-raised md-warn" ng-click="deleteAlbum(albumDetail)">Delete</md-button>
+        </div>
         </md-card-actions>
     </md-card>
 </div>
