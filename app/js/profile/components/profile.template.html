@@ -2,8 +2,7 @@
     <md-card layout="column" layout-align="center center" flex="50">
         <h2>User profile</h2>
         <form name="userForm">
-
-        <div flex layout="row" layout-align="space-between">
+        <div flex layout="row" layout-align="space-between center">
         <div layout-margin>
             <md-card-avatar layout="column"  layout-align="center center">
                 <img ng-src="{{$ctrl.user.avatar_url_medium}}" class="md-card-image" alt="Avatar">
@@ -11,7 +10,7 @@
                   <img-crop image="myImage" result-image="$ctrl.user.avatar"></img-crop>
                 </div>
                 <choose-file layout="row" layout-align="right end">
-                    <input  id="fileInput" name="ava" type="file" class="ng-hide" ng-model="$ctrl.user.avatar" base-sixty-four-input accept="image/*" maxsize="1000">
+                    <input id="fileInput" name="ava" type="file" class="ng-hide" ng-model="$ctrl.user.avatar" base-sixty-four-input accept="image/*" maxsize="1000">
                     <md-input-container flex class="md-block">
                         <input type="text" ng-model="fileName" disabled>
                         <div class="hint">Select different avatar</div>
@@ -22,7 +21,6 @@
                             <md-icon class="material-icons">attach_file</md-icon>
                         </md-button>
                     </div>
-
                 </choose-file>
             </md-card-avatar>
         </div>
