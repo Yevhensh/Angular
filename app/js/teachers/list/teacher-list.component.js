@@ -9,17 +9,7 @@ module.exports = angular
 
   TeacherListController.$inject =  ['TeacherResource','$scope', '$state'];
   function TeacherListController(TeacherResource, $scope, $state) {
-    var ctrl = this;
-        ctrl.getTeachers = getTeachers;
-
-    function getTeachers() {
-      return TeacherResource.get(function(data){
-        ctrl.teachers = data.teachers;
-      });
-    }
-
-    getTeachers();
+    TeacherResource.get(function(data){
+      $scope.teachers = data.teachers;
+    });
   }
-
-
-

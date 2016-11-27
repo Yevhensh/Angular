@@ -16,7 +16,7 @@
 <h1> Schools </h1>
 <md-button ui-sref="schoolCreate" class="md-raised md-primary stylecolor">Create new school</md-button>
 <div class="item">
-    <md-card ng-repeat="school in $ctrl.schools | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list items-list-small">
+    <md-card ng-repeat="school in schools | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list items-list-small">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">
