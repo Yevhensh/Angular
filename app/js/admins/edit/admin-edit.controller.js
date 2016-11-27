@@ -11,8 +11,9 @@ module.exports = angular
       $scope.admin = data.user;
     });
 
-    if (confirm("Are you sure \nyou want to update this admin?")){
-      $scope.updateAdmin = function() {
+
+    $scope.updateAdmin = function() {
+      if (confirm("Are you sure \nyou want to update this admin?")){
         $scope.admins.$update({ id: $stateParams.adminId }, function() {
           $state.go('admins');
         });

@@ -6,8 +6,9 @@ module.exports = angular
 
   StudentEditController.$inject = ['$scope', '$state', '$stateParams', 'StudentResource', 'Group', 'ParentResource'];
   function StudentEditController ($scope, $state, $stateParams, StudentResource, Group, ParentResource) {
-    if (confirm("Are you sure \nyou want to update this student?")){
-      $scope.updateStudent = function() {
+
+    $scope.updateStudent = function() {
+      if (confirm("Are you sure \nyou want to update this student?")){
         $scope.students.$update({ id: $stateParams.studentId }, function() {
           $state.go('students');
         });
