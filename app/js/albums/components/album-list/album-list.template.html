@@ -17,7 +17,7 @@
 <md-button ui-sref="albumCreate" class="md-raised md-primary stylecolor">New</md-button>
 <div class="item">
     <md-card ng-repeat="album in $ctrl.albums | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="items-list items-list-album">
-    <img ng-src="{{album.image}}" class="md-card-image content-image" alt="{{album.title}}"/>
+    <img ng-src="{{album.album_cover}}" class="md-card-image content-image" alt="{{album.title}}"/>
       <md-card-title>
         <md-card-title-text>
           <span class="md-headline">
