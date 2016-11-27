@@ -18,8 +18,8 @@ function AuthInterceptor($q, $window, $location) {
         return config;
     },
     responseError: function(response) {
-      if (response.status === 401 || response.status === 403) {
-        $window.localStorage.removeItem('auth_token') ||
+      if (response.status === 401) {
+        $window.localStorage.removeItem('auth_token') &&
         $window.sessionStorage.removeItem('auth_token');
         $location.path('/login');
       }

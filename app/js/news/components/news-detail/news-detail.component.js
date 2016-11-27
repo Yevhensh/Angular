@@ -7,9 +7,8 @@ module.exports = angular
         templateUrl: '/app/js/news/components/news-detail/news-detail.template.html'
     });
 
-NewsShowController.$inject = ['News', '$stateParams'];
+NewsShowController.$inject = ['News', '$stateParams', '$scope'];
 
-function NewsShowController(News, $stateParams) {
-    var ctrl = this;
-    ctrl.item = News.get({ id: $stateParams.id });
+function NewsShowController(News, $stateParams, $scope) {
+    $scope.newsDetail = News.get({ id: $stateParams.id });
 }

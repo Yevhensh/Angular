@@ -9,9 +9,9 @@
         <img class="border-image" ng-src="{{admin.avatar_url_medium}}">
       </md-card-avatar>
 
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button class="md-raised md-primary stylecolor" ui-sref="adminEdit({adminId: admin.id})">Edit</md-button>
-        <md-button class="md-raised md-warn" ng-click="deleteAdmin(admin)">Delete</md-button>
+      <md-card-actions layout="row" layout-align="space-around end">
+        <md-button class="md-raised md-primary stylecolor" ui-sref="adminEdit({adminId: adminDetail.user.id})">Edit</md-button>
+        <md-button class="md-raised md-warn" ng-click="deleteAdmin(adminDetail)">Delete</md-button>
       </md-card-actions>
     </div>
 
