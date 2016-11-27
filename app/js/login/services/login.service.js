@@ -21,7 +21,7 @@ function Auth($http, $window, appSettings) {
       return login;
     },
     logout: function() {
-      $window.localStorage.removeItem('auth_token') &&
+      $window.localStorage.removeItem('auth_token') &
       $window.sessionStorage.removeItem('auth_token');
     },
     isAuthenticated: function() {
