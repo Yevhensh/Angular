@@ -19,7 +19,7 @@ function NewsEditController (News, $scope, $state, $stateParams, Group, Level, S
     });
 
     School.get(function(data){
-      $scope.schools = data.schools;
+      $scope.school = data.school;
     });
 
     $scope.updateNews = function() {

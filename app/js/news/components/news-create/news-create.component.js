@@ -21,7 +21,7 @@ function NewsCreateController(News, $state, $scope, $stateParams, Group, Level, 
     });
 
     School.get(function(data){
-      $scope.schools = data.schools;
+      $scope.school = data.school;
     });
 
     $scope.addNews = function(){

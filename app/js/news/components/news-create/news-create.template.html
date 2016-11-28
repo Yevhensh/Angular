@@ -32,7 +32,7 @@
             <md-select ng-switch="news.imageable_type" ng-model="news.imageable_id" class="md-no-underline">
                 <md-option ng-switch-when="Group" ng-repeat="group in groups" ng-value="group.id">{{group.name}}</md-option>
                 <md-option ng-switch-when="Level" ng-repeat="level in levels" ng-value="level.id">{{level.name}}</md-option>
-                <md-option ng-switch-when="School" ng-repeat="school in schools" ng-value="school.id">{{school.name}}</md-option>
+                <md-option ng-switch-when="School" ng-value="school.id">{{school.name}}</md-option>
             </md-select>
             </md-input-container>
         </div>
