@@ -1,0 +1,9 @@
+<h1 class="days">Our Day</h1>
+<md-button ui-sref="ourDayEdit({ ourDayId: $ctrl.ourDay.id })" class="md-accent">Update</md-button>
+<h1>{{$ctrl.ourDay.day | date}}</h1>
+<div class="list-div"><p>{{$ctrl.ourDay.description}}</p></div>
+<md-list class="album-list" layout-xs="column" flex-xs="100">
+  <md-list-item ng-repeat="photo in $ctrl.photos" class="album-item" class="album-item" flex-xs="100">
+    <img ng-src="{{photo.image}}" alt="Our Day Photo"/>
+  </md-list-item>
+</md-list>
