@@ -1,3 +1,5 @@
+ {{schools}} {{$scope.schools}}
+
 <h1>Create the Album</h1>
 <div class="item item-medium">
     <md-button class="md-primary" ui-sref="albums">Back to Albums</md-button>
@@ -30,8 +32,7 @@
                                                   ng-value="level.id">
                   {{level.name}}
                 </md-option>
-                <md-option ng-switch-when="School" ng-repeat="school in schools"
-                                                   ng-value="school.id">
+                <md-option ng-switch-when="School" ng-value="school.id">
                   {{school.name}}
                 </md-option>
             </md-select>
