@@ -22,8 +22,8 @@ var contactsComponent = require('../contacts/contacts.module.js'),
     permissionsDirective = require('./directives/permissions.directive.js'),
     profileModule = require('../profile/profile.module.js'),
     dailyReportsModule = require('../dailyreports/dailyreports.module.js'),
-    myDayModule = require('../myDay/my-day.module.js'),
-    ourDayModule = require('../ourDay/our-day.module.js');
+    myDayModule = require('../my-day/my-day.module.js'),
+    ourDayModule = require('../our-day/our-day.module.js');
 
 module.exports = angular.module("app.main", [
   // modules
