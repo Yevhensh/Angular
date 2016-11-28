@@ -2,59 +2,99 @@
   <h1>Student Create</h1>
     <md-button class="md-primary" ui-sref="students">Back to Students</md-button>
     <form ng-submit="addStudent()" role="form">
-        <md-input-container class="md-block">
-        <input type='file' ng-model="student.avatar" base-sixty-four-input accept="image/*" maxsize="1000" placeholder="Student photo">
-        </md-input-container>
-
-        <md-input-container class="md-block">
-          <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="student.first_name" placeholder="First Name">
-        </md-input-container>
-
-        <md-input-container class="md-block">
-          <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="student.last_name" placeholder="Last Name">
-        </md-input-container>
-
+      <div layout="row">
+        <div flex="33" class="padd">
           <md-input-container class="md-block">
-            <input type="number" min="2" max ="10" ng-model="student.age" placeholder="Age">
+            <p>Upload a student photo.</p>
+            <input type='file'
+                   ng-model="student.avatar"
+                   base-sixty-four-input
+                   accept="image/*"
+                   maxsize="1000"
+                   placeholder="Student photo">
           </md-input-container>
-
-          <md-input-container class="md-block">
-            <label>Group</label>
-            <md-select ng-model="student.group_id" class="md-no-underline">
-                <md-option ng-repeat="group in groups" ng-value="group.id">
-                {{group.name}}
-              </md-option>
-            </md-select>
-          </md-input-container>
-
-          <md-input-container class="md-block">
-          <h2 layout="row" layout-align="center center" class="md-headline">Parents</h2>
-          <md-select  ng-model="student.parents.first.id" class="md-no-underline">
-                <md-option multiple ng-repeat="parent in parents" ng-value="parent.id">
-                <div>{{parent.first_name}}  {{parent.last_name}}</div>
-              </md-option>
-            </md-select>
-          </md-input-container>
-          <md-select ng-model="student.parents.second.id" class="md-no-underline">
-                <md-option ng-repeat="parent in parents" ng-value="parent.id">
-                <div>{{parent.first_name}}  {{parent.last_name}}</div>
-              </md-option>
-            </md-select>
-          </md-input-container>
-
-          <div>
-            <md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox>
-          </div>
-          <div ng-show="isDisabled">
-            <md-input-container class="md-block">
-              <input type="text" ng-model="student.health_info.health_problem" placeholder="Health Problem">
-            </md-input-container>
-
-            <md-input-container class="md-block">
-              <input type="text" ng-model="student.health_info.description" placeholder="Description">
-            </md-input-container>
         </div>
 
+        <div flex="33" class="padd">
+          <div layout="column" layout-align="center start">
+            <md-input-container class="md-block">
+              <p>First Name:</p>
+              <input type="text"
+                     ng-model="student.first_name"
+                     pattern="^[a-zA-Zа-яА-Я]{1,20}$">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <p>Last Name:</p>
+              <input type="text"
+                     ng-model="student.last_name"
+                     pattern="^[a-zA-Zа-яА-Я]{1,20}$">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <p>Age:</p>
+              <input type="number" min="2" max ="10" ng-model="student.age">
+            </md-input-container>
+          </div>
+        </div>
+
+        <div flex="33" class="padd">
+          <div layout="column" layout-align="center start">
+            <md-input-container class="md-block">
+              <p>Group</p>
+              <md-select ng-model="student.group_id" class="md-no-underline">
+                  <md-option ng-repeat="group in groups" ng-value="group.id">
+                  {{group.name}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+
+
+              <md-checkbox class="md-primary"
+                           md-no-ink ng-model="isDisabledParent"
+                           label="Parent:">
+                           Parent:
+              </md-checkbox>
+
+              <div ng-show="isDisabledParent"
+                   layout="column"
+                   layout-align="center end">
+              <md-input-container class="md-block">
+                <md-select  ng-model="student.parents.first.id"
+                            class="md-no-underline">
+                  <md-option ng-repeat="parent in parents" ng-value="parent.id">
+                    <div>{{parent.first_name}}  {{parent.last_name}}</div>
+                  </md-option>
+                </md-select>
+                </md-input-container>
+                  <md-select ng-model="student.parents.second.id"
+                             class="md-no-underline">
+                    <md-option ng-repeat="parent in parents" ng-value="parent.id">
+                      <div>{{parent.first_name}} {{parent.last_name}}</div>
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+              <md-checkbox class="md-primary"
+                           md-no-ink ng-model="isDisabled"
+                           label="Health Info:">
+                           Health Info:
+              </md-checkbox>
+                <div ng-show="isDisabled">
+                  <md-input-container class="md-block">
+                    <p>Health Problem:</p>
+                    <input type="text"
+                           ng-model="student.health_info.health_problem">
+                  </md-input-container>
+
+                  <md-input-container class="md-block">
+                    <p>Description:</p>
+                    <input type="text" ng-model="student.health_info.description">
+                  </md-input-container>
+                </div>
+            </div>
+          </div>
+        </div>
         <md-button type="submit" value="Save">Submit</md-button>
     </form>
 </div>

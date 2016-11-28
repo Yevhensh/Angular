@@ -24,7 +24,7 @@
   text-align: center;
   width: 90%;
   word-wrap: break-word;
-  margin: 0 auto;
+  margin: 0 10px;
 }
 
 .item-small {
@@ -76,4 +76,11 @@
 
 ul {
   list-style-type: none;
+}
+.md-block {
+  margin: 0px;
+}
+
+.padd {
+  padding: 5px 15px;
 }
