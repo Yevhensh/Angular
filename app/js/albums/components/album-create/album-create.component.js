@@ -28,7 +28,7 @@ module.exports = angular
     });
 
     School.get(function(data){
-      $scope.schools = data.schools;
+      $scope.school = data.school;
     });
 
   };
