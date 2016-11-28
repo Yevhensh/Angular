@@ -9,15 +9,7 @@ module.exports = angular
 
   ParentListController.$inject =  ['ParentResource','$scope', '$state'];
   function ParentListController(ParentResource, $scope, $state) {
-    var ctrl = this;
-        ctrl.getParents = getParents;
-
-    function getParents() {
-      return ParentResource.get(function(data){
-        ctrl.parents = data.parents;
-      });
-    }
-
-    getParents();
+    ParentResource.get(function(data){
+      $scope.parents = data.parents;
+    });
   }
-

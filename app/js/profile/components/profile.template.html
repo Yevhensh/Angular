@@ -2,11 +2,13 @@
     <md-card layout="column" layout-align="center center" flex="50">
         <h2>User profile</h2>
         <form name="userForm">
-
-        <div flex layout="row" layout-align="space-between">
+        <div flex layout="row" layout-align="space-between center">
         <div layout-margin>
             <md-card-avatar layout="column"  layout-align="center center">
                 <img ng-src="{{$ctrl.user.avatar_url_medium}}" class="md-card-image" alt="Avatar">
+                <div ng-controller="Crop" class="cropArea" ng-show="myImage">
+                  <img-crop image="myImage" result-image="$ctrl.user.avatar"></img-crop>
+                </div>
                 <choose-file layout="row" layout-align="right end">
                     <input id="fileInput" name="ava" type="file" class="ng-hide" ng-model="$ctrl.user.avatar" base-sixty-four-input accept="image/*" maxsize="1000">
                     <md-input-container flex class="md-block">
@@ -30,10 +32,20 @@
                     Role:
                     <span ng-bind="$ctrl.user.type"></span>
                 </p>
+                <p ng-if='$ctrl.user.type!="Superadmin"&&$ctrl.user.type!="Parent"'>
+                    <md-icon class="material-icons md-light md-24">account_balance</md-icon>
+                    School:
+                    <span ng-bind="$ctrl.user.school_id"></span>
+                </p>
+                <p ng-if='$ctrl.user.type=="Teacher"'>
+                    <md-icon class="material-icons md-light md-24">group</md-icon>
+                    Group:
+                    <span ng-bind="$ctrl.user.school_id"></span>
+                </p>
             </md-card-header-text>
 
             <md-input-container class="md-icon-float md-block">
-                <md-icon class="material-icons md-light md-24">face</md-icon>
+                <md-icon class="material-icons md-light md-24">account_circle</md-icon>
                 <label>First Name</label>
                 <input ng-model="$ctrl.user.first_name" name="first_name" type="text" ng-required="true">
                 <div md-colors="{color:'accent'}" ng-show="userForm.first_name.$invalid">The first name is required.</div>

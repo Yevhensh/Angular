@@ -1,7 +1,12 @@
 <div class="item item-medium">
-    <h1>Parent Create</h1>
+    <h1>Create new Parent</h1>
     <md-button class="md-primary" ui-sref="parents">Back to Parents</md-button>
     <form ng-submit="addParent()" role="form">
+
+        <md-input-container class="md-block">
+        <input type='file' ng-model="parent.avatar" base-sixty-four-input accept="image/*" maxsize="1000" placeholder="Parent photo">
+        </md-input-container>
+
         <md-input-container class="md-block">
           <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="parent.first_name" placeholder="First Name">
         </md-input-container>
@@ -12,7 +17,7 @@
 
         <h3>E-mail:</h3>
         <md-input-container class="md-block">
-          <input type="e-mail" ng-model="parent.email" placeholder="asd@asa">
+          <input type="e-mail" ng-model="parent.email" placeholder="example@mail.com">
         </md-input-container>
 
         <h3>Contact Phone:</h3>
@@ -22,25 +27,13 @@
 
         <h3>Password:</h3>
         <md-input-container class="md-block">
-          <input type="text" ng-model="parent.password">
+          <input type="password" ng-model="parent.password" placeholder="Min 6 symbols">
         </md-input-container>
 
         <h3>Password confirmation:</h3>
         <md-input-container class="md-block">
-          <input type="text" ng-model="parent.password_confirmation">
+          <input type="password" ng-model="parent.password_confirmation" placeholder="Min 6 symbols">
         </md-input-container>
-
-        <div class="menus" layout="row" layout-align="space-between center">
-          <md-input-container class="md-block">
-            <label>Student</label>
-            <md-select ng-model="parent.student_id" class="md-no-underline">
-                <md-option ng-repeat="student in students" ng-value="student.id">
-                {{student.name}}
-              </md-option>
-            </md-select>
-          </md-input-container>
-        </div>
-
         <md-button type="submit" value="Save">Submit</md-button>
     </form>
 </div>

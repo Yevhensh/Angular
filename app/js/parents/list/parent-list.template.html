@@ -22,8 +22,8 @@
 
             <md-content class="ful">
                 <md-list >
-                  <md-list-item class="md-3-line l-item" ng-repeat="parent in $ctrl.parents | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-                  <!-- <img ng-src="{{parent.avatar_url_thumb}}" height="50"> -->
+                  <md-list-item class="md-3-line l-item" ng-repeat="parent in parents | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+                  <img ng-src="{{parent.avatar_url_thumb}}" height="50">
                       <div class="md-list-item-text">
                           <h3>First Name: {{ parent.first_name }}</h3>
                           <h4>Last Name: {{ parent.last_name }} </h4>

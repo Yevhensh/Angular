@@ -1,3 +1,4 @@
+var dateFormat = require('dateformat');
 'use strict';
 module.exports = angular
     .module('app.dailyreportList.component', [])
@@ -9,25 +10,38 @@ module.exports = angular
 DailyreportListController.$inject = ['Dailyreport', '$window', '$scope', 'StudentResource', 'Attendance'];
 
 function DailyreportListController(Dailyreport, $window, $scope, StudentResource, Attendance) {
-    $scope.students = StudentResource.get();
 
-    var getAttend = function(){
-        Attendance.get(function(data){
-            $scope.attendances = data;
-            $scope.myDate = new Date(data.attendances[0].time);
-        }).$promise.then(function(res){
-            StudentResource.get(function(data){
-               $scope.students = data.students;
-            });
-            //     .$promise.then(function(res){
-            //     $scope.getCurrentAttendance($scope.students[0].id)
-            // });
-        })
+    var getStudents = function(){
+        StudentResource.get(function(data){
+            $scope.students = data.students;
+            try {
+              $scope.getDailyReport(data.students[0].id);
+            }
+            catch(e){}
+        });
     };
 
-    getAttend();
+    var setDate = function(day){
+        $scope.myDate = day;
+    };
 
-    // Dailyreport.get(function(data){
-    //
-    // })
+    var formatDate = function(){
+        $scope.formattedDate = dateFormat($scope.myDate, "yyyy-mm-dd");
+    };
+
+    $scope.getDailyReport = function(student){
+        formatDate();
+        Dailyreport.get({id: 1, student_id: student, day: $scope.formattedDate}).$promise
+            .then(function(data){
+                $scope.daily_report = data.daily_report;
+            });
+    };
+
+    $scope.sendDailyReport = function(){
+        Dailyreport.update({id: 1, sended: true}, null);
+        $scope.daily_report.sended = true;
+    };
+
+    getStudents();
+    setDate(new Date());
 }

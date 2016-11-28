@@ -1,51 +1,79 @@
-<div class="item item-medium">
+<div class="item">
     <h1>Student Edit</h1>
     <md-button class="md-primary" ui-sref="students">Back to Students</md-button>
     <form ng-submit="updateStudent()">
-
-        <md-input-container class="md-block">
-          <img ng-src="{{studentDetail.student.avatar_url_medium}}"  alt="Avatar">
-           <p>Upload a different photo.</p>
-           <input type='file' ng-model="studentDetail.student.avatar" value='{{studentDetail.student.avatar}}' base-sixty-four-input accept="image/*" maxsize="1000" placeholder="Student photo">
-        </md-input-container>
-
-        <md-input-container class="md-block">
-        <h3>First Name:</h3>
-          <input type="text" ng-model="studentDetail.student.first_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$">
-        </md-input-container>
-
-        <md-input-container class="md-block">
-        <h3>Last Name:</h3>
-          <input type="text" ng-model="studentDetail.student.last_name" pattern="^[a-zA-Zа-яА-Я]{1,20}$">
-        </md-input-container>
-
-            <md-input-container class="md-block">
-          <h3>Age:</h3>
-            <input type="number" min="2" max ="10" ng-model="studentDetail.student.age">
-          </md-input-container>
-
+      <div layout="row">
+        <div flex="33" class="padd">
           <md-input-container class="md-block">
-            <label>Group</label>
-            <md-select ng-model="studentDetail.student.group_name" class="md-no-underline">
-                <md-option ng-repeat="group in groups" ng-value="group.name">
-                {{group.name}}
-              </md-option>
-            </md-select>
+            <img class="border-image"
+                 ng-src="{{student.avatar_url_medium}}"
+                 alt="Avatar">
+            <p>Upload a different photo.</p>
+            <input type='file'
+                   ng-model="student.avatar"
+                   ng-value="student.avatar"
+                   base-sixty-four-input
+                   accept="image/*"
+                   maxsize="1000"
+                   placeholder="Student photo">
           </md-input-container>
-
-        <div><md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox></div>
-        <div ng-show="isDisabled">
-            <md-input-container class="md-block">
-            <h3>Health Problem:</h3>
-                <input type="text" ng-model="studentDetail.student.health_info.health_problem">
-            </md-input-container>
-
-            <md-input-container class="md-block">
-            <h3>Description:</h3>
-                <input type="text" ng-model="studentDetail.student.health_info.description">
-            </md-input-container>
         </div>
 
-        <md-button type="submit" value="Update">Update</md-button>
+        <div flex="33" class="padd">
+          <div layout="column" layout-align="center start">
+            <md-input-container class="md-block">
+              <p>First Name:</p>
+              <input type="text"
+                     ng-model="student.first_name"
+                     pattern="^[a-zA-Zа-яА-Я]{1,20}$">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <p>Last Name:</p>
+              <input type="text"
+                     ng-model="student.last_name"
+                     pattern="^[a-zA-Zа-яА-Я]{1,20}$">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <p>Age:</p>
+              <input type="number" min="2" max ="10" ng-model="student.age">
+            </md-input-container>
+          </div>
+        </div>
+
+        <div flex="33" class="padd">
+          <div layout="column" layout-align="center start">
+            <md-input-container class="md-block">
+              <p>Group</p>
+              <md-select ng-model="student.group_id" class="md-no-underline">
+                  <md-option ng-repeat="group in groups" ng-value="group.id">
+                  {{group.name}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+
+            <md-checkbox class="md-primary"
+                         md-no-ink ng-model="isDisabled"
+                         label="Health Info:">
+                         Health Info:
+            </md-checkbox>
+              <div ng-show="isDisabled">
+                <md-input-container class="md-block">
+                  <p>Health Problem:</p>
+                  <input type="text"
+                         ng-model="student.health_info.health_problem">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                  <p>Description:</p>
+                  <input type="text" ng-model="student.health_info.description">
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <md-button type="submit" value="Update">Update</md-button>
     </form>
 </div>

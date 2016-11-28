@@ -4,18 +4,18 @@
     <md-card>
     <md-card-header>
       <md-card-avatar>
-        <img class="md-user-avatar" ng-src="{{$ctrl.item.users[0].avatar_url_thumb}}"/>
+        <img class="md-user-avatar" ng-src="{{newsDetail.users[0].avatar_url_thumb}}"/>
       </md-card-avatar>
       <md-card-header-text>
-        <span class="md-title">{{$ctrl.item.users[0].first_name}}</span>
-        <span class="md-subhead">{{$ctrl.item.news.created_at | date:'medium'}}</span>
+        <span class="md-title">{{newsDetail.users[0].first_name}}</span>
+        <span class="md-subhead">{{newsDetail.news.created_at | date:'medium'}}</span>
       </md-card-header-text>
     </md-card-header>
-    <img ng-src="{{$ctrl.item.news.image_url_medium}}" class="md-card-image content-image" alt="{{$ctrl.item.news.title}} ">
+    <img ng-src="{{newsDetail.news.image_url_medium}}" class="md-card-image content-image" alt="{{$ctrl.item.news.title}} ">
         <md-card-title>
           <md-card-title-text class="item">
-            <span class="md-headline">{{$ctrl.item.news.title}}</span>
-            <span class="md-subhead">{{$ctrl.item.news.description}}</span>
+            <span class="md-headline">{{newsDetail.news.title}}</span>
+            <span class="md-subhead">{{newsDetail.news.description}}</span>
           </md-card-title-text>
         </md-card-title>
     </md-card>

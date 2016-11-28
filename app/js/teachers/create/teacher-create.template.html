@@ -1,7 +1,11 @@
 <div class="item person-create">
-  <h1>Teacher Create</h1>
+  <h1>Create New Teacher</h1>
     <md-button class="md-primary" ui-sref="teachers">Back to Teachers</md-button>
     <form ng-submit="addTeacher()" role="form">
+        <md-input-container class="md-block">
+          <input type='file' ng-model="teacher.avatar" base-sixty-four-input accept="image/*" maxsize="1000" placeholder="Teacher photo">
+        </md-input-container>
+
         <md-input-container class="md-block">
           <input type="text" pattern="^[a-zA-Zа-яА-Я]{1,20}$" ng-model="teacher.first_name" placeholder="First Name">
         </md-input-container>
@@ -12,7 +16,7 @@
 
         <h3>E-mail:</h3>
         <md-input-container class="md-block">
-          <input type="e-mail" ng-model="teacher.email" placeholder="asd@asa">
+          <input type="e-mail" ng-model="teacher.email" placeholder="example@mail.com">
         </md-input-container>
 
         <h3>Contact Phone:</h3>
@@ -22,12 +26,12 @@
 
         <h3>Password:</h3>
         <md-input-container class="md-block">
-          <input type="password" ng-model="teacher.password">
+          <input type="password" ng-model="teacher.password" placeholder="Min 6 symbols">
         </md-input-container>
 
         <h3>Password confirmation:</h3>
         <md-input-container class="md-block">
-          <input type="password" ng-model="teacher.password_confirmation">
+          <input type="password" ng-model="teacher.password_confirmation" placeholder="Min 6 symbols">
         </md-input-container>
 
         <div class="menus" layout="row" layout-align="space-between center">

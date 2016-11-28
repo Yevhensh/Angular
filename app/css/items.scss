@@ -12,6 +12,10 @@
   text-decoration: none;
 }
 
+.border-image {
+  border-radius: 10%;
+}
+
 .items-list-button {
   margin-left: auto;
 }
@@ -20,7 +24,7 @@
   text-align: center;
   width: 90%;
   word-wrap: break-word;
-  margin: 0 auto;
+  margin: 0 10px;
 }
 
 .item-small {
@@ -29,6 +33,11 @@
 
 .item-medium {
   width: 45%;
+}
+
+.item-large {
+  width: 100%;
+  vertical-align: middle;
 }
 
 .item-login {
@@ -67,4 +76,11 @@
 
 ul {
   list-style-type: none;
+}
+.md-block {
+  margin: 0px;
+}
+
+.padd {
+  padding: 5px 15px;
 }

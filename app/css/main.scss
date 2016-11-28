@@ -4,6 +4,7 @@
 @import "./style.scss";
 @import "./dailyreports.scss";
 
+
 .myDay h1 {
   color: cornflowerblue;
 }
@@ -58,7 +59,8 @@
     border-radius: 10px;
 }
 
-.main {
+
+.main, .daily_reports{
   .wrapper-a-date {
     width: 100%;
     text-align: center;

@@ -1,31 +1,50 @@
 <div class="dailyreport">
     <h1>Daily reports</h1>
     <div class="wrapper-a-date">
-        <md-datepicker ng-model="myDate" class="a-date" md-placeholder="Enter date"></md-datepicker>
+        <md-datepicker ng-model="myDate" ng-change="getDailyReport(students[0].id)" class="a-date" md-placeholder="Enter date"></md-datepicker>
     </div>
-    {{ att }}
-    <div class="students">
-        <div layout="row">
-            <md-card flex="30" class="l-card l-card-s">
-                <md-content class="ful">
-                    <md-list >
-                        <md-list-item class="md-3-line l-item" ng-repeat="student in students">
-                            <img ng-src="{{student.avatar_url_thumb}}" height="50">
-                            <div class="md-list-item-text">
-                                <h3>Name: {{ student.first_name }}</h3>
-                                <h4>Surname: {{ student.last_name }} </h4>
-                            </div>
-                            <div class="wrapper-button-persons">
-                                <md-button class="button-persons">report</md-button>
-                            </div>
-                            <md-divider ng-if="!$last"></md-divider>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-            </md-card>
-            <md-card flex="70" class="l-card l-card-a">
+    <div layout="row" permissions="Teacher" ng-show="!daily_report.sended">
+      <md-button class="md-raised md-warn" id="send" flex-offset="90" ng-click="sendDailyReport()">Send</md-button>
+    </div>
+    <div layout="row">
+        <md-card flex="30" class="l-card l-card-s">
+            <md-content class="ful">
+                <md-list ng-init="getDailyReport(students[0].id)">
+                    <md-list-item class="md-3-line l-item" ng-repeat="student in students">
+                        <img ng-src="{{student.avatar_url_thumb}}" height="50">
+                        <div class="md-list-item-text">
+                            <h3>Name: {{ student.first_name }}</h3>
+                            <h4>Surname: {{ student.last_name }} </h4>
+                        </div>
+                        <div class="wrapper-button-persons">
+                            <md-button class="button-persons" ng-click="getDailyReport(student.id)">report</md-button>
+                        </div>
+                        <md-divider ng-if="!$last"></md-divider>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+        </md-card>
+        <md-card flex="70" class="l-card l-card-a">
+            <div ng-show="daily_report">
                 <h2>Attendance Report</h2>
-            </md-card>
-        </div>
+                <div layout="row" class="daily-right">
+                    <div class="md-list-item-text" flex="60">
+                        <p> Name: {{ daily_report.attendance.student.first_name }}</p>
+                        <p> Surname: {{ daily_report.attendance.student.last_name }}</p>
+                    </div>
+                    <ul flex="40" class="dail-times">
+                        <p ng-show="!daily_report.attendance.report_times[0]" class="red">Absent</p>
+                        <p ng-show="daily_report.attendance.report_times[0]">Present Times</p>
+                        <li ng-repeat="time in daily_report.attendance.report_times">
+                            <div class="green"> {{ time.start | date : "H:mm:ss" }} </div>
+                            <div class="red"> {{ time.end | date : "H:mm:ss" }} </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-show="!daily_report">
+                <h2 class="red-material">Not created</h2>
+            </div>
+        </md-card>
     </div>
 </div>

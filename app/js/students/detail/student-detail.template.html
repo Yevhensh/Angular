@@ -1,34 +1,60 @@
 <h1>Show page</h1>
 <div class="item">
-    <md-button class="md-primary" ui-sref="students">Back to students</md-button>
-</div>
-<div layout layout-align="center center">
-  <md-card layout="row" layout-align="space-around" flex="50">
-    <div layout-margin>
-      <md-card-avatar layout="column"  layout-align="center center">
-       <img ng-src="{{studentDetail.student.avatar_url_medium}}">
-      </md-card-avatar>
-
-      <md-card-actions layout="row" layout-align="space-around center">
-        <md-button class="md-raised md-primary stylecolor" ui-sref="studentEdit({studentId: studentDetail.student.id})">Edit</md-button>
-        <md-button class="md-raised md-warn" ng-click="deleteStudent(studentDetail)">Delete</md-button>
-      </md-card-actions>
+  <md-button class="md-primary" ui-sref="students">Back to students</md-button>
+  <div layout="row">
+    <div flex="33">
+      <img class="border-image" ng-src="{{student.avatar_url_medium}}">
+      <div permissions="Admin" layout="row" layout-align="center center">
+        <md-button class="md-raised md-primary stylecolor"
+                   ui-sref="studentEdit({studentId: student.id})">
+                   Edit
+        </md-button>
+        <md-button class="md-raised md-warn"
+                   ng-click="deleteStudent(student)">
+                   Delete
+        </md-button>
+      </div>
     </div>
-
-    <div layout-margin>
-      <md-card-title-text class="item">
-        <p class="md-headline">{{ studentDetail.student.first_name }}</p>
-        <p class="md-headline">{{ studentDetail.student.last_name }}</p>
-        <p class="md-subhead">Age: {{ studentDetail.student.age }}</p>
-        <p class="md-subhead">Group: {{ studentDetail.student.group_id }}</p>
-        <md-checkbox class="md-primary" md-no-ink ng-model="isDisabled" label="Health Info:">Health Info:</md-checkbox>
-        <div ng-show="isDisabled">
-          <h4 class="md-headline">Problem:</h4>
-          <p class="md-subhead">{{ studentDetail.student.health_info.health_problem }}</p>
-          <h4 class="md-headline">Description: </h4>
-          <p class="md-subhead">{{ studentDetail.student.health_info.description }}</p>
+    <div flex="33">
+      <div layout="column" layout-align="center start">
+        <p class="md-headline">{{ student.first_name }}</p>
+        <p class="md-headline">{{ student.last_name }}</p>
+        <p class="md-subhead">Age: {{ student.age }}</p>
+        <p class="md-subhead">Group: {{ student.group_id}}</p>
+      </div>
+    </div>
+    <div flex="33">
+      <div layout="column" layout-align="center start">
+        <md-checkbox class="md-primary"
+                     md-no-ink ng-model="isDisabled"
+                     label="Health Info:">
+          <p class="md-headline">Health Info:</p>
+        </md-checkbox>
+        <div ng-show="isDisabled" layout="column" layout-align="center start">
+          <p class="md-subhead">
+            Problem: {{ student.health_info.health_problem }}
+          </p>
+          <p class="md-subhead">
+            Description: {{ student.health_info.description }}
+          </p>
         </div>
-      </md-card-title-text>
+        <div class="item" layout="column" layout-align="center start">
+          <p class="md-headline">Parents</p>
+          <md-button ng-if="student.parents[0].id" class="animate-if">
+            <p class="button-persons md-subhead"
+               ui-sref="parentDetail({parentId: student.parents[0].id})">
+              {{ student.parents[0].first_name }}
+              {{ student.parents[0].last_name }}
+            </p>
+          </md-button>
+          <md-button ng-if="student.parents[1].id" class="animate-if">
+            <p class="button-persons md-subhead"
+               ui-sref="parentDetail({parentId: student.parents[1].id})">
+              {{ student.parents[1].first_name }}
+              {{ student.parents[1].last_name }}
+            </p>
+        </div>
+      </div>
     </div>
-  </md-card>
+  </div>
 </div>

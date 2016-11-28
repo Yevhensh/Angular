@@ -6,8 +6,5 @@ module.exports = angular
     templateUrl: '/app/js/contacts/components/contacts.template.html',
     controller: ContactsController,
   });
-
-function ContactsController() {
-  var ctrl = this;
-}
+function ContactsController() {}
 

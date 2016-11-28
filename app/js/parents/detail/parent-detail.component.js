@@ -8,7 +8,6 @@ module.exports = angular
   });
 
   ParentDetailController.$inject = ['$scope', '$state', '$window', '$stateParams', 'ParentResource'];
-
   function ParentDetailController ($scope, $state, $window, $stateParams, ParentResource) {
     $scope.parentDetail = ParentResource.get({ id: $stateParams.parentId });
 

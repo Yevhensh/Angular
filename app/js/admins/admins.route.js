@@ -7,18 +7,22 @@ module.exports = angular
     $stateProvider.state({
       name: 'admins',
       url: '/admins',
-      template: '<admin-list></admin-list>'
+      templateUrl: './app/js/admins/list/admin-list.template.html',
+      controller: 'AdminListController'
     }).state({
       name: 'adminEdit',
       url: '/admins/{adminId}/edit',
-      template: '<admin-edit></admin-edit>'
+      templateUrl: './app/js/admins/edit/admin-edit.template.html',
+      controller: 'AdminEditController'
     }).state({
       name: 'adminDetail',
       url: 'admins/{adminId}',
-      template: '<admin-detail></admin-detail>'
+      templateUrl: './app/js/admins/detail/admin-detail.template.html',
+      controller: 'AdminDetailController'
     }).state({
       name: 'adminCreate',
       url: '/admins/new',
-      template: '<admin-create></admin-create>'
+      templateUrl: '/app/js/admins/create/admin-create.template.html',
+      controller: 'AdminCreateController'
     });
   });
