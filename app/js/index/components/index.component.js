@@ -1,0 +1,12 @@
+module.exports = angular
+    .module('app.index.component', ['ngMaterial'])
+    .controller('IndexCtrl', function ($scope, $timeout, $mdSidenav) {
+      $scope.toggleLeft = buildToggler('left');
+      $scope.toggleRight = buildToggler('right');
+
+      function buildToggler(componentId) {
+        return function() {
+          $mdSidenav(componentId).toggle();
+        }
+      }
+    });
